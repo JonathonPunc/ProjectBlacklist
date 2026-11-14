@@ -1,0 +1,23 @@
+# Machine-readable licence map (https://reuse.software). See LICENSING.md for
+# the human version. Built lists live on the `dist` branch and carry their own
+# LICENSE and NOTICE files, written by `python -m licensing stage` from the
+# texts in licensing/texts/. LICENSES/ holds only the licences of files here.
+version = 1
+SPDX-PackageName = "ProjectBlacklist"
+SPDX-PackageDownloadLocation = "https://github.com/JonathonPunc/ProjectBlacklist"
+
+# Code, docs and configuration.
+[[annotations]]
+path = "**"
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 JonathonPunc and ProjectBlacklist contributors"
+SPDX-License-Identifier = "MIT"
+
+# Our own data is public domain so it can go into every build, including the
+# CC0 one: list entries and allowlist decisions under data/, and the source
+# registry (licence research others are welcome to reuse).
+[[annotations]]
+path = ["data/**", "licensing/sources.toml"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 ProjectBlacklist contributors"
+SPDX-License-Identifier = "CC0-1.0"

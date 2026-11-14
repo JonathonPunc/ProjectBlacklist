@@ -1,0 +1,71 @@
+ProjectBlacklist: third-party notices
+=====================================
+
+Generated from licensing/sources.toml by `python -m licensing sync`.
+Do not edit by hand.
+
+Entries are suspected malicious or phishing hosts, not confirmed verdicts.
+
+Build: complement (CC0-1.0)
+---------------------------
+Fast list from public-domain sources and our own curation, meant to run alongside HaGeZi TIF.
+
+* ProjectBlacklist curated data (CC0-1.0), https://github.com/JonathonPunc/ProjectBlacklist
+
+* phishunt.io (CC0-1.0), https://phishunt.io/
+  Condition: Describe entries as suspected, never as confirmed phishing (phishunt ToS sections 3 and 4).
+  Condition: Don't misrepresent where the data came from (ToS section 4).
+  Condition: Stay under 10 requests per second (ToS section 5).
+  Requested: Credit phishunt.io when redistributing (ToS section 7: appreciated, not required).
+  Requested: Send false-positive disputes to phishunt's GitHub issues with its false-positive template (ToS section 6).
+
+Build: all-in-one (GPL-3.0-only)
+--------------------------------
+complement plus redistributable third-party lists, for people who want a single URL.
+
+* ProjectBlacklist curated data (CC0-1.0), https://github.com/JonathonPunc/ProjectBlacklist
+
+* phishunt.io (CC0-1.0), https://phishunt.io/
+  Condition: Describe entries as suspected, never as confirmed phishing (phishunt ToS sections 3 and 4).
+  Condition: Don't misrepresent where the data came from (ToS section 4).
+  Condition: Stay under 10 requests per second (ToS section 5).
+  Requested: Credit phishunt.io when redistributing (ToS section 7: appreciated, not required).
+  Requested: Send false-positive disputes to phishunt's GitHub issues with its false-positive template (ToS section 6).
+
+* HaGeZi Threat Intelligence Feeds (GPL-3.0-only), https://github.com/hagezi/dns-blocklists
+  Copyright HaGeZi and contributors. Published under the GNU General Public
+  License v3.0; full text in LICENSE.
+  Condition: A copy of the GPL-3.0 must accompany any redistribution (HaGeZi README, Redistribution and licensing).
+  Condition: GPL-3.0 covers the list as HaGeZi publishes it, not the upstream feeds behind it; check those terms separately before using any of them directly.
+  Requested: Fetch no more often than the list's Expires header says (8 hours when checked).
+  Requested: Send false positives for TIF entries to https://github.com/hagezi/dns-blocklists/issues.
+
+* Phishing.Database (MIT), https://github.com/Phishing-Database/Phishing.Database
+  Copyright (c) 2018-2025 Mitchell Krog - github.com/mitchellkrogza
+  Copyright (c) 2018-2025 Nissar Chababy - github.com/funilrys
+  Copyright (c) 2018-2025 Phishing.Database Contributors - github.com/Phishing-Database
+  Licensed under the MIT License (text below).
+  Requested: Send false positives for its entries to the Phishing.Database issue tracker, using its templates.
+
+MIT licence text
+----------------
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

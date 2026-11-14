@@ -1,0 +1,226 @@
+# ProjectBlacklist source registry.
+#
+# Every feed the pipeline may touch is declared here: what licence it carries,
+# whether its terms have been checked, and which published builds it may feed.
+# `python -m licensing check` enforces the rules below; LICENSING.md explains
+# them. After editing, run `python -m licensing sync` to regenerate NOTICE and
+# the source table in LICENSING.md.
+#
+# status
+#   approved  terms checked; may feed the builds listed in `builds`
+#   pending   terms unclear or unread; feeds nothing until resolved
+#   excluded  checked and rejected (terms, scope or quality); feeds nothing
+#   internal  used by the pipeline (e.g. as an allowlist), never shipped
+#
+# license    SPDX identifier, or LicenseRef-* for custom terms
+# verified   date someone last read the source's licence AND terms of use
+# conditions obligations that come with the data, beyond the licence itself
+# requests   things the maintainers ask for that no licence requires; we
+#            honour them anyway (see "Respecting list maintainers" in
+#            LICENSING.md)
+
+# ---------------------------------------------------------------- builds ---
+
+[builds.complement]
+license = "CC0-1.0"
+description = "Fast list from public-domain sources and our own curation, meant to run alongside HaGeZi TIF."
+
+[builds.all-in-one]
+license = "GPL-3.0-only"
+description = "complement plus redistributable third-party lists, for people who want a single URL."
+
+# --------------------------------------------------------------- approved ---
+
+[[sources]]
+id = "projectblacklist"
+name = "ProjectBlacklist curated data"
+status = "approved"
+license = "CC0-1.0"
+builds = ["complement", "all-in-one"]
+homepage = "https://github.com/JonathonPunc/ProjectBlacklist"
+terms_url = "https://github.com/JonathonPunc/ProjectBlacklist/blob/main/LICENSING.md"
+verified = 2026-11-14
+notes = """Entries and allowlist decisions kept in this repository under data/.
+Contributions are accepted under CC0-1.0 (see CONTRIBUTING.md)."""
+
+[[sources]]
+id = "phishunt"
+name = "phishunt.io"
+status = "approved"
+license = "CC0-1.0"
+builds = ["complement", "all-in-one"]
+homepage = "https://phishunt.io/"
+url = "https://phishunt.io/feed.txt"
+terms_url = "https://phishunt.io/tos/"
+verified = 2026-11-14
+conditions = [
+  "Describe entries as suspected, never as confirmed phishing (phishunt ToS sections 3 and 4).",
+  "Don't misrepresent where the data came from (ToS section 4).",
+  "Stay under 10 requests per second (ToS section 5).",
+]
+requests = [
+  "Credit phishunt.io when redistributing (ToS section 7: appreciated, not required).",
+  "Send false-positive disputes to phishunt's GitHub issues with its false-positive template (ToS section 6).",
+]
+notes = """ToS section 7 releases the feed data under CC0 1.0; attribution is
+appreciated but not required. phishunt itself aggregates Certificate
+Transparency logs and third-party feeds."""
+
+[[sources]]
+id = "hagezi-tif"
+name = "HaGeZi Threat Intelligence Feeds"
+status = "approved"
+license = "GPL-3.0-only"
+builds = ["all-in-one"]
+homepage = "https://github.com/hagezi/dns-blocklists"
+url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt"
+terms_url = "https://github.com/hagezi/dns-blocklists/blob/main/LICENSE"
+verified = 2026-11-14
+attribution = """Copyright HaGeZi and contributors. Published under the GNU General Public
+License v3.0; full text in LICENSE."""
+conditions = [
+  "A copy of the GPL-3.0 must accompany any redistribution (HaGeZi README, Redistribution and licensing).",
+  "GPL-3.0 covers the list as HaGeZi publishes it, not the upstream feeds behind it; check those terms separately before using any of them directly.",
+]
+requests = [
+  "Fetch no more often than the list's Expires header says (8 hours when checked).",
+  "Send false positives for TIF entries to https://github.com/hagezi/dns-blocklists/issues.",
+]
+notes = """HaGeZi states GPL-3.0 without an 'or later' grant, so we treat it as
+GPL-3.0-only. This is what forces the all-in-one build to be GPL-3.0."""
+
+[[sources]]
+id = "phishing-database"
+name = "Phishing.Database"
+status = "approved"
+license = "MIT"
+builds = ["all-in-one"]
+homepage = "https://github.com/Phishing-Database/Phishing.Database"
+url = "https://phish.co.za/latest/phishing-domains-ACTIVE.txt"
+terms_url = "https://github.com/Phishing-Database/Phishing.Database/blob/master/LICENSE"
+verified = 2026-11-14
+attribution = """Copyright (c) 2018-2025 Mitchell Krog - github.com/mitchellkrogza
+Copyright (c) 2018-2025 Nissar Chababy - github.com/funilrys
+Copyright (c) 2018-2025 Phishing.Database Contributors - github.com/Phishing-Database
+Licensed under the MIT License (text below)."""
+requests = [
+  "Send false positives for its entries to the Phishing.Database issue tracker, using its templates.",
+]
+notes = """MIT requires its copyright and permission notice in copies, so this
+source can't go into the CC0 build. Caveat: Phishing.Database does not list
+its upstream feeds, so we rely on its MIT grant as published."""
+
+# ---------------------------------------------------------------- pending ---
+
+[[sources]]
+id = "phishtank"
+name = "PhishTank"
+status = "pending"
+license = "LicenseRef-Unclear"
+homepage = "https://phishtank.org/"
+url = "http://data.phishtank.com/data/online-valid.json.gz"
+terms_url = "https://phishtank.org/faq.php"
+verified = 2026-11-14
+notes = """The dump downloads without a key, but new accounts have been closed
+since 2020. The site footer cites CC BY-SA 2.5 and we found no data-specific
+terms (the terms-of-use URL redirects to the home page). Share-alike data
+can't go into the CC0 build. Next step: ask Cisco Talos, which runs
+PhishTank, in writing."""
+
+[[sources]]
+id = "cert-pl"
+name = "CERT Polska warning list"
+status = "pending"
+license = "LicenseRef-Unclear"
+homepage = "https://hole.cert.pl/"
+url = "https://hole.cert.pl/domains/domains.txt"
+notes = """Terms not read yet: hole.cert.pl timed out on 2026-11-14. Mostly
+Polish-targeted phishing, but it also catches global brands."""
+
+# --------------------------------------------------------------- excluded ---
+
+[[sources]]
+id = "urlhaus"
+name = "URLhaus (abuse.ch)"
+status = "excluded"
+license = "LicenseRef-abusech-Terms"
+homepage = "https://urlhaus.abuse.ch/"
+terms_url = "https://abuse.ch/terms-of-use/"
+verified = 2026-11-14
+notes = """Needs a free Auth-Key; the terms allow not-for-profit use only
+(section 3.1) and forbid derivative works without express consent
+(section 7.3). Unauthenticated downloads now return 410 Gone. Reconsider
+only with written consent from abuse.ch."""
+
+[[sources]]
+id = "urlhaus-filter"
+name = "malware-filter urlhaus-filter"
+status = "excluded"
+license = "CC0-1.0"
+homepage = "https://gitlab.com/malware-filter/urlhaus-filter"
+url = "https://malware-filter.gitlab.io/malware-filter/urlhaus-filter-domains.txt"
+verified = 2026-11-14
+notes = """Labelled CC0 and MIT, but it is built from the URLhaus database dump,
+whose terms forbid derivative works without consent. A downstream label
+can't grant rights the upstream never gave."""
+
+[[sources]]
+id = "openphish"
+name = "OpenPhish community feed"
+status = "excluded"
+license = "LicenseRef-OpenPhish-Terms"
+homepage = "https://openphish.com/"
+terms_url = "https://openphish.com/terms.html"
+verified = 2026-11-14
+notes = """Terms forbid use for detection, threat intelligence or customer
+protection without prior written consent. That bars using it even only to
+corroborate entries, not just redistributing it."""
+
+[[sources]]
+id = "oisd"
+name = "oisd big"
+status = "excluded"
+license = "GPL-3.0-only"
+homepage = "https://oisd.nl/"
+terms_url = "https://oisd.nl/faq"
+verified = 2026-11-14
+notes = """The licence is fine (GPL-3.0), but this is an ad and tracker list:
+397 of its entries are Tranco top-10k sites such as googlesyndication.com.
+Out of scope for a malware and phishing list."""
+
+[[sources]]
+id = "blocklistproject-phishing"
+name = "The Block List Project: phishing"
+status = "excluded"
+license = "Unlicense"
+homepage = "https://github.com/blocklistproject/Lists"
+verified = 2026-11-14
+notes = """The licence is fine (public domain), but it blocked 0.1% of live
+phishing in our 2026-11-14 measurement, so it isn't worth its false
+positives."""
+
+# --------------------------------------------------------------- internal ---
+
+[[sources]]
+id = "tranco"
+name = "Tranco top sites list"
+status = "internal"
+license = "LicenseRef-Tranco"
+homepage = "https://tranco-list.eu/"
+verified = 2026-11-14
+notes = """Used only as an allowlist guard; never shipped. Built from Cisco
+Umbrella, Majestic (CC BY 3.0), Farsight, CrUX (CC BY-SA 4.0) and Cloudflare
+Radar (CC BY-NC 4.0). Because of the non-commercial component, revisit this
+if the project ever becomes commercial."""
+
+[[sources]]
+id = "public-suffix-list"
+name = "Public Suffix List"
+status = "internal"
+license = "MPL-2.0"
+homepage = "https://publicsuffix.org/"
+url = "https://publicsuffix.org/list/public_suffix_list.dat"
+verified = 2026-11-14
+notes = """Used to find registrable domains and shared-hosting suffixes;
+fetched at build time and never shipped. If it is ever vendored into this
+repo, keep it unmodified: MPL-2.0 is file-level copyleft."""
