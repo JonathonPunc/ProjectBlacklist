@@ -12,7 +12,7 @@ from pathlib import Path
 
 from licensing import registry as lic
 from pipeline import formats
-from pipeline.build import PSL_URL, TRANCO_URL, Builder, build_formats
+from pipeline.build import PSL_URL, TRANCO_URL, Builder, BuildReport, Report, SourceReport, annotations, build_formats
 from pipeline.fetch import FetchError
 from pipeline.guard import Guard, load_tranco
 from pipeline.hosts import PublicSuffixList, ancestors, classify, normalize
@@ -371,6 +371,22 @@ class Build(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "no pipeline settings: new-feed"):
             Builder(repo=ROOT, dist=self.dist, cache=self.cache, get=self.web.get, now=T0,
                     registry=reg2, min_entries=1).run(["complement"])
+
+
+class Annotations(unittest.TestCase):
+    def test_one_line_each_and_escaped(self):
+        r = Report()
+        r.sources["cert-pl"] = SourceReport("cert-pl", "unavailable", notes=["fetch failed: 50% \ndown"])
+        r.builds["complement"] = BuildReport("complement", entries=625, published=True)
+        r.builds["all-in-one"] = BuildReport("all-in-one", entries=9, failure="too small")
+        r.warnings.append("cert-pl: no usable copy")
+        lines = annotations(r)
+        self.assertEqual(len(lines), 4)
+        self.assertTrue(all(line.startswith("::") and "\n" not in line for line in lines))
+        self.assertIn("50%25 %0Adown", lines[0])
+        self.assertTrue(lines[1].startswith("::notice title=Build::complement: 625"))
+        self.assertTrue(lines[2].startswith("::error title=Build::all-in-one"))
+        self.assertTrue(lines[3].startswith("::warning"))
 
 
 if __name__ == "__main__":

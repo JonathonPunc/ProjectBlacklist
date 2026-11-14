@@ -7,7 +7,7 @@ import os
 import sys
 from pathlib import Path
 
-from .build import Builder, summary
+from .build import Builder, annotations, summary
 from .fetch import http_get
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -35,6 +35,8 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     text = summary(report)
     print(text)
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        print("\n".join(annotations(report)))
     step = os.environ.get("GITHUB_STEP_SUMMARY")
     if step:
         with open(step, "a", encoding="utf-8") as f:

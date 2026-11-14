@@ -323,6 +323,28 @@ def dist_readme(reg: lic.Registry, state: State, now: dt.datetime) -> str:
     return "\n".join(lines)
 
 
+def _escape(text: str) -> str:
+    return text.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+
+
+def annotations(report: Report) -> list[str]:
+    """GitHub workflow commands for a run. Annotations show on a run's page to
+    anyone, signed in or not; the step summary and logs need a signed-in user."""
+    out = []
+    for s in report.sources.values():
+        line = f"{s.id}: {s.how}, {s.kept:,} kept of {s.raw:,}"
+        if s.notes:
+            line += " - " + "; ".join(s.notes)
+        out.append(f"::notice title=Source::{_escape(line)}")
+    for b in report.builds.values():
+        if b.published:
+            out.append(f"::notice title=Build::{_escape(f'{b.id}: {b.entries:,} entries, passed')}")
+        else:
+            out.append(f"::error title=Build::{_escape(f'{b.id}: {b.entries:,} entries, NOT published: {b.failure}')}")
+    out += [f"::warning title=Warning::{_escape(w)}" for w in report.warnings]
+    return out
+
+
 def summary(report: Report) -> str:
     """Markdown summary of a run, for logs and the GitHub step summary."""
     out = ["## Sources", "", "| Source | How | Raw | Kept | Dropped | Notes |", "| --- | --- | --- | --- | --- | --- |"]
