@@ -1,0 +1,5 @@
+# ProjectBlacklist's own block entries (CC0-1.0; see LICENSING.md).
+# One domain per line. Each entry blocks that host and, in the wildcard
+# formats, everything under it. Add a short reason as a comment, e.g.
+#   evil-login.example  # phishing kit, reported in issue #12
+# Entries here skip the Tranco check, so be sure.

@@ -2,6 +2,7 @@ name: licensing
 
 on:
   push:
+    branches-ignore: [dist]   # the built lists; no code there
   pull_request:
 
 permissions:

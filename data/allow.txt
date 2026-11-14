@@ -1,0 +1,49 @@
+# Names the lists must never block (CC0-1.0; see LICENSING.md).
+#
+# An entry protects that name, its own subdomains, and every parent of it.
+# It does not protect tenants of a shared platform beneath it: allowing
+# amazonaws.com doesn't stop us blocking somebucket.s3.amazonaws.com.
+# Every build is checked against this file before it is published, so these
+# also act as canaries.
+#
+# Use this for false-positive decisions too, with a short reason.
+
+# Where our own lists are served from
+raw.githubusercontent.com
+github.com
+
+# Operating system updates and connectivity checks
+windowsupdate.com
+update.microsoft.com
+msftconnecttest.com
+connectivitycheck.gstatic.com
+captive.apple.com
+swscan.apple.com
+mesu.apple.com
+android.clients.google.com
+deb.debian.org
+security.debian.org
+archive.ubuntu.com
+security.ubuntu.com
+
+# DNS-over-HTTPS resolvers
+dns.google
+cloudflare-dns.com
+dns.quad9.net
+
+# Core platforms people sign in to
+google.com
+youtube.com
+gmail.com
+microsoft.com
+microsoftonline.com
+live.com
+office.com
+apple.com
+icloud.com
+amazon.com
+facebook.com
+instagram.com
+whatsapp.com
+wikipedia.org
+cloudflare.com

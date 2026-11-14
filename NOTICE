@@ -19,6 +19,13 @@ Fast list from public-domain sources and our own curation, meant to run alongsid
   Requested: Credit phishunt.io when redistributing (ToS section 7: appreciated, not required).
   Requested: Send false-positive disputes to phishunt's GitHub issues with its false-positive template (ToS section 6).
 
+* CERT Polska Warning List (LicenseRef-CERT-PL-Data-Usage-Policy), https://cert.pl/en/warning-list/
+  Listed as a data source only. No cooperation, partnership,
+  endorsement, certification or support by NASK-PIB or CERT Polska is implied.
+  Condition: Never imply cooperation, partnership, endorsement, certification or support by NASK-PIB or CERT Polska (data usage policy).
+  Condition: Don't use NASK-PIB or CERT Polska names, designations or logos in any way that could mislead about our relationship (data usage policy).
+  Requested: Block subdomains of listed domains too, but not their parents (CERT Polska implementation guidance).
+
 Build: all-in-one (GPL-3.0-only)
 --------------------------------
 complement plus redistributable third-party lists, for people who want a single URL.
@@ -46,6 +53,13 @@ complement plus redistributable third-party lists, for people who want a single 
   Copyright (c) 2018-2025 Phishing.Database Contributors - github.com/Phishing-Database
   Licensed under the MIT License (text below).
   Requested: Send false positives for its entries to the Phishing.Database issue tracker, using its templates.
+
+* CERT Polska Warning List (LicenseRef-CERT-PL-Data-Usage-Policy), https://cert.pl/en/warning-list/
+  Listed as a data source only. No cooperation, partnership,
+  endorsement, certification or support by NASK-PIB or CERT Polska is implied.
+  Condition: Never imply cooperation, partnership, endorsement, certification or support by NASK-PIB or CERT Polska (data usage policy).
+  Condition: Don't use NASK-PIB or CERT Polska names, designations or logos in any way that could mislead about our relationship (data usage policy).
+  Requested: Block subdomains of listed domains too, but not their parents (CERT Polska implementation guidance).
 
 MIT licence text
 ----------------

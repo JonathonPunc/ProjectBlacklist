@@ -60,7 +60,8 @@ class RealRegistry(unittest.TestCase):
     def test_complement_only_takes_public_domain_sources(self) -> None:
         reg = r.load()
         for s in reg.feeding("complement"):
-            self.assertIn(s.license, r.COMPATIBLE["CC0-1.0"], s.id)
+            self.assertTrue(reg.compatible("CC0-1.0", s.license), s.id)
+            self.assertFalse(reg.needs_notice(s.license), s.id)
 
     def test_excluded_sources_feed_nothing(self) -> None:
         for s in r.load().sources:
@@ -162,6 +163,45 @@ class Rules(unittest.TestCase):
         reg = r.loads('[builds.x]\nlicense = "WTFPL"\n' + source(builds=["x"]))
         errors, _ = r.check(reg, today=TODAY)
         self.assertTrue(any("no compatibility rules" in e for e in errors), errors)
+
+
+CUSTOM = """
+[licenses."LicenseRef-Any-Use"]
+name = "Any use"
+url = "https://example.org/policy"
+compatible_with = ["CC0-1.0", "GPL-3.0-only"]
+notice_required = false
+summary = "Any use, no attribution."
+"""
+
+
+class CustomTerms(unittest.TestCase):
+    def check(self, *parts: str) -> list[str]:
+        errors, _ = r.check(r.loads(BUILDS + "".join(parts)), today=TODAY)
+        return errors
+
+    def test_declared_custom_terms_can_enter_cc0(self) -> None:
+        self.assertEqual(self.check(CUSTOM, source(license="LicenseRef-Any-Use")), [])
+
+    def test_undeclared_custom_terms_are_refused(self) -> None:
+        errs = self.check(source(license="LicenseRef-Any-Use"))
+        self.assertTrue(any("can't go into build" in e for e in errs), errs)
+
+    def test_custom_terms_limited_to_their_builds(self) -> None:
+        gpl_only = CUSTOM.replace('["CC0-1.0", "GPL-3.0-only"]', '["GPL-3.0-only"]')
+        errs = self.check(gpl_only, source(license="LicenseRef-Any-Use"))
+        self.assertTrue(any("can't go into build complement" in e for e in errs), errs)
+
+    def test_custom_terms_need_licenseref_id_and_summary(self) -> None:
+        bad = '[licenses."MIT"]\nname = "x"\nurl = "u"\ncompatible_with = ["CC0-1.0"]\n'
+        errs = self.check(bad)
+        self.assertTrue(any("LicenseRef- id" in e for e in errs), errs)
+        self.assertTrue(any("needs name, url and summary" in e for e in errs), errs)
+
+    def test_custom_terms_with_notice_need_attribution(self) -> None:
+        noticed = CUSTOM.replace("notice_required = false", "notice_required = true")
+        errs = self.check(noticed, source(license="LicenseRef-Any-Use"))
+        self.assertTrue(any("requires an attribution" in e for e in errs), errs)
 
 
 class Staging(unittest.TestCase):

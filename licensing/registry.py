@@ -89,9 +89,31 @@ class Source:
 
 
 @dataclass(frozen=True)
+class CustomLicense:
+    """Terms that aren't an SPDX licence, declared in sources.toml."""
+    id: str
+    name: str
+    url: str
+    compatible_with: tuple[str, ...]
+    notice_required: bool
+    summary: str
+
+
+@dataclass(frozen=True)
 class Registry:
     builds: dict[str, Build]
     sources: tuple[Source, ...]
+    licenses: dict[str, CustomLicense]
+
+    def compatible(self, build_license: str, source_license: str) -> bool:
+        if source_license in COMPATIBLE.get(build_license, ()):
+            return True
+        custom = self.licenses.get(source_license)
+        return custom is not None and build_license in custom.compatible_with
+
+    def needs_notice(self, license_id: str) -> bool:
+        custom = self.licenses.get(license_id)
+        return custom.notice_required if custom else license_id in NOTICE_REQUIRED
 
     def feeding(self, build_id: str) -> list[Source]:
         """Approved sources whose data goes into ``build_id``."""
@@ -122,7 +144,18 @@ def loads(text: str) -> Registry:
         )
         for s in raw.get("sources", [])
     )
-    return Registry(builds, sources)
+    licenses = {
+        lid: CustomLicense(
+            id=lid,
+            name=str(c.get("name", "")),
+            url=str(c.get("url", "")),
+            compatible_with=tuple(c.get("compatible_with", ())),
+            notice_required=bool(c.get("notice_required", True)),
+            summary=" ".join(str(c.get("summary", "")).split()),
+        )
+        for lid, c in raw.get("licenses", {}).items()
+    }
+    return Registry(builds, sources, licenses)
 
 
 def load(path: Path = REGISTRY_PATH) -> Registry:
@@ -146,6 +179,16 @@ def check(reg: Registry, *, today: dt.date | None = None,
             errors.append(f"build {b.id}: licence {b.license!r} has no compatibility rules")
         if not text_path(b.license, texts_dir).is_file():
             errors.append(f"build {b.id}: missing licence text {text_path(b.license, texts_dir).name}")
+
+    for c in reg.licenses.values():
+        where = f"licence {c.id}"
+        if not c.id.startswith("LicenseRef-"):
+            errors.append(f"{where}: custom terms must use a LicenseRef- id, not an SPDX one")
+        if not (c.name and c.url and c.summary):
+            errors.append(f"{where}: needs name, url and summary")
+        for bl in c.compatible_with:
+            if bl not in COMPATIBLE:
+                errors.append(f"{where}: compatible_with names {bl!r}, which no build rule knows")
 
     seen: set[str] = set()
     for s in reg.sources:
@@ -185,15 +228,16 @@ def check(reg: Registry, *, today: dt.date | None = None,
                 warnings.append(f"{where}: terms last checked {s.verified}; read them again")
         if not s.builds:
             warnings.append(f"{where}: approved but feeds no build")
-        if s.license in NOTICE_REQUIRED and s.builds and not s.attribution:
+        if reg.needs_notice(s.license) and s.builds and not s.attribution:
             errors.append(f"{where}: {s.license} requires an attribution notice")
         for bid in s.builds:
             b = reg.builds.get(bid)
             if b is None or b.license not in COMPATIBLE:
                 continue
-            if s.license not in COMPATIBLE[b.license]:
+            if not reg.compatible(b.license, s.license):
                 errors.append(f"{where}: {s.license} data can't go into build {bid} ({b.license})")
             elif (s.license != b.license and s.license in NOTICE_REQUIRED
+                  and s.license not in reg.licenses
                   and not text_path(s.license, texts_dir).is_file()):
                 errors.append(f"{where}: build {bid} must ship the {s.license} text, "
                               f"but {text_path(s.license, texts_dir).name} is missing")

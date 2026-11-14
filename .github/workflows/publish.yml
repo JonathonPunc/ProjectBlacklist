@@ -1,0 +1,93 @@
+name: publish
+
+# Rebuilds the lists and force-pushes them to the `dist` branch.
+# Scheduled runs only fire from the default branch (main). A push to any
+# other branch that touches the build runs a trial build of both lists
+# against the live sources and reports it, but publishes nothing.
+on:
+  push:
+    branches-ignore: [main, dist]
+    paths:
+      - "pipeline/**"
+      - "licensing/**"
+      - "data/**"
+      - ".github/workflows/publish.yml"
+  schedule:
+    - cron: "7,37 * * * *"        # complement, every 30 minutes, off the hour
+    - cron: "19 3,11,19 * * *"    # complement + all-in-one, every 8 hours (HaGeZi: Expires 8 hours)
+  workflow_dispatch:
+    inputs:
+      builds:
+        description: Builds to rebuild
+        type: choice
+        default: complement
+        options: [complement, "complement,all-in-one"]
+      allow_swing:
+        description: Publish even if a build changed size more than the 30% gate allows
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  # Trial builds queue per branch and never hold up a real publish.
+  group: ${{ github.event_name == 'push' && format('trial-{0}', github.ref) || 'publish' }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out the current dist branch
+        run: |
+          if git ls-remote --exit-code --heads origin dist >/dev/null; then
+            git fetch --depth 1 origin dist:refs/remotes/origin/dist
+            git worktree add --detach dist origin/dist
+          else
+            git worktree add --detach dist HEAD
+            git -C dist rm -rq --cached . && find dist -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - id: day
+        run: echo "day=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+
+      # Reference data (Public Suffix List, Tranco) is used but never published,
+      # so it lives in the private Actions cache, not on the dist branch.
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: refdata-${{ steps.day.outputs.day }}
+          restore-keys: refdata-
+
+      - name: Build
+        id: build
+        env:
+          BUILDS: >-
+            ${{ github.event_name == 'workflow_dispatch' && inputs.builds
+                || (github.event_name == 'push' && 'complement,all-in-one')
+                || (github.event.schedule == '19 3,11,19 * * *' && 'complement,all-in-one' || 'complement') }}
+          ALLOW_SWING: ${{ github.event_name == 'workflow_dispatch' && inputs.allow_swing && '--allow-swing' || '' }}
+        run: python -m pipeline build --builds "$BUILDS" --dist dist --cache .cache $ALLOW_SWING
+
+      # Publish whatever passed its gates, even if another build failed. The
+      # branch has no history: each run replaces it, so the repo doesn't grow.
+      - name: Publish to the dist branch
+        if: always() && steps.build.outcome != 'skipped' && github.event_name != 'push'
+        run: |
+          cd dist
+          test -f state/state.json || { echo "nothing built"; exit 0; }
+          rm -rf .tmp-* .old-*            # leftovers if a build was interrupted
+          git checkout -q --orphan publish
+          git add -A
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "Lists built $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push -q --force origin publish:dist

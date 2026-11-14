@@ -29,6 +29,19 @@ description = "Fast list from public-domain sources and our own curation, meant 
 license = "GPL-3.0-only"
 description = "complement plus redistributable third-party lists, for people who want a single URL."
 
+# ----------------------------------------------------------- custom terms ---
+# Terms that aren't an SPDX licence. Each says which build licences it can go
+# into; `check` uses that alongside the SPDX rules in licensing/registry.py.
+
+[licenses."LicenseRef-CERT-PL-Data-Usage-Policy"]
+name = "CERT Polska Warning List data usage policy"
+url = "https://cert.pl/en/warning-list/"
+compatible_with = ["CC0-1.0", "GPL-3.0-only"]
+notice_required = false
+summary = """The list "may be used by any user for any purpose, including
+commercial purposes"; attribution is not required. Identifying the source must
+not imply cooperation or endorsement by NASK-PIB or CERT Polska."""
+
 # --------------------------------------------------------------- approved ---
 
 [[sources]]
@@ -110,6 +123,30 @@ notes = """MIT requires its copyright and permission notice in copies, so this
 source can't go into the CC0 build. Caveat: Phishing.Database does not list
 its upstream feeds, so we rely on its MIT grant as published."""
 
+[[sources]]
+id = "cert-pl"
+name = "CERT Polska Warning List"
+status = "approved"
+license = "LicenseRef-CERT-PL-Data-Usage-Policy"
+builds = ["complement", "all-in-one"]
+homepage = "https://cert.pl/en/warning-list/"
+url = "https://hole.cert.pl/domains/v2/domains.txt"
+terms_url = "https://cert.pl/en/warning-list/"
+verified = 2026-11-14
+attribution = """Listed as a data source only. No cooperation, partnership,
+endorsement, certification or support by NASK-PIB or CERT Polska is implied."""
+conditions = [
+  "Never imply cooperation, partnership, endorsement, certification or support by NASK-PIB or CERT Polska (data usage policy).",
+  "Don't use NASK-PIB or CERT Polska names, designations or logos in any way that could mislead about our relationship (data usage policy).",
+]
+requests = [
+  "Block subdomains of listed domains too, but not their parents (CERT Polska implementation guidance).",
+]
+notes = """Government-run (NASK-PIB) list, mostly Polish-targeted phishing but it
+also catches global brands. Entries expire after 6 months upstream.
+hole.cert.pl was often unreachable on 2026-11-14, so the pipeline keeps its
+last good copy."""
+
 # ---------------------------------------------------------------- pending ---
 
 [[sources]]
@@ -126,16 +163,6 @@ since 2020. The site footer cites CC BY-SA 2.5 and we found no data-specific
 terms (the terms-of-use URL redirects to the home page). Share-alike data
 can't go into the CC0 build. Next step: ask Cisco Talos, which runs
 PhishTank, in writing."""
-
-[[sources]]
-id = "cert-pl"
-name = "CERT Polska warning list"
-status = "pending"
-license = "LicenseRef-Unclear"
-homepage = "https://hole.cert.pl/"
-url = "https://hole.cert.pl/domains/domains.txt"
-notes = """Terms not read yet: hole.cert.pl timed out on 2026-11-14. Mostly
-Polish-targeted phishing, but it also catches global brands."""
 
 # --------------------------------------------------------------- excluded ---
 
