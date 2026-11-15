@@ -16,6 +16,7 @@ from __future__ import annotations
 import datetime as dt
 import shutil
 import tomllib
+from collections.abc import Iterable
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -295,10 +296,17 @@ def notice_text(reg: Registry, build_id: str | None = None,
     return "\n".join(out).rstrip() + "\n"
 
 
-def header_lines(reg: Registry, build_id: str) -> list[str]:
-    """Comment lines (without the comment prefix) every published list must start with."""
+def header_lines(reg: Registry, build_id: str, used: Iterable[str] | None = None) -> list[str]:
+    """Comment lines (without the comment prefix) every published list must start with.
+
+    used: ids of the sources that went into this particular file. A source that
+    was down or skipped is left off its Sources line (NOTICE still credits every
+    source the build can use). None means all of them.
+    """
     b = reg.builds[build_id]
-    sources = "; ".join(f"{s.name} ({s.license})" for s in reg.feeding(build_id))
+    used = None if used is None else set(used)
+    sources = "; ".join(f"{s.name} ({s.license})" for s in reg.feeding(build_id)
+                        if used is None or s.id in used) or "none this run"
     return [
         f"License: {b.license} ({LICENSE_URLS.get(b.license, 'see LICENSE')})",
         f"Sources: {sources}",

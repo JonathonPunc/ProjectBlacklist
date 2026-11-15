@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Check out the current dist branch
         run: |
@@ -54,7 +54,7 @@ jobs:
             git -C dist rm -rq --cached . && find dist -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
           fi
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -63,7 +63,7 @@ jobs:
 
       # Reference data (Public Suffix List, Tranco) is used but never published,
       # so it lives in the private Actions cache, not on the dist branch.
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: .cache
           key: refdata-${{ steps.day.outputs.day }}

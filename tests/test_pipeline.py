@@ -324,6 +324,17 @@ class Build(unittest.TestCase):
         self.assertEqual(report.sources["cert-pl"].how, "unavailable")
         self.assertTrue(any("cert-pl" in w for w in report.warnings))
 
+    def test_header_names_only_sources_used_this_run(self) -> None:
+        def sources_line(build: str) -> str:
+            text = (self.dist / build / "domains.txt").read_text()
+            return next(ln for ln in text.splitlines() if ln.startswith("# Sources:"))
+        self.web.pages[url("phishing-database")] = FetchError("HTTP Error 503")
+        report = self.run_build(["all-in-one"])
+        self.assertTrue(report.ok, report.builds)
+        self.assertNotIn("Phishing.Database", sources_line("all-in-one"))
+        self.assertIn("CERT Polska", sources_line("all-in-one"))
+        self.assertIn("Phishing.Database", (self.dist / "all-in-one" / "NOTICE").read_text())  # still credited
+
     def test_mirror_swing_is_rejected(self) -> None:
         self.run_build(["complement"])
         self.web.pages[url("cert-pl")] = b"pl-scam.pl\n" + b"".join(f"new{i}.pl\n".encode() for i in range(50))

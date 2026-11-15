@@ -201,7 +201,7 @@ class Builder:
         return None
 
     # -- builds -------------------------------------------------------------
-    def _header(self, build: str) -> list[str]:
+    def _header(self, build: str, used: list[str]) -> list[str]:
         b = self.reg.builds[build]
         return [
             f"Title: {TITLES.get(build, build)}",
@@ -211,7 +211,7 @@ class Builder:
             f"Expires: {EXPIRES.get(build, '1 day')}",
             f"Last modified: {self.now:%d %b %Y %H:%M} UTC",
             f"Version: {self.now:%Y.%m%d.%H%M}",
-            *lic.header_lines(self.reg, build),
+            *lic.header_lines(self.reg, build, used),
             f"Report false positives: {ISSUES}",
         ]
 
@@ -235,12 +235,12 @@ class Builder:
                 return f"{prev} -> {len(hosts)} entries ({change:.0%} change, limit {limit:.0%})"
         return ""
 
-    def _write(self, build: str, hosts: set[str], guard: Guard, rep: BuildReport) -> str:
+    def _write(self, build: str, hosts: set[str], used: list[str], guard: Guard, rep: BuildReport) -> str:
         """Write a build into a temp dir, verify every file, then swap it into place."""
         tmp = self.dist / f".tmp-{build}"
         shutil.rmtree(tmp, ignore_errors=True)
         lic.stage(self.reg, build, tmp)            # LICENSE + NOTICE; refuses if licensing fails
-        header = self._header(build)
+        header = self._header(build, used)
         serial = int(self.now.timestamp())
         prepared = formats.prepare(hosts)
         wanted = {"wildcard": set(prepared["wildcard"]), "exact": hosts}
@@ -319,7 +319,7 @@ class Builder:
                 hosts |= kept.get(s.id, set())
             present = sorted(s.id for s in self.reg.feeding(build) if s.id in kept)
             rep.entries = len(hosts)
-            rep.failure = self._gate(build, hosts, present, state, rep) or self._write(build, hosts, guard, rep)
+            rep.failure = self._gate(build, hosts, present, state, rep) or self._write(build, hosts, present, guard, rep)
             if not rep.failure:
                 rep.published = True
                 state.build_counts[build] = len(hosts)
