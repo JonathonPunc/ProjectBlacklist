@@ -61,6 +61,13 @@ complement plus redistributable third-party lists, for people who want a single 
   Condition: Don't use NASK-PIB or CERT Polska names, designations or logos in any way that could mislead about our relationship (data usage policy).
   Requested: Block subdomains of listed domains too, but not their parents (CERT Polska implementation guidance).
 
+Build: early-warning (CC0-1.0)
+------------------------------
+Experimental: hosts whose new TLS certificates look like a brand's login page, often hours before anyone reports them. Expect more mistakes than complement; use it alongside, not instead.
+
+* ProjectBlacklist early-warning detector (CC0-1.0), https://github.com/JonathonPunc/ProjectBlacklist
+  Condition: Read the logs through their monitoring (names/data tile) endpoints with gzip, whole tiles only, as the static CT API asks (https://c2sp.org/static-ct-api).
+
 MIT licence text
 ----------------
 

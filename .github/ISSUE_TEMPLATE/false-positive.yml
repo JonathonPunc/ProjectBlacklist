@@ -1,0 +1,42 @@
+name: Wrongly blocked
+description: One of our lists blocks a site that's safe.
+title: "Wrongly blocked: "
+labels: ["false-positive"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. A bot will reply within a few minutes saying which of our lists block the site and which source it came from. If it came from another list, its maintainers usually want the report too, and the bot will link to where they take reports.
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+      description: Just the domain, like `login.example.com`. No need for the full address.
+      placeholder: login.example.com
+    validations:
+      required: true
+  - type: dropdown
+    id: list
+    attributes:
+      label: Which list are you using?
+      multiple: true
+      options:
+        - complement
+        - early-warning
+        - all-in-one
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: breaks
+    attributes:
+      label: What breaks
+      description: What were you trying to do? Who runs the site, if you know?
+    validations:
+      required: true
+  - type: checkboxes
+    id: owner
+    attributes:
+      label: Is it your site?
+      options:
+        - label: I run this site or work for the organisation that does.

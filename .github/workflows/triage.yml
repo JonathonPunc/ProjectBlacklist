@@ -1,0 +1,56 @@
+name: triage
+
+# Replies to "Wrongly blocked" and "Missed site" issue forms with which of our
+# lists block the domain, which sources list it, and where those sources'
+# maintainers take reports. The issue text is untrusted: it only ever reaches
+# the shell as an environment variable and is parsed by Python.
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: triage-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  lookup:
+    if: contains(github.event.issue.body, '### Domain')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out the dist branch
+        run: |
+          git fetch --depth 1 origin dist
+          git worktree add --detach dist FETCH_HEAD
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Look up the reported domain
+        env:
+          BODY: ${{ github.event.issue.body }}
+          KIND: ${{ contains(github.event.issue.body, '### What breaks') && 'false-positive' || 'missed' }}
+        run: |
+          printf '%s' "$BODY" > "$RUNNER_TEMP/body.md"
+          python -m pipeline lookup --dist dist --kind "$KIND" --issue-body "$RUNNER_TEMP/body.md" \
+            > "$RUNNER_TEMP/reply.md" || true
+
+      - name: Reply on the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+          LABEL: ${{ contains(github.event.issue.body, '### What breaks') && 'false-positive' || 'missed-site' }}
+        run: |
+          gh label create false-positive --color d73a4a --description "A list blocks a safe site" --force
+          gh label create missed-site --color 0e8a16 --description "A dangerous site we don't block yet" --force
+          gh issue edit "$NUMBER" --add-label "$LABEL"
+          # Update our earlier reply when the issue is edited, rather than adding another.
+          gh issue comment "$NUMBER" --body-file "$RUNNER_TEMP/reply.md" --edit-last 2>/dev/null \
+            || gh issue comment "$NUMBER" --body-file "$RUNNER_TEMP/reply.md"

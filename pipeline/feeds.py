@@ -15,7 +15,7 @@ from datetime import timedelta
 class Feed:
     source_id: str
     fmt: str                          # urls | domains | abp | hosts (see pipeline.parse)
-    kind: str                         # live | mirror | local
+    kind: str                         # live | mirror | local | detector
     path: str = ""                    # local feeds: file in this repo
     # Never fetch more often than this: politeness, and maintainers' stated cadence.
     min_interval: timedelta = timedelta(hours=1)
@@ -46,4 +46,9 @@ FEEDS: dict[str, Feed] = {f.source_id: f for f in (
     # HaGeZi's list header says "Expires: 8 hours".
     Feed("hagezi-tif", "abp", "mirror", min_interval=timedelta(hours=8), max_stale=timedelta(days=7)),
     Feed("phishing-database", "domains", "mirror", min_interval=timedelta(hours=8), max_stale=timedelta(days=7)),
+    # Our early-warning detector (pipeline.early): brand lookalikes in new TLS
+    # certificates. It manages its own 14-day lifetime. Unvetted, so it gets
+    # the same top-1M popular-site check as phishunt.
+    Feed("ct-lookalikes", "names", "detector", min_interval=timedelta(0),
+         tranco_limit=1_000_000, swing_limit=None),
 )}

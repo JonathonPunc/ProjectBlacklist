@@ -86,6 +86,7 @@ class Source:
     conditions: tuple[str, ...]
     requests: tuple[str, ...]
     notes: str
+    report_url: str = ""       # where to report a wrongly listed entry
 
 
 @dataclass(frozen=True)
@@ -139,6 +140,7 @@ def loads(text: str) -> Registry:
             verified=s.get("verified"),
             attribution=str(s.get("attribution", "")).strip(),
             conditions=tuple(s.get("conditions", ())),
+            report_url=str(s.get("report_url", "")),
             requests=tuple(s.get("requests", ())),
             notes=" ".join(str(s.get("notes", "")).split()),
         )

@@ -15,6 +15,7 @@
 # license    SPDX identifier, or LicenseRef-* for custom terms
 # verified   date someone last read the source's licence AND terms of use
 # conditions obligations that come with the data, beyond the licence itself
+# report_url where to report a wrongly listed entry from this source
 # requests   things the maintainers ask for that no licence requires; we
 #            honour them anyway (see "Respecting list maintainers" in
 #            LICENSING.md)
@@ -28,6 +29,10 @@ description = "Fast list from public-domain sources and our own curation, meant 
 [builds.all-in-one]
 license = "GPL-3.0-only"
 description = "complement plus redistributable third-party lists, for people who want a single URL."
+
+[builds.early-warning]
+license = "CC0-1.0"
+description = "Experimental: hosts whose new TLS certificates look like a brand's login page, often hours before anyone reports them. Expect more mistakes than complement; use it alongside, not instead."
 
 # ----------------------------------------------------------- custom terms ---
 # Terms that aren't an SPDX licence. Each says which build licences it can go
@@ -52,9 +57,30 @@ license = "CC0-1.0"
 builds = ["complement", "all-in-one"]
 homepage = "https://github.com/JonathonPunc/ProjectBlacklist"
 terms_url = "https://github.com/JonathonPunc/ProjectBlacklist/blob/main/LICENSING.md"
+report_url = "https://github.com/JonathonPunc/ProjectBlacklist/issues/new?template=false-positive.yml"
 verified = 2026-11-14
 notes = """Entries and allowlist decisions kept in this repository under data/.
 Contributions are accepted under CC0-1.0 (see CONTRIBUTING.md)."""
+
+[[sources]]
+id = "ct-lookalikes"
+name = "ProjectBlacklist early-warning detector"
+status = "approved"
+license = "CC0-1.0"
+builds = ["early-warning"]
+homepage = "https://github.com/JonathonPunc/ProjectBlacklist"
+terms_url = "https://letsencrypt.org/docs/ct-logs/"
+report_url = "https://github.com/JonathonPunc/ProjectBlacklist/issues/new?template=false-positive.yml"
+verified = 2026-11-15
+conditions = [
+  "Read the logs through their monitoring (names/data tile) endpoints with gzip, whole tiles only, as the static CT API asks (https://c2sp.org/static-ct-api).",
+]
+notes = """Our own judgements (pipeline/early.py) about hostnames in public
+Certificate Transparency logs, released under CC0-1.0. The logs publish
+certificates so that anyone can monitor them; neither the Let's Encrypt CT page
+nor the static CT API spec sets usage terms, rate limits or licence conditions
+for readers (checked 2026-11-15). Borderline hosts' home pages are fetched once
+or a few times to look for a login form."""
 
 [[sources]]
 id = "phishunt"
@@ -65,6 +91,7 @@ builds = ["complement", "all-in-one"]
 homepage = "https://phishunt.io/"
 url = "https://phishunt.io/feed.txt"
 terms_url = "https://phishunt.io/tos/"
+report_url = "https://github.com/0xDanielLopez/phishunt/issues/new?template=false-positive.yml"
 verified = 2026-11-14
 conditions = [
   "Describe entries as suspected, never as confirmed phishing (phishunt ToS sections 3 and 4).",
@@ -88,6 +115,7 @@ builds = ["all-in-one"]
 homepage = "https://github.com/hagezi/dns-blocklists"
 url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt"
 terms_url = "https://github.com/hagezi/dns-blocklists/blob/main/LICENSE"
+report_url = "https://github.com/hagezi/dns-blocklists/issues"
 verified = 2026-11-14
 attribution = """Copyright HaGeZi and contributors. Published under the GNU General Public
 License v3.0; full text in LICENSE."""
@@ -111,6 +139,7 @@ builds = ["all-in-one"]
 homepage = "https://github.com/Phishing-Database/Phishing.Database"
 url = "https://phish.co.za/latest/phishing-domains-ACTIVE.txt"
 terms_url = "https://github.com/Phishing-Database/Phishing.Database/blob/master/LICENSE"
+report_url = "https://github.com/Phishing-Database/Phishing.Database/issues/new/choose"
 verified = 2026-11-14
 attribution = """Copyright (c) 2018-2025 Mitchell Krog - github.com/mitchellkrogza
 Copyright (c) 2018-2025 Nissar Chababy - github.com/funilrys
@@ -132,6 +161,7 @@ builds = ["complement", "all-in-one"]
 homepage = "https://cert.pl/en/warning-list/"
 url = "https://hole.cert.pl/domains/v2/domains.txt"
 terms_url = "https://cert.pl/en/warning-list/"
+report_url = "https://incydent.cert.pl/#!/lang=en"
 verified = 2026-11-14
 attribution = """Listed as a data source only. No cooperation, partnership,
 endorsement, certification or support by NASK-PIB or CERT Polska is implied."""

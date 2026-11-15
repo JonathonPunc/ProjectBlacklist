@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report phishing to the brand being impersonated
+    url: https://www.antiphishing.org/report-phishing
+    about: The Anti-Phishing Working Group passes reports on to brands, browsers and hosting providers.

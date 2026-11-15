@@ -1,0 +1,23 @@
+name: Missed phishing or malware site
+description: A dangerous site our lists don't block yet.
+title: "Missed site: "
+labels: ["missed-site"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please don't visit the site again to check it. Don't paste full links that contain your email address or account details: the domain is enough.
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+      description: Just the domain, like `paypal-verify-account.example`.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Why do you think it's malicious
+      description: What did it pretend to be, and how did you come across it (text message, email, ad, search result)?
+    validations:
+      required: true

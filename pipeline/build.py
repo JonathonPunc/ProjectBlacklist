@@ -15,8 +15,11 @@ from licensing import registry as lic
 from . import formats
 from .feeds import FEEDS, Feed
 from .fetch import FetchError, Getter, cached
+from .early import EarlyWarning
 from .guard import Guard, load_tranco
 from .hosts import PublicSuffixList, normalize
+from .lookalike import Detector
+from .pagecheck import PageGetter
 from .parse import parse
 from .state import State
 
@@ -25,8 +28,9 @@ TRANCO_URL = "https://tranco-list.eu/top-1m.csv.zip"
 HOMEPAGE = "https://github.com/JonathonPunc/ProjectBlacklist"
 ISSUES = HOMEPAGE + "/issues"
 RAW_BASE = "https://raw.githubusercontent.com/JonathonPunc/ProjectBlacklist/dist"
-EXPIRES = {"complement": "30 minutes", "all-in-one": "8 hours"}
-TITLES = {"complement": "ProjectBlacklist complement", "all-in-one": "ProjectBlacklist all-in-one"}
+EXPIRES = {"complement": "30 minutes", "all-in-one": "8 hours", "early-warning": "30 minutes"}
+TITLES = {"complement": "ProjectBlacklist complement", "all-in-one": "ProjectBlacklist all-in-one",
+          "early-warning": "ProjectBlacklist early warning (experimental)"}
 
 # Sanity gates
 MIN_ENTRIES = 50
@@ -37,6 +41,9 @@ SMALL_SWING = 0.75
 # dnsmasq, Unbound and RPZ form. Re-hosting those at 70-95 MiB each, three times
 # a day, isn't worth the churn, so all-in-one ships the formats most people use.
 BUILD_FORMATS = {"all-in-one": ("abp", "domains", "hosts")}
+# The early-warning list is small and changes a lot from run to run by design,
+# so it has no minimum size and no swing check.
+NO_GATES = {"early-warning"}
 
 MAX_FILE = 95 * 1024 * 1024  # GitHub refuses files over 100 MiB
 WARN_FILE = 50 * 1024 * 1024
@@ -69,6 +76,7 @@ class Report:
     builds: dict[str, BuildReport] = field(default_factory=dict)
     warnings: list[str] = field(default_factory=list)
     reference: dict[str, str] = field(default_factory=dict)
+    early: dict = field(default_factory=dict)
 
     @property
     def ok(self) -> bool:
@@ -90,8 +98,11 @@ def load_domain_file(path: Path) -> set[str]:
 class Builder:
     def __init__(self, *, repo: Path, dist: Path, cache: Path, get: Getter,
                  now: dt.datetime | None = None, registry: lic.Registry | None = None,
-                 min_entries: int = MIN_ENTRIES, allow_swing: bool = False) -> None:
+                 min_entries: int = MIN_ENTRIES, allow_swing: bool = False,
+                 page_get: PageGetter | None = None) -> None:
         self.repo, self.dist, self.cache, self.get = repo, dist, cache, get
+        self.page_get = page_get
+        self.early: EarlyWarning | None = None
         self.min_entries = min_entries
         self.allow_swing = allow_swing
         self.now = now or dt.datetime.now(dt.timezone.utc).replace(microsecond=0)
@@ -144,6 +155,15 @@ class Builder:
 
     def _collect(self, feed: Feed, src: lic.Source, state: State) -> set[str] | None:
         rep = self.report.sources.setdefault(src.id, SourceReport(src.id))
+        if feed.kind == "detector":
+            det = Detector.load(self.repo / "data" / "brands.toml", self.guard.psl)
+            self.early = EarlyWarning(dist=self.dist, cache=self.cache, get=self.get, detector=det,
+                                      now=self.now, page_get=self.page_get)
+            result = self.early.run()
+            rep.how = "scanned"
+            rep.notes += result.notes
+            self.report.early = result.stats
+            return result.hosts
         if feed.kind == "local":
             rep.how = "local"
             return load_domain_file(self.repo / feed.path)
@@ -190,6 +210,8 @@ class Builder:
         ]
 
     def _gate(self, build: str, hosts: set[str], present: list[str], state: State, rep: BuildReport) -> str:
+        if build in NO_GATES:
+            return ""
         if len(hosts) < self.min_entries:
             return f"only {len(hosts)} entries (minimum {self.min_entries})"
         prev = state.build_counts.get(build)
@@ -260,7 +282,7 @@ class Builder:
 
         self.dist.mkdir(parents=True, exist_ok=True)
         state = State(self.dist)
-        guard = self._guard()
+        guard = self.guard = self._guard()
 
         kept: dict[str, set[str]] = {}
         for sid, src in sources.items():
@@ -280,6 +302,10 @@ class Builder:
             rep.kept = len(ok)
             kept[sid] = ok
 
+        if self.early:
+            self.early.confirm(self._other_feeds(kept, state))
+            self.early.save()
+
         for build in builds:
             rep = self.report.builds[build] = BuildReport(build, previous=state.build_counts.get(build))
             hosts: set[str] = set()
@@ -296,6 +322,24 @@ class Builder:
         state.save()
         (self.dist / "README.md").write_text(dist_readme(self.reg, state, self.now), encoding="utf-8")
         return self.report
+
+
+    def _other_feeds(self, kept: dict[str, set[str]], state: State) -> dict[str, set[str]]:
+        """Every other feed's current hosts, to see which early warnings they confirm.
+        Feeds not fetched this run come from their saved snapshot or seen-list."""
+        out = {}
+        for sid, feed in FEEDS.items():
+            if feed.kind in ("detector", "local"):
+                continue
+            if sid in kept:
+                out[sid] = kept[sid]
+            elif feed.kind == "live":
+                out[sid] = state.live_hosts(sid)
+            else:
+                snap = state.load_snapshot(sid)
+                if snap:
+                    out[sid] = snap[0]
+        return out
 
 
 def build_formats(build: str) -> tuple[str, ...]:
@@ -341,6 +385,9 @@ def annotations(report: Report) -> list[str]:
             out.append(f"::notice title=Build::{_escape(f'{b.id}: {b.entries:,} entries, passed')}")
         else:
             out.append(f"::error title=Build::{_escape(f'{b.id}: {b.entries:,} entries, NOT published: {b.failure}')}")
+    if report.early:
+        line = ", ".join(f"{k} {'-' if v is None else v}" for k, v in report.early.items())
+        out.append(f"::notice title=Early warning::{_escape(line)}")
     out += [f"::warning title=Warning::{_escape(w)}" for w in report.warnings]
     return out
 
@@ -358,6 +405,9 @@ def summary(report: Report) -> str:
         if b.note:
             result += f" ({b.note})"
         out.append(f"| {b.id} | {b.entries:,} | {prev} | {result} |")
+    if report.early:
+        out += ["", "## Early warning", "", "| Measure | Value |", "| --- | --- |",
+                *(f"| {k} | {'-' if v is None else v} |" for k, v in report.early.items())]
     if report.reference:
         out += ["", "Reference data: " + "; ".join(f"{k} {v}" for k, v in report.reference.items())]
     if report.warnings:

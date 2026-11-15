@@ -5,7 +5,9 @@ hosts, for Pi-hole, AdGuard Home, uBlock Origin, dnsmasq, Unbound and any
 resolver that takes a Response Policy Zone.
 
 Entries are **suspected** malicious or phishing hosts, not confirmed verdicts.
-If something you trust is blocked, [open an issue](https://github.com/JonathonPunc/ProjectBlacklist/issues).
+If something you trust is blocked, [report it](https://github.com/JonathonPunc/ProjectBlacklist/issues/new?template=false-positive.yml):
+a bot replies within minutes with where the entry came from, and an unblock is
+published within minutes of a maintainer adding it to the allowlist.
 
 ## Which list?
 
@@ -13,13 +15,18 @@ If something you trust is blocked, [open an issue](https://github.com/JonathonPu
 | --- | --- | --- | --- |
 | **complement** | Fresh feeds only (phishunt, CERT Polska, our own entries). Small and quick to refresh. Meant to run *alongside* [HaGeZi TIF](https://github.com/hagezi/dns-blocklists). | every 30 minutes | CC0 (public domain) |
 | **all-in-one** | complement plus HaGeZi TIF and Phishing.Database, for one URL that covers it all. Large (~1.5 million entries), so Adblock, hosts and plain-domain formats only. | every 8 hours | GPL-3.0 |
+| **early-warning** *(experimental)* | Hosts whose brand-new TLS certificates look like a brand's login page (`paypal-login-verify.com`, `fасebook` written with Cyrillic letters), often before anyone has reported them. Expect more mistakes than the other lists. | every 30 minutes | CC0 (public domain) |
 
 Use **complement** if you already run HaGeZi TIF, or want something light.
 Use **all-in-one** if you want a single list.
+Add **early-warning** on top of either if you'd rather block a few safe sites
+than let new phishing through, and don't mind [reporting](https://github.com/JonathonPunc/ProjectBlacklist/issues/new?template=false-positive.yml)
+the odd mistake.
 
 ## URLs
 
-These are the complement URLs. For the bigger list, replace `complement` with
+These are the complement URLs. For early-warning, replace `complement` with
+`early-warning` (every format). For the bigger list, replace it with
 `all-in-one` in the Adblock, hosts or plain-domain URL; those are the formats
 all-in-one comes in. For dnsmasq, Unbound or RPZ, use complement together with
 HaGeZi's own TIF in that format.
@@ -50,6 +57,54 @@ which is how Pi-hole reads plain lines, so prefer the Adblock file on Pi-hole v6
   from cron) and include it in your config. The Unbound file starts its own
   `server:` clause, so it can be included anywhere.
 
+## Ads, trackers and adult content
+
+These lists are about phishing and malware only. Blocking ads or adult content
+is a household choice rather than a safety one, and good lists for both already
+exist. We link to them rather than copy them, so their maintainers keep
+getting the reports and update stats they rely on:
+
+| To block | List | URL |
+| --- | --- | --- |
+| Ads and trackers | HaGeZi Multi PRO | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/pro.txt` |
+| Ads and trackers | oisd big | `https://big.oisd.nl` |
+| Adult content | HaGeZi NSFW | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/nsfw.txt` |
+| Adult content | oisd nsfw | `https://nsfw.oisd.nl` |
+
+All four are Adblock-format and work in Pi-hole v6, AdGuard Home and uBlock
+Origin. Each project offers other formats too; see
+[HaGeZi](https://github.com/hagezi/dns-blocklists) and [oisd](https://oisd.nl).
+DNS blocking works per site, so adult-content lists can't filter mixed sites
+such as Reddit or X without blocking them entirely.
+
+## How the early-warning list works
+
+Every publicly trusted TLS certificate is published in
+[Certificate Transparency](https://certificate.transparency.dev/) logs within
+minutes of being issued, and a phishing site needs one before it can show the
+padlock. Every 30 minutes we read the hostnames from the certificates Let's
+Encrypt issued since the last run (about 400,000) and score each one
+([`pipeline/lookalike.py`](pipeline/lookalike.py)) for looking like one of the
+brands in [`data/brands.toml`](data/brands.toml):
+
+- the brand's name, even disguised (`paypa1`, `pay-pal`, Cyrillic look-alike
+  letters) or with one typo (`micros0ft`, `netfiix`);
+- the brand's real domain carried inside another name
+  (`paypal.com.account-check.top`);
+- words phishing names use (`login`, `verify`, `wallet`, `refund`), and
+  top-level domains with far-above-average abuse.
+
+Names that score high are listed straight away. Borderline ones get their home
+page checked, now and over the next day, and are listed only if the page asks
+for a password or a secret (card number, recovery phrase) and names the brand.
+Hosts on a brand's own domains, popular sites and the allowlist are never
+listed. Entries stay for 14 days.
+
+Each run also records when an early-warning host later shows up in one of the
+other feeds, and how many hours earlier we had it; the numbers are in each
+run's summary. A host that never shows up there isn't necessarily a mistake,
+because those feeds miss plenty, so it's a lower bound on how often we're right.
+
 ## How it's built
 
 A scheduled GitHub Action ([`publish.yml`](.github/workflows/publish.yml))
@@ -69,12 +124,12 @@ live sources and publishes nothing. Before anything is published:
   size jumps or collapses, is set aside and its last good copy used instead. A
   build that changes by more than 30% isn't published.
 - **Stale entries expire.** Hosts from the live phishunt feed are kept for 14
-  days after they were last reported.
+  days after they were last reported; early-warning hosts for 14 days.
 - **Sources are fetched politely,** never more often than their maintainers ask.
 
 ## Licensing
 
-Code is MIT. The complement list and our own data are CC0. The all-in-one list
+Code is MIT. The complement and early-warning lists and our own data are CC0. The all-in-one list
 is GPL-3.0 because it includes HaGeZi's GPL-3.0 list. Every built list carries
 its own `LICENSE` and `NOTICE`. See [LICENSING.md](LICENSING.md) for which
 sources are used, which aren't, and why.
@@ -86,7 +141,8 @@ Python 3.12, standard library only.
 ```
 python -m unittest discover -s tests -v                 # tests (no network)
 python -m licensing check                               # licence rules
-python -m pipeline build --builds complement --dist /tmp/dist --cache /tmp/cache
+python -m pipeline build --builds complement,early-warning --dist /tmp/dist --cache /tmp/cache
+python -m pipeline lookup --dist /tmp/dist example.com  # which list and source has it
 python scripts/coverage.py --list /tmp/dist/complement/abp.txt --urls held-out.txt
 ```
 

@@ -28,7 +28,7 @@ class FetchError(Exception):
 
 def http_get(url: str, *, timeout: float = 45, retries: int = 2) -> bytes:
     """GET a URL with our User-Agent. Retries network errors and 5xx, not 4xx."""
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept-Encoding": "gzip"})
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept-Encoding": "gzip, identity"})
     last: Exception | None = None
     for attempt in range(retries + 1):
         try:

@@ -17,11 +17,31 @@ By opening a pull request you agree that:
   source, open an issue instead and we'll check its terms (see
   [LICENSING.md](LICENSING.md)).
 
-## False positives
+## Wrongly blocked and missed sites
 
-If a site you trust is blocked, open an issue with the exact domain, the build
-it appears in, and why it's legitimate. Entries are *suspected* malicious or
-phishing hosts, not verdicts, and we'd rather fix a wrong one quickly.
+Use the issue forms: [wrongly blocked](https://github.com/JonathonPunc/ProjectBlacklist/issues/new?template=false-positive.yml)
+or [missed site](https://github.com/JonathonPunc/ProjectBlacklist/issues/new?template=missed-site.yml).
+Within a few minutes a bot ([`triage.yml`](.github/workflows/triage.yml))
+replies with which of our lists block the domain, which sources list it, and
+where each source's maintainers take reports. Entries are *suspected*
+malicious or phishing hosts, not verdicts, and we'd rather fix a wrong one
+quickly.
+
+For maintainers, handling a report:
+
+1. **Wrongly blocked:** add the domain to [`data/allow.txt`](data/allow.txt)
+   with the issue number, e.g. `shop.example.com  # issue #12: real shop`,
+   and push to `main`. Any change under `data/` publishes every list within
+   minutes. If the bot says the entry came from another list, report it there
+   too (it links to where): that fixes it for everyone who uses that list, and
+   the maintainers asked for it.
+2. **Early-warning mistakes** usually mean the detector needs teaching, not
+   just an allowlist entry. A brand's real domain goes in its `domains` in
+   [`data/brands.toml`](data/brands.toml). An ordinary word mistaken for a brand
+   (like `finance` for Binance) goes in `not_brands`.
+3. **Missed site:** if you've confirmed it, add it to
+   [`data/block.txt`](data/block.txt) with a reason and push to `main`. Entries
+   there skip the popular-site check, so be sure.
 
 ## Before you push
 

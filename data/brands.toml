@@ -1,0 +1,307 @@
+# Brands the early-warning detector watches for in new certificates.
+#
+# strong  distinctive names: any hostname containing one (after undoing
+#         look-alike tricks such as 0->o, rn->m and lookalike Unicode letters)
+#         scores high. Also matched with one typo (paypai, netfiix).
+#         Names listed in `word_start` too only count at the start of a word
+#         (icloud-verify, not multicloud).
+# weak    names that are also ordinary words: they only count as a whole
+#         word (chase-login, not purchased), and need other evidence too.
+# domains registrable domains the brand really owns. Hosts on them are never
+#         flagged. Not exhaustive: popular-site checks (Tranco) and
+#         data/allow.txt also protect real brand sites.
+#
+# Edit freely; the detector reloads this file on every run.
+
+
+# Words phishing hostnames pair with a brand: each adds a little to the score.
+keywords = [
+  "login", "logon", "signin", "sign-in", "verify", "verification", "validate", "secure",
+  "security", "account", "accounts", "update", "confirm", "support", "helpdesk", "wallet",
+  "recover", "recovery", "restore", "unlock", "unlocked", "suspended", "suspend", "limited",
+  "billing", "payment", "invoice", "refund", "claim", "reward", "auth", "authenticate",
+  "session", "password", "reset", "webscr", "customer", "service", "alert", "notice",
+  "delivery", "redelivery", "parcel", "package", "tracking", "toll", "tolls", "fee", "fees",
+  "kyc", "2fa", "mfa",
+]
+
+# Ordinary words that contain or nearly spell a brand name: finance (binance),
+# interactive (interac), revolution (revolut). They're blanked out before matching.
+not_brands = [
+  "finance", "financial", "betflix", "interactive", "interaction", "interact", "revolution",
+  "revolutionary", "revolutions", "cloudy", "fedexfield", "enpass", "applied", "applies",
+]
+
+# Hostnames with these words are VPN or proxy tunnels that borrow a brand's
+# domain to slip past network filters, not phishing pages. Not flagged.
+tunnel_words = ["vpn", "vless", "vmess", "trojan", "v2ray", "xray", "ssh", "proxy", "tunnel", "socks"]
+
+# Top-level domains where abuse is far above average (Interisle and Spamhaus
+# reports). Being on one adds a little to the score; on its own it means nothing.
+risky_tlds = [
+  "top", "xyz", "shop", "online", "site", "live", "click", "icu", "cfd", "sbs", "bond",
+  "buzz", "cyou", "rest", "support", "help", "vip", "lol", "mom", "today", "world", "xin",
+  "work", "fun", "store", "life", "win", "asia", "monster", "autos", "boats", "homes",
+  "motorcycles", "yachts", "beauty", "hair", "skin", "makeup", "quest", "zip", "mov",
+]
+
+[[brand]]
+name = "PayPal"
+strong = ["paypal"]
+domains = ["paypal.com", "paypal.me", "paypalobjects.com", "paypal-community.com", "paypal.cn", "paypal-corp.com"]
+
+[[brand]]
+name = "Microsoft"
+strong = ["microsoft", "office365", "onedrive", "sharepoint", "hotmail"]
+weak = ["outlook", "msft", "teams", "azure"]
+domains = ["microsoft.com", "office.com", "office365.com", "live.com", "outlook.com", "hotmail.com", "sharepoint.com", "onedrive.com", "azure.com", "azurewebsites.net", "microsoftonline.com", "msft.net", "msn.com", "windows.net", "microsoft365.com", "cloud.microsoft", "office.net", "microsoft-falcon.net", "microsoft-int.com", "microsoft-ppe.com", "msidentity.com", "azure-api.net", "azureedge.net", "azurefd.net", "windowsazure.com", "sharepointonline.com", "skype.com", "xbox.com", "bing.com"]
+
+[[brand]]
+name = "Apple"
+strong = ["icloud", "appleid"]
+word_start = ["icloud"]
+weak = ["apple", "itunes"]
+domains = ["apple.com", "icloud.com", "me.com", "mzstatic.com", "apple-cloudkit.com", "cdn-apple.com", "itunes.com"]
+
+[[brand]]
+name = "Google"
+strong = ["gmail"]
+weak = ["google"]
+domains = ["google.com", "gmail.com", "googleusercontent.com", "googleapis.com", "gstatic.com", "youtube.com", "goo.gl", "googlemail.com", "withgoogle.com", "google.dev", "web.app", "firebaseapp.com"]
+
+[[brand]]
+name = "Amazon"
+weak = ["amazon", "aws", "prime", "primevideo"]
+domains = ["amazon.com", "amazon.co.uk", "amazon.de", "amazon.fr", "amazon.it", "amazon.es", "amazon.ca", "amazon.co.jp", "amazon.in", "amazon.com.au", "amazon.com.br", "amazon.com.mx", "amazon.nl", "amazon.se", "amazon.pl", "amazonaws.com", "primevideo.com", "aws.amazon.com", "amazon.dev", "aws.dev", "a2z.com", "amazonaws.com.cn", "awsstatic.com", "media-amazon.com", "amazontrust.com"]
+
+[[brand]]
+name = "Netflix"
+strong = ["netflix"]
+domains = ["netflix.com", "nflxvideo.net", "nflximg.net", "nflxext.com", "netflix.net"]
+
+[[brand]]
+name = "Meta"
+strong = ["facebook", "instagram", "whatsapp"]
+weak = ["meta", "fb"]
+domains = ["facebook.com", "fb.com", "instagram.com", "whatsapp.com", "whatsapp.net", "meta.com", "fbcdn.net", "messenger.com", "facebook.net", "metamail.com"]
+
+[[brand]]
+name = "LinkedIn"
+strong = ["linkedin"]
+domains = ["linkedin.com", "licdn.com", "lnkd.in"]
+
+[[brand]]
+name = "DocuSign"
+strong = ["docusign"]
+domains = ["docusign.com", "docusign.net"]
+
+[[brand]]
+name = "Adobe"
+weak = ["adobe"]
+domains = ["adobe.com", "adobe.io", "adobelogin.com", "typekit.net", "acrobat.com"]
+
+[[brand]]
+name = "Dropbox"
+strong = ["dropbox"]
+domains = ["dropbox.com", "dropboxusercontent.com", "db.tt", "dropboxapi.com"]
+
+[[brand]]
+name = "DHL"
+strong = ["dhl"]
+domains = ["dhl.com", "dhl.de", "dhl.co.uk", "dhl.fr", "dhlparcel.nl", "dhl.nl", "dhlecommerce.com"]
+
+[[brand]]
+name = "FedEx"
+strong = ["fedex"]
+domains = ["fedex.com"]
+
+[[brand]]
+name = "USPS"
+strong = ["usps"]
+domains = ["usps.com", "usps.gov"]
+
+[[brand]]
+name = "Royal Mail"
+strong = ["royalmail"]
+domains = ["royalmail.com", "royalmail.co.uk"]
+
+[[brand]]
+name = "Evri"
+weak = ["evri", "hermes"]
+domains = ["evri.com"]
+
+[[brand]]
+name = "E-ZPass"
+strong = ["ezpass", "e-zpass"]
+domains = ["e-zpassny.com", "ezpassnj.com", "ezpassva.com", "e-zpassiag.com", "ezpassmd.com", "paturnpike.com"]
+
+[[brand]]
+name = "Wells Fargo"
+strong = ["wellsfargo"]
+domains = ["wellsfargo.com", "wf.com"]
+
+[[brand]]
+name = "Chase"
+strong = ["jpmorganchase", "chasebank"]
+weak = ["chase"]
+domains = ["chase.com", "jpmorganchase.com", "jpmorgan.com"]
+
+[[brand]]
+name = "Bank of America"
+strong = ["bankofamerica"]
+weak = ["bofa"]
+domains = ["bankofamerica.com", "bofa.com", "ml.com", "merrilledge.com"]
+
+[[brand]]
+name = "Citi"
+strong = ["citibank"]
+domains = ["citi.com", "citibank.com", "citibankonline.com", "citigroup.com"]
+
+[[brand]]
+name = "HSBC"
+strong = ["hsbc"]
+domains = ["hsbc.com", "hsbc.co.uk", "hsbc.com.hk", "hsbc.ca", "hsbc.com.mx", "hsbc.fr"]
+
+[[brand]]
+name = "Barclays"
+strong = ["barclays", "barclaycard"]
+domains = ["barclays.co.uk", "barclays.com", "barclaycard.co.uk", "barclaycardus.com", "barclays.net"]
+
+[[brand]]
+name = "Santander"
+strong = ["santander"]
+domains = ["santander.co.uk", "santander.com", "santanderconsumer.com", "santanderconsumerusa.com", "santanderbank.co.uk", "santanderbank.com", "santander.com.br", "santander.es", "santander.de", "santander.pl", "santander.com.mx", "santander.cl"]
+
+[[brand]]
+name = "Coinbase"
+strong = ["coinbase"]
+domains = ["coinbase.com", "coinbase.org", "cb-cdn.com"]
+
+[[brand]]
+name = "Binance"
+strong = ["binance"]
+domains = ["binance.com", "binance.us", "binance.org", "bnbchain.org", "binance.info"]
+
+[[brand]]
+name = "MetaMask"
+strong = ["metamask"]
+domains = ["metamask.io", "consensys.io", "consensys.net"]
+
+[[brand]]
+name = "Trust Wallet"
+strong = ["trustwallet"]
+domains = ["trustwallet.com"]
+
+[[brand]]
+name = "Ledger"
+weak = ["ledger"]
+strong = ["ledgerlive"]
+domains = ["ledger.com"]
+
+[[brand]]
+name = "Kraken"
+weak = ["kraken"]
+domains = ["kraken.com"]
+
+[[brand]]
+name = "Steam"
+strong = ["steampowered", "steamcommunity"]
+weak = ["steam"]
+domains = ["steampowered.com", "steamcommunity.com", "steamstatic.com", "steamgames.com", "steamusercontent.com", "steamchina.com", "valvesoftware.com", "s.team"]
+
+[[brand]]
+name = "Roblox"
+strong = ["roblox"]
+domains = ["roblox.com", "rbxcdn.com", "roblox.cn", "rbx.com"]
+
+[[brand]]
+name = "Telegram"
+strong = ["telegram"]
+domains = ["telegram.org", "t.me", "telegram.me", "telegra.ph", "telesco.pe"]
+
+[[brand]]
+name = "Discord"
+strong = ["discord"]
+domains = ["discord.com", "discord.gg", "discordapp.com", "discordapp.net", "discord.media", "discord.dev", "discord.co", "discord.new", "discord.gift", "discordstatus.com"]
+
+[[brand]]
+name = "eBay"
+strong = ["ebay"]
+domains = ["ebay.com", "ebay.co.uk", "ebay.de", "ebay.fr", "ebay.it", "ebay.es", "ebay.ca", "ebay.com.au", "ebayimg.com", "ebaystatic.com", "ebay.us"]
+
+[[brand]]
+name = "Walmart"
+strong = ["walmart"]
+domains = ["walmart.com", "walmart.ca", "walmartimages.com", "walmart.net"]
+
+[[brand]]
+name = "Venmo"
+strong = ["venmo"]
+domains = ["venmo.com"]
+
+[[brand]]
+name = "Cash App"
+strong = ["cashapp"]
+domains = ["cash.app", "cash.me", "squareup.com", "block.xyz"]
+
+[[brand]]
+name = "Zelle"
+strong = ["zellepay"]
+weak = ["zelle"]
+domains = ["zellepay.com"]
+
+[[brand]]
+name = "Interac"
+strong = ["interac"]
+domains = ["interac.ca", "etransfer.interac.ca"]
+
+[[brand]]
+name = "Revolut"
+strong = ["revolut"]
+domains = ["revolut.com", "revolut.me", "revolut.codes"]
+
+[[brand]]
+name = "Booking.com"
+weak = ["booking"]
+domains = ["booking.com", "bstatic.com"]
+
+[[brand]]
+name = "Airbnb"
+strong = ["airbnb"]
+domains = ["airbnb.com", "airbnb.co.uk", "airbnb.fr", "airbnb.de", "airbnb.ca", "airbnb.com.au", "airbnb.es", "airbnb.it", "muscache.com"]
+
+[[brand]]
+name = "Spotify"
+strong = ["spotify"]
+domains = ["spotify.com", "scdn.co", "spotify.link", "spotifycdn.com"]
+
+[[brand]]
+name = "AT&T"
+weak = ["att"]
+domains = ["att.com", "att.net", "attwireless.com"]
+
+[[brand]]
+name = "Xfinity"
+strong = ["xfinity"]
+weak = ["comcast"]
+domains = ["xfinity.com", "comcast.com", "comcast.net"]
+
+[[brand]]
+name = "IRS"
+weak = ["irs"]
+domains = ["irs.gov"]
+
+[[brand]]
+name = "HMRC"
+strong = ["hmrc"]
+domains = ["hmrc.gov.uk", "gov.uk"]
+
+[[brand]]
+name = "Okta"
+weak = ["okta"]
+domains = ["okta.com", "oktacdn.com", "okta-emea.com", "oktapreview.com"]
+
+[[brand]]
+name = "Yahoo"
+weak = ["yahoo"]
+domains = ["yahoo.com", "yahoo.co.jp", "yimg.com", "aol.com"]

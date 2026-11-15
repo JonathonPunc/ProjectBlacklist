@@ -1,27 +1,29 @@
 name: publish
 
 # Rebuilds the lists and force-pushes them to the `dist` branch.
-# Scheduled runs only fire from the default branch (main). A push to any
-# other branch that touches the build runs a trial build of both lists
-# against the live sources and reports it, but publishes nothing.
+# Scheduled runs only fire from the default branch (main).
+# A push to main that changes the data or the build publishes straight away,
+# so an entry added to data/allow.txt is unblocked within minutes.
+# A push to any other branch runs a trial build of every list against the live
+# sources and reports it, but publishes nothing.
 on:
   push:
-    branches-ignore: [main, dist]
+    branches-ignore: [dist]
     paths:
       - "pipeline/**"
       - "licensing/**"
       - "data/**"
       - ".github/workflows/publish.yml"
   schedule:
-    - cron: "7,37 * * * *"        # complement, every 30 minutes, off the hour
-    - cron: "19 3,11,19 * * *"    # complement + all-in-one, every 8 hours (HaGeZi: Expires 8 hours)
+    - cron: "7,37 * * * *"        # complement + early-warning, every 30 minutes, off the hour
+    - cron: "19 3,11,19 * * *"    # all three, every 8 hours (HaGeZi: Expires 8 hours)
   workflow_dispatch:
     inputs:
       builds:
         description: Builds to rebuild
         type: choice
-        default: complement
-        options: [complement, "complement,all-in-one"]
+        default: "complement,early-warning"
+        options: ["complement,early-warning", "complement,early-warning,all-in-one"]
       allow_swing:
         description: Publish even if a build changed size more than the 30% gate allows
         type: boolean
@@ -32,7 +34,7 @@ permissions:
 
 concurrency:
   # Trial builds queue per branch and never hold up a real publish.
-  group: ${{ github.event_name == 'push' && format('trial-{0}', github.ref) || 'publish' }}
+  group: ${{ github.event_name == 'push' && github.ref != 'refs/heads/main' && format('trial-{0}', github.ref) || 'publish' }}
   cancel-in-progress: false
 
 jobs:
@@ -72,15 +74,18 @@ jobs:
         env:
           BUILDS: >-
             ${{ github.event_name == 'workflow_dispatch' && inputs.builds
-                || (github.event_name == 'push' && 'complement,all-in-one')
-                || (github.event.schedule == '19 3,11,19 * * *' && 'complement,all-in-one' || 'complement') }}
+                || (github.event_name == 'push' && 'complement,early-warning,all-in-one')
+                || (github.event.schedule == '19 3,11,19 * * *' && 'complement,early-warning,all-in-one'
+                    || 'complement,early-warning') }}
           ALLOW_SWING: ${{ github.event_name == 'workflow_dispatch' && inputs.allow_swing && '--allow-swing' || '' }}
         run: python -m pipeline build --builds "$BUILDS" --dist dist --cache .cache $ALLOW_SWING
 
       # Publish whatever passed its gates, even if another build failed. The
       # branch has no history: each run replaces it, so the repo doesn't grow.
       - name: Publish to the dist branch
-        if: always() && steps.build.outcome != 'skipped' && github.event_name != 'push'
+        if: >-
+          always() && steps.build.outcome != 'skipped'
+          && (github.event_name != 'push' || github.ref == 'refs/heads/main')
         run: |
           cd dist
           test -f state/state.json || { echo "nothing built"; exit 0; }
