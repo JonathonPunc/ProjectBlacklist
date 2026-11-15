@@ -23,6 +23,14 @@ Add **early-warning** on top of either if you'd rather block a few safe sites
 than let new phishing through, and don't mind [reporting](https://github.com/JonathonPunc/ProjectBlacklist/issues/new?template=false-positive.yml)
 the odd mistake.
 
+> [!WARNING]
+> **early-warning is experimental.** Its entries are picked automatically from
+> new certificates, with no human review, and some will be legitimate sites
+> (a brand's new campaign domain, a fan site, a security researcher's test
+> page). Don't make it the only list on a network where a wrongly blocked site
+> is costly, such as a school or a business, unless someone there can unblock
+> sites quickly. Every early-warning file starts with the same warning.
+
 ## URLs
 
 These are the complement URLs. For early-warning, replace `complement` with
@@ -78,6 +86,9 @@ DNS blocking works per site, so adult-content lists can't filter mixed sites
 such as Reddit or X without blocking them entirely.
 
 ## How the early-warning list works
+
+> [!WARNING]
+> Experimental: see the warning under [Which list?](#which-list) before using it.
 
 Every publicly trusted TLS certificate is published in
 [Certificate Transparency](https://certificate.transparency.dev/) logs within

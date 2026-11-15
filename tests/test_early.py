@@ -313,6 +313,11 @@ class BuilderIntegration(unittest.TestCase):
             text = (dist / "early-warning" / "domains.txt").read_text()
             self.assertIn("\npaypal-login-verify.com\n", text)
             self.assertIn("License: CC0-1.0", text)
+            # The warning sits right under the title in every format.
+            for fmt in ("domains.txt", "hosts.txt", "abp.txt", "dnsmasq.conf", "unbound.conf", "rpz.zone"):
+                lines = (dist / "early-warning" / fmt).read_text().splitlines()
+                at = next(i for i, ln in enumerate(lines) if "Title:" in ln)
+                self.assertIn("WARNING: experimental", lines[at + 1], fmt)
             self.assertEqual(rep.early["listed"], 1)
         finally:
             shutil.rmtree(tmp)

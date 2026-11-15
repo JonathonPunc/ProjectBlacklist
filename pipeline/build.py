@@ -31,6 +31,11 @@ RAW_BASE = "https://raw.githubusercontent.com/JonathonPunc/ProjectBlacklist/dist
 EXPIRES = {"complement": "1 hour", "all-in-one": "8 hours", "early-warning": "1 hour"}
 TITLES = {"complement": "ProjectBlacklist complement", "all-in-one": "ProjectBlacklist all-in-one",
           "early-warning": "ProjectBlacklist early warning (experimental)"}
+# A second header line, right under the title, for lists that need one. Tools
+# often show only the first few lines, so it's short and comes first.
+WARNINGS = {"early-warning": "WARNING: experimental. Picked automatically, with no human review; "
+                             "some entries will be legitimate sites. Only use it where a wrongly "
+                             "blocked site is easy to report and unblock."}
 
 # Sanity gates
 MIN_ENTRIES = 50
@@ -200,6 +205,7 @@ class Builder:
         b = self.reg.builds[build]
         return [
             f"Title: {TITLES.get(build, build)}",
+            *([WARNINGS[build]] if build in WARNINGS else []),
             f"Description: {b.description}",
             f"Homepage: {HOMEPAGE}",
             f"Expires: {EXPIRES.get(build, '1 day')}",
