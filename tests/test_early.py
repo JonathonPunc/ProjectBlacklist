@@ -19,7 +19,7 @@ from pipeline.hosts import PublicSuffixList
 from pipeline.lookalike import FLAG, Detector
 from tests.test_pipeline import PSL, ROOT, T0, tranco_zip
 
-PSL_PLUS = PSL.replace("// ===END ICANN DOMAINS===", "top\nph\ncom.ph\nme\n// ===END ICANN DOMAINS===")
+PSL_PLUS = PSL.replace("// ===END ICANN DOMAINS===", "top\nph\ncom.ph\nme\nbe\nnl\norg.uk\n// ===END ICANN DOMAINS===")
 
 CONFIG = {
     "keywords": ["login", "verify", "secure", "account", "wallet"],
@@ -33,7 +33,7 @@ CONFIG = {
         {"name": "Discord", "strong": ["discord"], "domains": ["discord.com"]},
         {"name": "Binance", "strong": ["binance"], "domains": ["binance.com"]},
         {"name": "Meta", "strong": ["facebook"], "domains": ["facebook.com"]},
-        {"name": "DHL", "strong": ["dhl"], "domains": ["dhl.com"]},
+        {"name": "DHL", "strong": ["dhl"], "domains": ["dhl.com", "dhlparcel.nl", "cloud.com"]},
         {"name": "Chase", "weak": ["chase"], "domains": ["chase.com"]},
         {"name": "E-ZPass", "strong": ["ezpass"], "domains": []},
     ],
@@ -68,6 +68,16 @@ class Lookalike(unittest.TestCase):
         self.assertIsNone(self.d.score("paypal.com"))
         self.assertIsNone(self.d.score("login.paypal.com"))
         self.assertIsNone(self.d.score("pages.dev"))
+
+    def test_brand_name_under_a_country_code_is_the_brands(self) -> None:
+        for host in ("dhl.be", "cloud.mail.parcel.dhl.be", "paypal.co.uk", "dhlparcel.be", "facebook.com.ph"):
+            self.assertIsNone(self.d.score(host), host)
+        # Not the exact name, a generic label of a listed domain (cloud.com),
+        # or a country code anyone can buy: still judged.
+        for host in ("dhl-login.be", "paypal-secure.co.uk", "cloud.be", "paypal.io", "paypal.me",
+                     "paypal.org.uk"):
+            self.assertIsNotNone(self.d.score(host), host)
+        self.assertGreaterEqual(self.score("dhl-login-verify.be"), FLAG)
 
     def test_ordinary_words_are_not_brands(self) -> None:
         for host in ("purchased.com", "kintai-cloud.com", "multicloud.com", "di-scordino.com",
@@ -227,6 +237,20 @@ class EarlyWarningTests(unittest.TestCase):
         self.assertEqual(early.select_logs(json.loads(log_list("Some Other Log")), T0), [])
         far = T0 + dt.timedelta(days=365 * 2)
         self.assertEqual(early.select_logs(json.loads(log_list()), far), [])     # expired shard
+
+    def test_hosts_on_brand_domains_are_dropped_from_earlier_flags(self) -> None:
+        self.run_once(T0)
+        path = self.dist / "state" / "early-warning.json"
+        state = json.loads(path.read_text())
+        old = {"first": "2026-01-01T00:00:00Z", "flagged": early._iso(T0), "score": 4, "reasons": []}
+        state["flagged"] = {"cloud.mail.parcel.dhl.be": old, "dhl-login-verify.be": old}
+        state["pending"] = {"dhl.be": {"first": early._iso(T0), "last": early._iso(T0), "tries": 0,
+                                       "score": 3, "reasons": [], "brand": "DHL"}}
+        path.write_text(json.dumps(state))
+        r = self.run_once(T0 + dt.timedelta(hours=1))
+        self.assertEqual(r.hosts, {"dhl-login-verify.be"})
+        self.assertEqual(json.loads(path.read_text())["pending"], {})
+        self.assertNotIn("dhl.be", self.web.page_calls)
 
     def test_first_run_starts_at_the_head_without_backfill(self) -> None:
         r = self.run_once(T0)

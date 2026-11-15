@@ -136,7 +136,7 @@ class EarlyWarning:
 
     def _owned(self, host: str) -> bool:
         reg = self.det.psl.registrable(host, private=False)
-        return reg in self.det.owned if reg else False
+        return self.det.owns(reg) if reg else False
 
     def _check_pages(self, notes: list[str]) -> int:
         due = [h for h, p in self.pending.items()
@@ -188,6 +188,10 @@ class EarlyWarning:
 
     def run(self) -> Result:
         notes: list[str] = []
+        # Drop anything now known to be on a brand's own domain (one added to
+        # brands.toml, say) straight away rather than after the TTL.
+        self.flagged = {h: f for h, f in self.flagged.items() if self.det.score(h) is not None}
+        self.pending = {h: p for h, p in self.pending.items() if self.det.score(h) is not None}
         names, certs = self._new_names(notes)
         hosts = {normalize(n[2:] if n.startswith("*.") else n) for n in names}
         hosts.discard(None)

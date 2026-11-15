@@ -76,6 +76,11 @@ def _decode_idn(label: str) -> tuple[str, bool]:
 
 
 SHORT = 4          # strong names this short only match at the start of a word
+# Country-code TLDs sold as generic domains to anyone, so "paypal.io" says
+# nothing about who owns it. Other country codes count as the brand's own
+# when the name is exactly the brand's, directly or under co./com. (dhl.be,
+# amazon.co.jp, paypal.com.ph): big brands register those themselves.
+OPEN_CCTLDS = frozenset("ac ai am cc cf co fm ga gg gq io la ly me ml nu pw sh so su tk to tv vc ws".split())
 
 
 def _typos(word: str) -> set[str]:
@@ -109,6 +114,14 @@ class Detector:
         nb = sorted(config.get("not_brands", ()), key=len, reverse=True)
         self._not_brands = re.compile("|".join(map(re.escape, nb))) if nb else None
         self.owned = {d for b in self.brands for d in b.domains}
+        # Names a brand would register under every country code: its strong
+        # names, and labels of its listed domains that contain one (dhlparcel).
+        self.owned_names: set[str] = set()
+        for b in self.brands:
+            names = {t.replace("-", "") for t in b.strong}
+            self.owned_names |= names
+            self.owned_names |= {d.split(".")[0] for d in b.domains
+                                 if any(n in d.split(".")[0].replace("-", "") for n in names)}
         strong = {t.replace("-", ""): b.name for b in self.brands for t in b.strong}
         self.strong = strong
         starts = {t for b in self.brands for t in b.word_start}
@@ -160,11 +173,21 @@ class Detector:
                         return self.strong[m.group()]
         return ""
 
+    def owns(self, reg: str) -> bool:
+        """Is reg (a registrable domain) one a brand owns? Listed domains, plus a
+        brand's exact name under a country code (see OPEN_CCTLDS)."""
+        if reg in self.owned:
+            return True
+        name, _, suffix = reg.partition(".")
+        second, _, cc = suffix.rpartition(".")
+        return (name in self.owned_names and second in ("", "co", "com") and len(cc) == 2
+                and cc not in OPEN_CCTLDS and cc not in self.risky_tlds)
+
     def score(self, host: str) -> Score | None:
         """Score host, or None if it sits on a domain a brand owns (or is a suffix)."""
         priv, icann = self.psl.suffixes(host)
         reg = self.psl.owner(host, icann)
-        if host == priv or reg is None or reg in self.owned:
+        if host == priv or reg is None or self.owns(reg):
             return None
         name = host[: -len(priv) - 1]
         s = Score(host)
