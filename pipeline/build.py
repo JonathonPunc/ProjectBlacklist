@@ -28,7 +28,7 @@ TRANCO_URL = "https://tranco-list.eu/top-1m.csv.zip"
 HOMEPAGE = "https://github.com/JonathonPunc/ProjectBlacklist"
 ISSUES = HOMEPAGE + "/issues"
 RAW_BASE = "https://raw.githubusercontent.com/JonathonPunc/ProjectBlacklist/dist"
-EXPIRES = {"complement": "30 minutes", "all-in-one": "8 hours", "early-warning": "30 minutes"}
+EXPIRES = {"complement": "1 hour", "all-in-one": "8 hours", "early-warning": "1 hour"}
 TITLES = {"complement": "ProjectBlacklist complement", "all-in-one": "ProjectBlacklist all-in-one",
           "early-warning": "ProjectBlacklist early warning (experimental)"}
 

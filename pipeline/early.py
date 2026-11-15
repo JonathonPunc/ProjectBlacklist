@@ -37,7 +37,7 @@ LOG_FAMILIES = ("Let's Encrypt Willow", "Let's Encrypt Sycamore")
 MAX_TILES = 6_000                 # per log per run (~1.5M certificates); beyond it, skip ahead
 PAGE_CHECKS = 600                 # per run
 PAGE_WORKERS = 32
-RECHECK_AFTER = dt.timedelta(hours=1)
+RECHECK_AFTER = dt.timedelta(minutes=50)  # just under the hourly run, which often starts late
 MAX_TRIES = 3
 PENDING_FOR = dt.timedelta(days=1)
 TTL = dt.timedelta(days=14)

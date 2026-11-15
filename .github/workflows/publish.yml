@@ -15,7 +15,7 @@ on:
       - "data/**"
       - ".github/workflows/publish.yml"
   schedule:
-    - cron: "7,37 * * * *"        # complement + early-warning, every 30 minutes, off the hour
+    - cron: "7 * * * *"           # complement + early-warning, hourly, off the hour
     - cron: "19 3,11,19 * * *"    # all three, every 8 hours (HaGeZi: Expires 8 hours)
   workflow_dispatch:
     inputs:

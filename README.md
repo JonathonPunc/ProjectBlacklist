@@ -13,9 +13,9 @@ published within minutes of a maintainer adding it to the allowlist.
 
 | List | What's in it | Rebuilt | Licence |
 | --- | --- | --- | --- |
-| **complement** | Fresh feeds only (phishunt, CERT Polska, our own entries). Small and quick to refresh. Meant to run *alongside* [HaGeZi TIF](https://github.com/hagezi/dns-blocklists). | every 30 minutes | CC0 (public domain) |
+| **complement** | Fresh feeds only (phishunt, CERT Polska, our own entries). Small and quick to refresh. Meant to run *alongside* [HaGeZi TIF](https://github.com/hagezi/dns-blocklists). | hourly | CC0 (public domain) |
 | **all-in-one** | complement plus HaGeZi TIF and Phishing.Database, for one URL that covers it all. Large (~1.5 million entries), so Adblock, hosts and plain-domain formats only. | every 8 hours | GPL-3.0 |
-| **early-warning** *(experimental)* | Hosts whose brand-new TLS certificates look like a brand's login page (`paypal-login-verify.com`, `fасebook` written with Cyrillic letters), often before anyone has reported them. Expect more mistakes than the other lists. | every 30 minutes | CC0 (public domain) |
+| **early-warning** *(experimental)* | Hosts whose brand-new TLS certificates look like a brand's login page (`paypal-login-verify.com`, `fасebook` written with Cyrillic letters), often before anyone has reported them. Expect more mistakes than the other lists. | hourly | CC0 (public domain) |
 
 Use **complement** if you already run HaGeZi TIF, or want something light.
 Use **all-in-one** if you want a single list.
@@ -82,8 +82,8 @@ such as Reddit or X without blocking them entirely.
 Every publicly trusted TLS certificate is published in
 [Certificate Transparency](https://certificate.transparency.dev/) logs within
 minutes of being issued, and a phishing site needs one before it can show the
-padlock. Every 30 minutes we read the hostnames from the certificates Let's
-Encrypt issued since the last run (about 400,000) and score each one
+padlock. Every hour we read the hostnames from the certificates Let's
+Encrypt issued since the last run (about 700,000) and score each one
 ([`pipeline/lookalike.py`](pipeline/lookalike.py)) for looking like one of the
 brands in [`data/brands.toml`](data/brands.toml):
 

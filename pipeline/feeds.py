@@ -42,7 +42,8 @@ FEEDS: dict[str, Feed] = {f.source_id: f for f in (
          tranco_limit=1_000_000, swing_limit=None, max_junk=0.25),
     # Curated lists that manage their own entry lifetimes: mirror them as published.
     # CERT Polska entries stay listed for 6 months upstream, so an old copy is still useful.
-    Feed("cert-pl", "domains", "mirror", min_interval=timedelta(hours=1), max_stale=timedelta(days=30)),
+    # 50 minutes, not an hour, so a scheduled run that starts a little late still fetches it.
+    Feed("cert-pl", "domains", "mirror", min_interval=timedelta(minutes=50), max_stale=timedelta(days=30)),
     # HaGeZi's list header says "Expires: 8 hours".
     Feed("hagezi-tif", "abp", "mirror", min_interval=timedelta(hours=8), max_stale=timedelta(days=7)),
     Feed("phishing-database", "domains", "mirror", min_interval=timedelta(hours=8), max_stale=timedelta(days=7)),
