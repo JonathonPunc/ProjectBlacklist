@@ -10,6 +10,7 @@ import struct
 import tempfile
 import tomllib
 import unittest
+from unittest import mock
 from pathlib import Path
 
 from pipeline import ct, early, pagecheck
@@ -78,6 +79,12 @@ class Lookalike(unittest.TestCase):
                      "paypal.org.uk"):
             self.assertIsNotNone(self.d.score(host), host)
         self.assertGreaterEqual(self.score("dhl-login-verify.be"), FLAG)
+
+    def test_real_domain_inside_a_name_needs_other_evidence(self) -> None:
+        # VPN "bug host" names carry a real domain but nothing else: page check.
+        self.assertEqual(self.score("cache.paypal.com.somevps.org"), FLAG - 1)
+        self.assertGreaterEqual(self.score("secure.paypal.com.somevps.org"), FLAG)
+        self.assertIn("carries paypal.com", self.d.score("cache.paypal.com.somevps.org").reasons)
 
     def test_ordinary_words_are_not_brands(self) -> None:
         for host in ("purchased.com", "kintai-cloud.com", "multicloud.com", "di-scordino.com",
@@ -238,18 +245,52 @@ class EarlyWarningTests(unittest.TestCase):
         far = T0 + dt.timedelta(days=365 * 2)
         self.assertEqual(early.select_logs(json.loads(log_list()), far), [])     # expired shard
 
+    def test_out_of_time_leaves_the_rest_for_the_next_run(self) -> None:
+        self.run_once(T0)                                        # cursor at tile 2
+        self.web.size = 6 * ct.TILE
+        self.web.tiles[2] = names_tile([["paypal-login-verify.com"]])
+        self.web.tiles[5] = names_tile([["facebook-login-verify.com"]])
+        ticks = iter(range(0, 10**6, 500))                       # each look at the clock: +500 s
+        with mock.patch.object(early, "CT_CHUNK", 1):
+            e = early.EarlyWarning(dist=self.dist, cache=self.cache, get=self.web.get, detector=detector(),
+                                   now=T0 + dt.timedelta(hours=1), page_get=self.web.page,
+                                   clock=lambda: next(ticks))
+            r = e.run()
+            e.save()
+        self.assertEqual(r.hosts, {"paypal-login-verify.com"})
+        self.assertTrue(any("left for the next run" in n for n in r.notes), r.notes)
+        self.assertEqual(e.cursors[LOG_URL], 3 * ct.TILE)        # kept its place
+        r = self.run_once(T0 + dt.timedelta(hours=2))
+        self.assertEqual(r.hosts, {"paypal-login-verify.com", "facebook-login-verify.com"})
+        self.assertFalse(any("skipped" in n for n in r.notes), r.notes)
+
+    def test_new_names_are_page_checked_first(self) -> None:
+        self.run_once(T0)
+        path = self.dist / "state" / "early-warning.json"
+        state = json.loads(path.read_text())
+        def pend(first: dt.datetime) -> dict:
+            return {"first": early._iso(first), "last": early._iso(first), "tries": 0,
+                    "score": 3, "reasons": [], "brand": "PayPal"}
+        state["pending"] = {"paypal-older.com": pend(T0), "paypal-newer.com": pend(T0 + dt.timedelta(hours=1))}
+        path.write_text(json.dumps(state))
+        with mock.patch.object(early, "PAGE_CHECKS", 1):
+            self.run_once(T0 + dt.timedelta(hours=2))
+        self.assertEqual(self.web.page_calls, ["paypal-newer.com"])
+
     def test_hosts_on_brand_domains_are_dropped_from_earlier_flags(self) -> None:
         self.run_once(T0)
         path = self.dist / "state" / "early-warning.json"
         state = json.loads(path.read_text())
         old = {"first": "2026-01-01T00:00:00Z", "flagged": early._iso(T0), "score": 4, "reasons": []}
-        state["flagged"] = {"cloud.mail.parcel.dhl.be": old, "dhl-login-verify.be": old}
+        state["flagged"] = {"cloud.mail.parcel.dhl.be": old, "dhl-login-verify.be": old,
+                            "cache.paypal.com.somevps.org": old,                  # old rule: back to pending
+                            "www.paypal.com.othervps.org": {**old, "confirmed": {"at": early._iso(T0), "by": "hagezi-tif"}}}
         state["pending"] = {"dhl.be": {"first": early._iso(T0), "last": early._iso(T0), "tries": 0,
                                        "score": 3, "reasons": [], "brand": "DHL"}}
         path.write_text(json.dumps(state))
         r = self.run_once(T0 + dt.timedelta(hours=1))
-        self.assertEqual(r.hosts, {"dhl-login-verify.be"})
-        self.assertEqual(json.loads(path.read_text())["pending"], {})
+        self.assertEqual(r.hosts, {"dhl-login-verify.be", "www.paypal.com.othervps.org"})
+        self.assertEqual(set(json.loads(path.read_text())["pending"]), {"cache.paypal.com.somevps.org"})
         self.assertNotIn("dhl.be", self.web.page_calls)
 
     def test_first_run_starts_at_the_head_without_backfill(self) -> None:

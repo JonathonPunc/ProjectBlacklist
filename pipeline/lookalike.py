@@ -228,10 +228,13 @@ class Detector:
         s.brand = hit
         if idn:
             s.add(SCORES["idn"], "lookalike letters")
+        kws = sorted(t for t in tokens if t in self.keywords)[:MAX_KEYWORDS]
         m = self._embed_re.search(name)
         if m:
-            s.add(SCORES["embeds"], f"carries {m.group(1).replace('-', '.')}")
-        kws = sorted(t for t in tokens if t in self.keywords)[:MAX_KEYWORDS]
+            # A real domain inside another name only counts alongside phishing
+            # words or lookalike letters. On its own it's mostly VPN "bug host"
+            # names (cache.netflix.com.some-vpn.my.id), so it goes to a page check.
+            s.add(SCORES["embeds"] if kws or idn else 0, f"carries {m.group(1).replace('-', '.')}")
         if kws:
             s.add(len(kws), "words " + ", ".join(kws))
         # A risky TLD only adds weight to a name that already uses phishing words.

@@ -21,6 +21,8 @@ from __future__ import annotations
 import datetime as dt
 import json
 import statistics
+import time
+from collections.abc import Callable
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -34,9 +36,16 @@ LOG_LIST_URL = "https://www.gstatic.com/ct/log_list/v3/all_logs_list.json"
 # Tiled logs that publish names tiles. Each Let's Encrypt certificate is in one
 # or both of these, so reading both catches about half again as many as one.
 LOG_FAMILIES = ("Let's Encrypt Willow", "Let's Encrypt Sycamore")
-MAX_TILES = 6_000                 # per log per run (~1.5M certificates); beyond it, skip ahead
-PAGE_CHECKS = 600                 # per run
-PAGE_WORKERS = 32
+# GitHub starts scheduled runs late or not at all when it's busy, so a run may
+# find several hours of certificates waiting. It reads them for up to
+# CT_BUDGET, saving its place as it goes; the next run carries on from there.
+# Only a backlog beyond MAX_TILES (about 12 hours of Let's Encrypt) is skipped.
+MAX_TILES = 48_000                # per log (~12M certificates); beyond it, skip ahead
+CT_BUDGET = dt.timedelta(minutes=15)
+CT_CHUNK = 1_000                  # tiles read from one log before switching to the next
+CT_WORKERS = 16
+PAGE_CHECKS = 3_000               # per run; about an hour's borderline names plus re-checks
+PAGE_WORKERS = 128
 RECHECK_AFTER = dt.timedelta(minutes=50)  # just under the hourly run, which often starts late
 MAX_TRIES = 3
 PENDING_FOR = dt.timedelta(days=1)
@@ -80,10 +89,12 @@ class Result:
 
 class EarlyWarning:
     def __init__(self, *, dist: Path, cache: Path, get: Getter, detector: Detector,
-                 now: dt.datetime, page_get: pagecheck.PageGetter | None = None) -> None:
+                 now: dt.datetime, page_get: pagecheck.PageGetter | None = None,
+                 clock: Callable[[], float] = time.monotonic) -> None:
         self.path = dist / "state" / "early-warning.json"
         self.cache, self.get, self.det, self.now = cache, get, detector, now
         self.page_get = page_get or pagecheck.fetch_page
+        self.clock = clock
         data = json.loads(self.path.read_text(encoding="utf-8")) if self.path.is_file() else {}
         self.cursors: dict[str, int] = data.get("cursors", {})
         self.pending: dict[str, dict] = data.get("pending", {})
@@ -98,6 +109,7 @@ class EarlyWarning:
             notes.append("no Certificate Transparency logs selected")
         names: set[str] = set()
         certs = 0
+        work: list[list] = []                         # [log, next entry, end]
         for log in logs:
             try:
                 size = ct.checkpoint_size(self.get(f"{log.url}/checkpoint").decode("utf-8", "replace"))
@@ -113,15 +125,33 @@ class EarlyWarning:
             if end - start > MAX_TILES * ct.TILE:
                 skipped = end - MAX_TILES * ct.TILE - start
                 start = end - MAX_TILES * ct.TILE
+                self.cursors[log.url] = start
                 notes.append(f"{log.name}: fell behind, skipped {skipped:,} certificates")
-            try:
-                for _, ns in ct.read_names(log, start, end, self.get):
-                    certs += 1
-                    names.update(ns)
-            except (FetchError, ValueError) as exc:
-                notes.append(f"{log.name}: {exc}; will retry from entry {start:,}")
-                continue
-            self.cursors[log.url] = end
+            if start < end:
+                work.append([log, start, end])
+        # Take the logs in turns, a chunk at a time, so running out of time
+        # leaves each one partly read rather than one read and one untouched.
+        deadline = self.clock() + CT_BUDGET.total_seconds()
+        while work and self.clock() < deadline:
+            for w in list(work):
+                log, pos, end = w
+                stop = min(end, pos + CT_CHUNK * ct.TILE)
+                try:
+                    for _, ns in ct.read_names(log, pos, stop, self.get, workers=CT_WORKERS):
+                        certs += 1
+                        names.update(ns)
+                except (FetchError, ValueError) as exc:
+                    notes.append(f"{log.name}: {exc}; will retry from entry {pos:,}")
+                    work.remove(w)
+                    continue
+                self.cursors[log.url] = w[1] = stop
+                if stop >= end:
+                    work.remove(w)
+                if self.clock() >= deadline:
+                    break
+        left = sum(end - pos for _, pos, end in work)
+        if left:
+            notes.append(f"out of time: {left:,} certificates left for the next run")
         # Drop cursors for shards that have left the list.
         live = {lg.url for lg in logs}
         self.cursors = {u: c for u, c in self.cursors.items() if u in live}
@@ -142,7 +172,10 @@ class EarlyWarning:
         due = [h for h, p in self.pending.items()
                if p["tries"] == 0
                or (p["tries"] < MAX_TRIES and self.now - _parse(p["last"]) >= RECHECK_AFTER)]
-        due = sorted(due, key=lambda h: self.pending[h]["first"])[:PAGE_CHECKS]
+        # First checks before re-checks, newest names first: a phishing page is
+        # usually up in its first hours, and a name waits at most PENDING_FOR.
+        due = sorted(due, key=lambda h: (self.pending[h]["tries"] > 0,
+                                         -_parse(self.pending[h]["first"]).timestamp()))[:PAGE_CHECKS]
         if not due:
             return 0
         with ThreadPoolExecutor(PAGE_WORKERS) as pool:
@@ -162,6 +195,24 @@ class EarlyWarning:
         return len(due)
 
     # -- bookkeeping --------------------------------------------------------
+    def _rescore(self) -> None:
+        """Apply detector changes to names already held, not just new ones.
+
+        A name now on a brand's own domain (one added to brands.toml, say) is
+        dropped. A name flagged on its name alone that no longer scores FLAG
+        goes back for a page check, unless another feed has since listed it."""
+        self.pending = {h: p for h, p in self.pending.items() if self.det.score(h) is not None}
+        for host, f in list(self.flagged.items()):
+            s = self.det.score(host)
+            if s is None:
+                del self.flagged[host]
+            elif (s.score < FLAG and not f.get("confirmed")
+                  and not any(r.startswith("page asks") for r in f.get("reasons", []))):
+                del self.flagged[host]
+                if s.score == FLAG - 1:
+                    self.pending[host] = {"first": _iso(self.now), "last": _iso(self.now), "tries": 0,
+                                          "score": s.score, "reasons": s.reasons, "brand": s.brand}
+
     def _flag(self, host: str, score: int, reasons: list[str], *, first: str | None = None) -> None:
         if host not in self.flagged:
             self.flagged[host] = {"first": first or _iso(self.now), "flagged": _iso(self.now),
@@ -188,10 +239,7 @@ class EarlyWarning:
 
     def run(self) -> Result:
         notes: list[str] = []
-        # Drop anything now known to be on a brand's own domain (one added to
-        # brands.toml, say) straight away rather than after the TTL.
-        self.flagged = {h: f for h, f in self.flagged.items() if self.det.score(h) is not None}
-        self.pending = {h: p for h, p in self.pending.items() if self.det.score(h) is not None}
+        self._rescore()
         names, certs = self._new_names(notes)
         hosts = {normalize(n[2:] if n.startswith("*.") else n) for n in names}
         hosts.discard(None)
