@@ -54,6 +54,12 @@ complement plus redistributable third-party lists, for people who want a single 
   Licensed under the MIT License (text below).
   Requested: Send false positives for its entries to the Phishing.Database issue tracker, using its templates.
 
+* PhishDestroy Destroylist (primary) (MIT), https://github.com/phishdestroy/destroylist
+  Copyright (c) 2019 PhishDestroy
+  Licensed under the MIT License (text below).
+  Condition: Use the primary list (list.txt) only. The 'community' feeds are aggregated from 13+ third-party sources whose terms the MIT grant can't cover.
+  Requested: Send wrongly listed domains to PhishDestroy's appeals form (https://phishdestroy.io/appeals/) or its GitHub appeal template.
+
 * CERT Polska Warning List (LicenseRef-CERT-PL-Data-Usage-Policy), https://cert.pl/en/warning-list/
   Listed as a data source only. No cooperation, partnership,
   endorsement, certification or support by NASK-PIB or CERT Polska is implied.

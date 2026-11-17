@@ -47,6 +47,10 @@ FEEDS: dict[str, Feed] = {f.source_id: f for f in (
     # HaGeZi's list header says "Expires: 8 hours".
     Feed("hagezi-tif", "abp", "mirror", min_interval=timedelta(hours=8), max_stale=timedelta(days=7)),
     Feed("phishing-database", "domains", "mirror", min_interval=timedelta(hours=8), max_stale=timedelta(days=7)),
+    # PhishDestroy's own finds. Aggressive (it lists some popular real sites), so
+    # it gets the same top-1M popular-site check as the unvetted feeds.
+    Feed("destroylist", "domains", "mirror", min_interval=timedelta(hours=2), max_stale=timedelta(days=7),
+         tranco_limit=1_000_000),
     # Our early-warning detector (pipeline.early): brand lookalikes in new TLS
     # certificates. It manages its own 14-day lifetime. Unvetted, so it gets
     # the same top-1M popular-site check as phishunt.

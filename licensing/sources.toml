@@ -153,6 +153,31 @@ source can't go into the CC0 build. Caveat: Phishing.Database does not list
 its upstream feeds, so we rely on its MIT grant as published."""
 
 [[sources]]
+id = "destroylist"
+name = "PhishDestroy Destroylist (primary)"
+status = "approved"
+license = "MIT"
+builds = ["all-in-one"]
+homepage = "https://github.com/phishdestroy/destroylist"
+url = "https://raw.githubusercontent.com/phishdestroy/destroylist/main/list.txt"
+terms_url = "https://github.com/phishdestroy/destroylist/blob/main/LICENSE"
+report_url = "https://phishdestroy.io/appeals/"
+verified = 2026-11-17
+attribution = """Copyright (c) 2019 PhishDestroy
+Licensed under the MIT License (text below)."""
+conditions = [
+  "Use the primary list (list.txt) only. The 'community' feeds are aggregated from 13+ third-party sources whose terms the MIT grant can't cover.",
+]
+requests = [
+  "Send wrongly listed domains to PhishDestroy's appeals form (https://phishdestroy.io/appeals/) or its GitHub appeal template.",
+]
+notes = """Domains PhishDestroy finds with its own parsers and reports to registrars
+before listing. Broader than phishing alone (crypto and investment scams too)
+and aggressive: on 2026-11-17, 532 of 231,195 entries were Tranco top-1M sites,
+including maya.ph, kasserver.com and antispamcloud.com. The feed therefore gets
+the strict top-1M popular-site check (pipeline/feeds.py)."""
+
+[[sources]]
 id = "cert-pl"
 name = "CERT Polska Warning List"
 status = "approved"
