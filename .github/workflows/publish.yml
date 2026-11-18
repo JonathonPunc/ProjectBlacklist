@@ -25,7 +25,7 @@ on:
         default: "complement,early-warning"
         options: ["complement,early-warning", "complement,early-warning,all-in-one"]
       allow_swing:
-        description: Publish even if a build changed size more than the 30% gate allows
+        description: Accept sources and builds that changed size more than their checks allow (30%)
         type: boolean
         default: false
 

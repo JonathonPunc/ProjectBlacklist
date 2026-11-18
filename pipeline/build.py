@@ -153,9 +153,16 @@ class Builder:
         if feed.swing_limit is not None and prev:
             change = abs(len(parsed.entries) - prev) / prev
             if change > feed.swing_limit:
-                rep.notes.append(f"rejected: {prev} -> {len(parsed.entries)} entries "
-                                 f"({change:.0%} change, limit {feed.swing_limit:.0%})")
-                return None
+                what = (f"{prev} -> {len(parsed.entries)} entries "
+                        f"({change:.0%} change, limit {feed.swing_limit:.0%})")
+                if not self.allow_swing:
+                    rep.notes.append(f"rejected: {what}")
+                    # Loud, because the saved copy only lasts max_stale: a real change
+                    # needs someone to look and re-run with --allow-swing.
+                    self.report.warnings.append(f"{feed.source_id}: size change rejected, {what}; "
+                                                "re-run with --allow-swing if it is genuine")
+                    return None
+                rep.notes.append(f"accepted with --allow-swing: {what}")
         state.mark_fetched(feed.source_id, self.now)
         state.source_counts[feed.source_id] = len(parsed.entries)
         return parsed.entries

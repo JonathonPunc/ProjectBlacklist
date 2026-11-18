@@ -30,7 +30,7 @@ def main(argv: list[str] | None = None) -> int:
                    help="private directory for the early-warning memory of domains already seen "
                         "(optional; without it, page checks are ordered by time only)")
     b.add_argument("--allow-swing", action="store_true",
-                   help="publish even if a build changed size more than the gate allows")
+                   help="accept a source or build that changed size more than its check allows")
     lk = sub.add_parser("lookup", help="say which lists and sources contain a host")
     lk.add_argument("domain", nargs="?", help="host to look up")
     lk.add_argument("--issue-body", type=Path, help="read the host from an issue's text instead")

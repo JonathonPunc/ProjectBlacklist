@@ -341,6 +341,14 @@ class Build(unittest.TestCase):
         report = self.run_build(["complement"], now=T0 + dt.timedelta(hours=2))
         self.assertIn("change", " ".join(report.sources["cert-pl"].notes))
         self.assertNotIn("new1.pl", self.listed("complement"))
+        self.assertTrue(any("cert-pl" in w and "--allow-swing" in w for w in report.warnings))
+        forced = Builder(repo=ROOT, dist=self.dist, cache=self.cache, get=self.web.get,
+                         now=T0 + dt.timedelta(hours=3), min_entries=1, allow_swing=True).run(["complement"])
+        self.assertIn("accepted with --allow-swing", " ".join(forced.sources["cert-pl"].notes))
+        self.assertIn("new1.pl", self.listed("complement"))
+        # The new size is the baseline from now on: the next normal run takes it.
+        report = self.run_build(["complement"], now=T0 + dt.timedelta(hours=5))
+        self.assertEqual(report.sources["cert-pl"].how, "fetched")
 
     def test_build_swing_keeps_previous_files(self) -> None:
         self.run_build(["complement"])
