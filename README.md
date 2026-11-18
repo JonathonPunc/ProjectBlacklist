@@ -94,7 +94,7 @@ Every publicly trusted TLS certificate is published in
 [Certificate Transparency](https://certificate.transparency.dev/) logs within
 minutes of being issued, and a phishing site needs one before it can show the
 padlock. Every hour we read the hostnames from the certificates Let's
-Encrypt issued since the last run (about 700,000) and score each one
+Encrypt issued since the last run (about 1.8 million) and score each one
 ([`pipeline/lookalike.py`](pipeline/lookalike.py)) for looking like one of the
 brands in [`data/brands.toml`](data/brands.toml):
 
@@ -108,6 +108,9 @@ brands in [`data/brands.toml`](data/brands.toml):
 Names that score high are listed straight away. Borderline ones get their home
 page checked, now and over the next day, and are listed only if the page asks
 for a password or a secret (card number, recovery phrase) and names the brand.
+Names on domains we have never seen a certificate for (most likely just
+registered) are checked first; the detector remembers every domain it has seen
+for at least 60 days, privately, and uses that only to order the checks.
 Hosts on a brand's own domains, popular sites and the allowlist are never
 listed. Entries stay for 14 days.
 

@@ -21,6 +21,7 @@ from .hosts import PublicSuffixList, normalize
 from .lookalike import Detector
 from .pagecheck import PageGetter
 from .parse import parse
+from .seen import SeenDomains
 from .state import State
 
 PSL_URL = "https://publicsuffix.org/list/public_suffix_list.dat"
@@ -104,8 +105,9 @@ class Builder:
     def __init__(self, *, repo: Path, dist: Path, cache: Path, get: Getter,
                  now: dt.datetime | None = None, registry: lic.Registry | None = None,
                  min_entries: int = MIN_ENTRIES, allow_swing: bool = False,
-                 page_get: PageGetter | None = None) -> None:
+                 page_get: PageGetter | None = None, seen: Path | None = None) -> None:
         self.repo, self.dist, self.cache, self.get = repo, dist, cache, get
+        self.seen = seen                              # directory for the early-warning domain memory
         self.page_get = page_get
         self.early: EarlyWarning | None = None
         self.min_entries = min_entries
@@ -162,8 +164,9 @@ class Builder:
         rep = self.report.sources.setdefault(src.id, SourceReport(src.id))
         if feed.kind == "detector":
             det = Detector.load(self.repo / "data" / "brands.toml", self.guard.psl)
+            memory = SeenDomains(self.seen, self.now) if self.seen else None
             self.early = EarlyWarning(dist=self.dist, cache=self.cache, get=self.get, detector=det,
-                                      now=self.now, page_get=self.page_get)
+                                      now=self.now, page_get=self.page_get, seen=memory)
             result = self.early.run()
             rep.how = "scanned"
             rep.notes += result.notes

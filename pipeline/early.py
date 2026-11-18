@@ -29,6 +29,7 @@ from pathlib import Path
 
 from . import ct, pagecheck
 from .fetch import FetchError, Getter, cached
+from .seen import SeenDomains
 from .hosts import ancestors, normalize
 from .lookalike import FLAG, Detector
 
@@ -90,11 +91,12 @@ class Result:
 class EarlyWarning:
     def __init__(self, *, dist: Path, cache: Path, get: Getter, detector: Detector,
                  now: dt.datetime, page_get: pagecheck.PageGetter | None = None,
-                 clock: Callable[[], float] = time.monotonic) -> None:
+                 clock: Callable[[], float] = time.monotonic, seen: SeenDomains | None = None) -> None:
         self.path = dist / "state" / "early-warning.json"
         self.cache, self.get, self.det, self.now = cache, get, detector, now
         self.page_get = page_get or pagecheck.fetch_page
         self.clock = clock
+        self.seen = seen                              # optional memory of domains seen before
         data = json.loads(self.path.read_text(encoding="utf-8")) if self.path.is_file() else {}
         self.cursors: dict[str, int] = data.get("cursors", {})
         self.pending: dict[str, dict] = data.get("pending", {})
@@ -172,9 +174,12 @@ class EarlyWarning:
         due = [h for h, p in self.pending.items()
                if p["tries"] == 0
                or (p["tries"] < MAX_TRIES and self.now - _parse(p["last"]) >= RECHECK_AFTER)]
-        # First checks before re-checks, newest names first: a phishing page is
-        # usually up in its first hours, and a name waits at most PENDING_FOR.
+        # First checks before re-checks, then names on domains we had never
+        # seen a certificate for (likely just registered), newest first: a
+        # phishing page is usually up in its first hours, and a name waits at
+        # most PENDING_FOR. A name with no domain-memory answer counts as new.
         due = sorted(due, key=lambda h: (self.pending[h]["tries"] > 0,
+                                         self.pending[h].get("new_domain") is False,
                                          -_parse(self.pending[h]["first"]).timestamp()))[:PAGE_CHECKS]
         if not due:
             return 0
@@ -243,6 +248,14 @@ class EarlyWarning:
         names, certs = self._new_names(notes)
         hosts = {normalize(n[2:] if n.startswith("*.") else n) for n in names}
         hosts.discard(None)
+        reg_of: dict[str, str] = {}
+        new_regs: set[str] = set()
+        if self.seen is not None:
+            for h in hosts:
+                r = self.det.psl.registrable(h)
+                if r:
+                    reg_of[h] = r
+            new_regs = self.seen.add(reg_of.values())
         new_flags = new_pending = 0
         for h in hosts:
             if h in self.flagged:
@@ -257,6 +270,8 @@ class EarlyWarning:
             elif s.score == FLAG - 1 and h not in self.pending:
                 self.pending[h] = {"first": _iso(self.now), "last": _iso(self.now), "tries": 0,
                                    "score": s.score, "reasons": s.reasons, "brand": s.brand}
+                if h in reg_of:
+                    self.pending[h]["new_domain"] = reg_of[h] in new_regs
                 new_pending += 1
         before = len(self.flagged)
         checked = self._check_pages(notes)
@@ -267,6 +282,12 @@ class EarlyWarning:
                         if p["tries"] < MAX_TRIES and self.now - _parse(p["first"]) <= PENDING_FOR}
         notes.insert(0, f"{certs:,} new certificates, {len(hosts):,} names: {new_flags} flagged by name, "
                         f"{new_pending} borderline, {checked} pages checked, {by_page} flagged by page")
+        if self.seen is not None:
+            regs = set(reg_of.values())
+            warm = "" if self.seen.warm else " (still warming up: most look new for the first 60 days)"
+            notes.append(f"domain memory: {len(new_regs):,} of {len(regs):,} domains seen for the first time"
+                         f"{warm}; about {self.seen.estimate():,} remembered"
+                         + ("; started a new generation" if self.seen.rotated else ""))
         return Result(set(self.flagged), notes, self._stats())
 
     def save(self) -> None:
@@ -275,3 +296,5 @@ class EarlyWarning:
         tmp = self.path.with_suffix(".tmp")
         tmp.write_text(json.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8")
         tmp.replace(self.path)
+        if self.seen is not None:
+            self.seen.save()

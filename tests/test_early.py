@@ -13,7 +13,8 @@ import unittest
 from unittest import mock
 from pathlib import Path
 
-from pipeline import ct, early, pagecheck
+from pipeline import ct, early, pagecheck, seen
+from pipeline.seen import SeenDomains
 from pipeline.build import PSL_URL, TRANCO_URL, Builder
 from pipeline.fetch import FetchError
 from pipeline.hosts import PublicSuffixList
@@ -399,3 +400,79 @@ class BuilderIntegration(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# --------------------------------------------------------------- seen ---
+
+class SeenDomainsTests(unittest.TestCase):
+    BITS = 1 << 16
+
+    def setUp(self) -> None:
+        self.tmp = Path(tempfile.mkdtemp())
+
+    def tearDown(self) -> None:
+        shutil.rmtree(self.tmp)
+
+    def mem(self, now: dt.datetime) -> SeenDomains:
+        return SeenDomains(self.tmp / "seen", now, bits=self.BITS)
+
+    def test_remembers_across_runs(self) -> None:
+        m = self.mem(T0)
+        self.assertEqual(m.add(["a.com", "b.pages.dev", "a.com"]), {"a.com", "b.pages.dev"})
+        self.assertEqual(m.add(["a.com", "c.com"]), {"c.com"})
+        m.save()
+        m = self.mem(T0 + dt.timedelta(hours=1))
+        self.assertEqual(m.add(["a.com", "b.pages.dev", "d.com"]), {"d.com"})
+        self.assertFalse(m.warm)
+        self.assertTrue(self.mem(T0 + dt.timedelta(days=61)).warm)
+
+    def test_generations_forget_slowly(self) -> None:
+        m = self.mem(T0)
+        m.add(["old.com"])
+        m.save()
+        m = self.mem(T0 + seen.ROTATE_AFTER)                 # rotates: old.com is in the older generation
+        self.assertTrue(m.rotated)
+        self.assertEqual(m.add(["old.com"]), set())          # still remembered
+        m.save()
+        m = self.mem(T0 + 2 * seen.ROTATE_AFTER)             # rotates again; old.com was refreshed
+        self.assertEqual(m.add(["old.com"]), set())
+        m.save()
+        m = self.mem(T0 + 3 * seen.ROTATE_AFTER)
+        m.save()
+        m = self.mem(T0 + 4 * seen.ROTATE_AFTER)             # not seen for two rotations: forgotten
+        self.assertEqual(m.add(["old.com"]), {"old.com"})
+
+    def test_resized_memory_starts_over(self) -> None:
+        m = self.mem(T0)
+        m.add(["a.com"])
+        m.save()
+        m = SeenDomains(self.tmp / "seen", T0, bits=self.BITS * 2)
+        self.assertEqual(m.add(["a.com"]), {"a.com"})
+
+
+class SeenInEarlyWarning(EarlyWarningTests):
+    def ew(self, now: dt.datetime) -> early.EarlyWarning:
+        return early.EarlyWarning(dist=self.dist, cache=self.cache, get=self.web.get, detector=detector(),
+                                  now=now, page_get=self.web.page,
+                                  seen=SeenDomains(self.tmp / "seen", now, bits=1 << 16))
+
+    def test_names_on_new_domains_are_checked_first(self) -> None:
+        self.run_once(T0)
+        self.web.size = 3 * ct.TILE
+        self.web.tiles[2] = names_tile([["www.paypal-shop.com"]])     # an established domain...
+        self.run_once(T0 + dt.timedelta(hours=1))
+        self.web.tiles[3] = names_tile([["store.paypal-shop.com"], ["paypal-mart.com"]])
+        self.web.size = 4 * ct.TILE
+        self.web.page_calls.clear()
+        r = self.run_once(T0 + dt.timedelta(hours=2))                  # ...and a brand-new one
+        state = json.loads((self.dist / "state" / "early-warning.json").read_text())
+        self.assertIs(state["pending"]["store.paypal-shop.com"]["new_domain"], False)
+        self.assertIs(state["pending"]["paypal-mart.com"]["new_domain"], True)
+        self.assertTrue(any("domain memory: " in n for n in r.notes), r.notes)
+        self.web.page_calls.clear()
+        for h in state["pending"]:
+            state["pending"][h]["tries"] = 0
+        (self.dist / "state" / "early-warning.json").write_text(json.dumps(state))
+        with mock.patch.object(early, "PAGE_CHECKS", 1):
+            self.run_once(T0 + dt.timedelta(hours=3))
+        self.assertEqual(self.web.page_calls, ["paypal-mart.com"])

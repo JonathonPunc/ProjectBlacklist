@@ -26,6 +26,9 @@ def main(argv: list[str] | None = None) -> int:
     b.add_argument("--dist", type=Path, default=ROOT / "dist", help="output directory (the dist branch)")
     b.add_argument("--cache", type=Path, default=ROOT / ".cache",
                    help="private cache for reference data (never published)")
+    b.add_argument("--seen", type=Path, default=None,
+                   help="private directory for the early-warning memory of domains already seen "
+                        "(optional; without it, page checks are ordered by time only)")
     b.add_argument("--allow-swing", action="store_true",
                    help="publish even if a build changed size more than the gate allows")
     lk = sub.add_parser("lookup", help="say which lists and sources contain a host")
@@ -50,7 +53,7 @@ def main(argv: list[str] | None = None) -> int:
     builds = [x.strip() for x in args.builds.split(",") if x.strip()]
     try:
         report = Builder(repo=ROOT, dist=args.dist, cache=args.cache, get=http_get,
-                         allow_swing=args.allow_swing).run(builds)
+                         allow_swing=args.allow_swing, seen=args.seen).run(builds)
     except ValueError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1

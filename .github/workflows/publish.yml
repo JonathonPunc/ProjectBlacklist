@@ -31,6 +31,7 @@ on:
 
 permissions:
   contents: write
+  actions: write      # to delete superseded copies of the domain memory from the Actions cache
 
 concurrency:
   # Trial builds queue per branch and never hold up a real publish.
@@ -69,6 +70,15 @@ jobs:
           key: refdata-${{ steps.day.outputs.day }}
           restore-keys: refdata-
 
+      # The early-warning detector's memory of domains it has seen certificates
+      # for (pipeline/seen.py). Private like the reference data, but it changes
+      # every run, so each run saves a fresh copy and deletes the older ones.
+      - uses: actions/cache/restore@v6
+        with:
+          path: .ct-seen
+          key: ct-seen-${{ github.run_id }}
+          restore-keys: ct-seen-
+
       - name: Build
         id: build
         env:
@@ -78,7 +88,7 @@ jobs:
                 || (github.event.schedule == '19 3,11,19 * * *' && 'complement,early-warning,all-in-one'
                     || 'complement,early-warning') }}
           ALLOW_SWING: ${{ github.event_name == 'workflow_dispatch' && inputs.allow_swing && '--allow-swing' || '' }}
-        run: python -m pipeline build --builds "$BUILDS" --dist dist --cache .cache $ALLOW_SWING
+        run: python -m pipeline build --builds "$BUILDS" --dist dist --cache .cache --seen .ct-seen $ALLOW_SWING
 
       # Publish whatever passed its gates, even if another build failed. The
       # branch has no history: each run replaces it, so the repo doesn't grow.
@@ -96,3 +106,23 @@ jobs:
               -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
               commit -q -m "Lists built $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push -q --force origin publish:dist
+
+      - name: Save the domain memory
+        if: >-
+          always() && steps.build.outcome != 'skipped'
+          && github.ref == 'refs/heads/main' && hashFiles('.ct-seen/meta.json') != ''
+        uses: actions/cache/save@v6
+        with:
+          path: .ct-seen
+          key: ct-seen-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Delete older copies of the domain memory
+        if: >-
+          always() && steps.build.outcome != 'skipped'
+          && github.ref == 'refs/heads/main' && hashFiles('.ct-seen/meta.json') != ''
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh cache list -R "$GITHUB_REPOSITORY" --key ct-seen- --sort created_at --order desc \
+              --limit 100 --json id --jq '.[1:][].id' | xargs -r -n1 gh cache delete -R "$GITHUB_REPOSITORY"
