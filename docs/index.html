@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ProjectBlacklist setup</title>
+<meta name="description" content="Step-by-step setup for the ProjectBlacklist phishing and malware blocklists in Pi-hole, AdGuard, Brave, uBlock Origin, pfSense, OPNsense and more.">
+<style>
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --text: #1b1f24; --muted: #5b6470; --line: #dde1e6;
+  --accent: #b42318; --accent-soft: #fdecea; --accent-text: #ffffff;
+  --code-bg: #f0f2f5; --warn-bg: #fff7e6; --warn-line: #f0c36d; --info-bg: #eef4ff; --info-line: #a9c1f5;
+  --ok: #18794e;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111418; --panel: #1a1e24; --text: #e6e8eb; --muted: #9aa3ae; --line: #2c323a;
+    --accent: #f05a4f; --accent-soft: #3a1d1b; --accent-text: #160606;
+    --code-bg: #232831; --warn-bg: #2e2614; --warn-line: #7a5d1f; --info-bg: #17223a; --info-line: #34548f;
+    --ok: #4cc38a;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif;
+}
+a { color: var(--accent); }
+.wrap { max-width: 920px; margin: 0 auto; padding: 32px 16px 64px; }
+header h1 { margin: 0 0 4px; font-size: 1.9rem; letter-spacing: -0.01em; }
+header p { margin: 0; color: var(--muted); max-width: 46em; }
+header .links { margin-top: 10px; font-size: 0.95rem; }
+header .links a { margin-right: 14px; }
+h2 { font-size: 1.15rem; margin: 36px 0 10px; }
+h2 .n { display: inline-grid; place-items: center; width: 1.6em; height: 1.6em; margin-right: 8px;
+  border-radius: 50%; background: var(--accent); color: var(--accent-text); font-size: 0.85rem; }
+h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 18px 0 8px; }
+
+/* choice chips: real radio/checkbox inputs, so keyboards and screen readers just work */
+.choices { display: grid; gap: 10px; }
+.lists { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.choice input { position: absolute; opacity: 0; pointer-events: none; }
+.choice label {
+  display: block; height: 100%; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 10px;
+  background: var(--panel); cursor: pointer;
+}
+.choice label b { display: block; }
+.choice label span { display: block; color: var(--muted); font-size: 0.9rem; margin-top: 2px; }
+.choice input:checked + label { border-color: var(--accent); background: var(--accent-soft); }
+.choice input:focus-visible + label { outline: 3px solid var(--accent); outline-offset: 2px; }
+.addon { margin-top: 10px; }
+.addon label { display: flex; gap: 10px; align-items: flex-start; }
+.addon label::before {
+  content: ""; flex: none; width: 18px; height: 18px; margin-top: 3px; border: 1.5px solid var(--muted); border-radius: 4px;
+}
+.addon input:checked + label::before { background: var(--accent); border-color: var(--accent);
+  box-shadow: inset 0 0 0 3px var(--accent-soft); }
+
+.platforms { display: flex; flex-wrap: wrap; gap: 8px; }
+.platforms .choice label { padding: 7px 13px; border-radius: 999px; font-weight: 600; font-size: 0.95rem; }
+
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin-top: 18px; }
+.panel h2 { margin-top: 0; }
+.summary { margin: 0 0 6px; }
+.meta { color: var(--muted); font-size: 0.92rem; margin: 0; }
+ol.steps { padding-left: 1.4em; margin: 8px 0 0; }
+ol.steps li { margin: 6px 0; }
+.urls { display: grid; gap: 8px; }
+.url { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: var(--code-bg); }
+.url .label { font-size: 0.85rem; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.url .row { display: flex; gap: 8px; align-items: center; margin-top: 4px; }
+.url code { flex: 1; min-width: 0; overflow-wrap: anywhere; font-size: 0.86rem; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px;
+  overflow-x: auto; font-size: 0.84rem; line-height: 1.45; margin: 8px 0; white-space: pre; }
+.pre-wrap { position: relative; }
+.pre-wrap .copy { position: absolute; top: 6px; right: 6px; }
+button.copy {
+  flex: none; font: inherit; font-size: 0.8rem; padding: 3px 10px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--panel); color: var(--text);
+}
+button.copy.done { color: var(--ok); border-color: var(--ok); }
+button.link { font: inherit; padding: 0; border: 0; background: none; color: var(--accent); text-decoration: underline; cursor: pointer; }
+.note { border-left: 4px solid var(--info-line); background: var(--info-bg); padding: 10px 12px; border-radius: 6px; margin: 12px 0 0; }
+.note.warn { border-color: var(--warn-line); background: var(--warn-bg); }
+.note p { margin: 0; }
+.note p + p { margin-top: 6px; }
+.tag, .choice label .tag { display: inline-block; font-weight: 400; margin-left: 4px; font-size: 0.75rem; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+details { margin-top: 14px; }
+summary { cursor: pointer; font-weight: 600; }
+footer { margin-top: 40px; color: var(--muted); font-size: 0.9rem; }
+footer p { margin: 6px 0; }
+@media (max-width: 520px) {
+  .wrap { padding-top: 22px; }
+  header h1 { font-size: 1.55rem; }
+  .panel { padding: 16px 14px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Set up ProjectBlacklist</h1>
+  <p>Free blocklists of suspected phishing and malware sites. Pick a list and where you want to use it,
+    and this page shows the exact steps and URLs.</p>
+  <div class="links">
+    <a href="https://github.com/JonathonPunc/ProjectBlacklist">Project on GitHub</a>
+    <a href="https://github.com/JonathonPunc/ProjectBlacklist/issues/new?template=false-positive.yml">Report a wrongly blocked site</a>
+  </div>
+</header>
+
+<h2><span class="n">1</span>Pick a list</h2>
+<div class="choices lists" role="radiogroup" aria-label="List">
+  <div class="choice">
+    <input type="radio" name="list" id="list-all-in-one" value="all-in-one" checked>
+    <label for="list-all-in-one"><b>all-in-one</b>
+      <span>One URL that covers everything: our fresh feeds plus HaGeZi TIF and PhishDestroy. Large (over a million entries). Best if you want a single list.</span></label>
+  </div>
+  <div class="choice">
+    <input type="radio" name="list" id="list-complement" value="complement">
+    <label for="list-complement"><b>complement</b>
+      <span>Small and refreshed hourly. Made to run alongside HaGeZi TIF, so this page adds that list too. Best for browsers or small devices.</span></label>
+  </div>
+</div>
+<div class="choice addon">
+  <input type="checkbox" id="ew">
+  <label for="ew"><div><b>Also add early-warning <span class="tag">experimental</span></b>
+    <span>Brand-new sites whose names look like a bank's or brand's login page, often caught hours before anyone
+    reports them. It also catches the odd real site, so skip it where a wrongly blocked page would be a
+    problem (a school or business) unless someone can unblock sites quickly.</span></div></label>
+</div>
+
+<h2><span class="n">2</span>Where do you want to block?</h2>
+<div id="platforms"></div>
+
+<section class="panel" id="out" aria-live="polite"></section>
+
+<section class="panel" id="extras-panel">
+  <h2>Want to block ads or adult content too?</h2>
+  <p class="meta">Our lists stick to phishing and malware. These well-known lists, made by other people, cover ads and
+    adult sites. Add <b>one</b> from each row you want; the two in a row overlap a lot. They're shown in the format
+    for the platform you picked above.</p>
+  <div id="extras"></div>
+</section>
+
+<footer>
+  <p>Lists rebuild every hour (all-in-one every 8 hours) and are served from GitHub. complement and early-warning are public
+    domain (CC0); all-in-one is GPL-3.0 because of the lists it includes.</p>
+  <p><b>Can't add lists to:</b> NextDNS and most hosted DNS services, which only let you pick from their own catalogue,
+    and many home routers. Point those devices at a Pi-hole or AdGuard Home instead.</p>
+  <p>Something you trust blocked? <a href="https://github.com/JonathonPunc/ProjectBlacklist/issues/new?template=false-positive.yml">Report it</a>:
+    a bot replies within minutes with where the entry came from.</p>
+</footer>
+</div>
+
+<script>
+(() => {
+  "use strict";
+  const RAW = "https://raw.githubusercontent.com/JonathonPunc/ProjectBlacklist/dist";
+  const HZ = "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest";
+  const FILE = { abp: "abp.txt", domains: "domains.txt", hosts: "hosts.txt", dnsmasq: "dnsmasq.conf", unbound: "unbound.conf", rpz: "rpz.zone" };
+  const FORMATS = {
+    "complement": ["abp", "domains", "hosts", "dnsmasq", "unbound", "rpz"],
+    "early-warning": ["abp", "domains", "hosts", "dnsmasq", "unbound", "rpz"],
+    "all-in-one": ["abp", "domains", "hosts"],
+  };
+  const FORMAT_NAME = { abp: "Adblock", domains: "plain domain list", hosts: "hosts file", dnsmasq: "dnsmasq", unbound: "Unbound", rpz: "RPZ zone" };
+  // HaGeZi TIF in each format (the list complement is made to run alongside).
+  const TIF = {
+    abp: [["HaGeZi TIF", HZ + "/adblock/tif.txt"]],
+    browser: [["HaGeZi TIF medium (sized for browsers)", HZ + "/adblock/tif.medium.txt"]],
+    domains: [["HaGeZi TIF", HZ + "/wildcard/tif-onlydomains.txt"]],
+    dnsmasq: [["HaGeZi TIF", HZ + "/dnsmasq/tif.txt"]],
+    rpz: [["HaGeZi TIF, part 1", HZ + "/rpz/tif-1.txt"], ["HaGeZi TIF, part 2", HZ + "/rpz/tif-2.txt"]],
+  };
+  // Ads and adult-content lists by other projects, per format.
+  const EXTRAS = [
+    { kind: "Ads and trackers", lists: [
+      { name: "HaGeZi Multi PRO", home: "https://github.com/hagezi/dns-blocklists",
+        url: { abp: HZ + "/adblock/pro.txt", domains: HZ + "/wildcard/pro-onlydomains.txt", dnsmasq: HZ + "/dnsmasq/pro.txt", rpz: HZ + "/rpz/pro.txt" } },
+      { name: "oisd big", home: "https://oisd.nl",
+        url: { abp: "https://big.oisd.nl", domains: "https://big.oisd.nl/domainswild2", dnsmasq: "https://big.oisd.nl/dnsmasq2", rpz: "https://big.oisd.nl/rpz" } },
+    ]},
+    { kind: "Adult content", lists: [
+      { name: "HaGeZi NSFW", home: "https://github.com/hagezi/dns-blocklists",
+        url: { abp: HZ + "/adblock/nsfw.txt", domains: HZ + "/wildcard/nsfw-onlydomains.txt", dnsmasq: HZ + "/dnsmasq/nsfw.txt", rpz: HZ + "/rpz/nsfw.txt" } },
+      { name: "oisd nsfw", home: "https://oisd.nl",
+        url: { abp: "https://nsfw.oisd.nl", domains: "https://nsfw.oisd.nl/domainswild2", dnsmasq: "https://nsfw.oisd.nl/dnsmasq2", rpz: "https://nsfw.oisd.nl/rpz" } },
+    ]},
+  ];
+
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+  // Each platform: summary, the format it reads, steps (HTML; {urls} = the URL list block), notes and optional commands.
+  const P = [
+    { id: "pihole", name: "Pi-hole", group: "Whole network",
+      summary: "A DNS server for your home network, usually on a Raspberry Pi. Every device that uses it for DNS is protected: phones, TVs, consoles and guests' devices too.",
+      fmt: "abp", why: "Pi-hole v6 reads Adblock files, which block each site and its subdomains.",
+      steps: [
+        "Open the Pi-hole web interface (usually <code>http://pi.hole/admin</code>) and go to <b>Lists</b>.",
+        "Paste a URL from above into <b>Address</b>, add a comment such as the list's name, and click <b>Add blocklist</b>. Repeat for each URL.",
+        "Go to <b>Tools → Update Gravity</b> and click <b>Update</b> (or run <code>pihole -g</code>).",
+        "Pi-hole only refreshes its lists once a week by default, which is slow for phishing. To refresh every 6 hours, run <code>sudo crontab -e</code> and add the line below.",
+      ],
+      code: () => "0 */6 * * * /usr/local/bin/pihole -g",
+      notes: [["info", "Still on Pi-hole v5? It can't read Adblock files: in each URL, change <code>abp.txt</code> to <code>hosts.txt</code>. Running Pi-hole in Docker? Use <code>docker exec pihole pihole -g</code> in the cron line."]] },
+    { id: "adguard-home", name: "AdGuard Home", group: "Whole network",
+      summary: "A DNS server for your whole network, like Pi-hole, that runs on a Raspberry Pi, a NAS, a router or a spare PC.",
+      fmt: "abp", why: "AdGuard Home reads Adblock files, which block each site and its subdomains.",
+      steps: [
+        "In the AdGuard Home dashboard, open <b>Filters → DNS blocklists</b>.",
+        "Click <b>Add blocklist → Add a custom list</b>, give it a name, paste a URL from above and click <b>Save</b>. Repeat for each URL.",
+        "Go to <b>Settings → General settings</b> and set <b>Filters update interval</b> to <b>1 hour</b>, so new phishing sites are picked up quickly.",
+      ],
+      notes: [["info", "all-in-one and HaGeZi TIF are large. HaGeZi suggests at least 2 GB of RAM for its full TIF list; on a small device, use complement with HaGeZi's TIF medium instead."]] },
+    { id: "technitium", name: "Technitium DNS", group: "Whole network",
+      summary: "A free, self-hosted DNS server for Windows, Linux, macOS and Docker, with blocklist support built in.",
+      fmt: "domains", why: "Technitium reads plain domain lists.",
+      steps: [
+        "Open the Technitium web console and go to <b>Settings → Blocking</b>. Make sure <b>Enable Blocking</b> is ticked.",
+        "In <b>Allow / Block List URLs</b>, paste each URL from above on its own line.",
+        "Set <b>Block List URL Update Interval</b> to <b>1</b> hour and click <b>Save Settings</b>.",
+      ] },
+    { id: "pfsense", name: "pfSense (pfBlockerNG)", group: "Whole network",
+      summary: "Blocks at the firewall for everything behind it, using the pfBlockerNG package's DNSBL feature.",
+      fmt: "domains", why: "pfBlockerNG reads plain domain lists.",
+      steps: [
+        "Install <b>pfBlockerNG</b> (System → Package Manager) if you haven't, and make sure <b>DNSBL</b> is enabled under <b>Firewall → pfBlockerNG → DNSBL</b>.",
+        "Go to <b>Firewall → pfBlockerNG → DNSBL → DNSBL Groups</b> and click <b>Add</b>. Name the group, e.g. <code>ProjectBlacklist</code>.",
+        "Under <b>DNSBL Source Definitions</b>, add one row per URL from above: <b>State</b> ON, the URL as <b>Source</b>, and a short <b>Header/Label</b> such as <code>pbl_allinone</code>.",
+        "Set <b>Action</b> to <b>Unbound</b> and <b>Update Frequency</b> to <b>Every hour</b>, then click <b>Save</b>.",
+        "Go to <b>Firewall → pfBlockerNG → Update</b>, choose <b>Reload</b> with <b>DNSBL</b>, and click <b>Run</b>.",
+      ] },
+    { id: "opnsense", name: "OPNsense", group: "Whole network",
+      summary: "Blocks at the firewall for everything behind it, using the blocklist feature built into OPNsense's Unbound DNS.",
+      fmt: "domains", why: "OPNsense reads plain domain lists.",
+      steps: [
+        "Go to <b>Services → Unbound DNS → Blocklist</b> and tick <b>Enable</b>.",
+        "Paste each URL from above into <b>URLs of blocklists</b>, then click <b>Apply</b>.",
+        "To refresh hourly, go to <b>System → Settings → Cron</b>, add a job with command <b>Update Unbound DNSBLs</b>, minute <code>15</code> and hour <code>*</code>, and save.",
+      ],
+      notes: [["info", "Menu names shift a little between OPNsense versions; the blocklist settings always live under Unbound DNS."]] },
+    { id: "brave", name: "Brave", group: "Browser", browser: true,
+      summary: "Brave's built-in Shields can load extra filter lists, so this protects you in Brave on this computer only, with nothing else to install.",
+      fmt: "abp", why: "Brave reads Adblock files.",
+      steps: [
+        "Open <code>brave://settings/shields/filters</code> (Settings → Shields → Content filtering).",
+        "Under <b>Add custom filter lists</b>, paste a URL from above and click <b>Add</b>. Repeat for each URL.",
+        "That's it: Brave keeps the lists up to date by itself.",
+      ],
+      notes: [["info", "These steps are for Brave on a computer. On phones, Brave's menus differ; a network-wide blocker such as Pi-hole covers phones better."]] },
+    { id: "ublock", name: "uBlock Origin", group: "Browser", browser: true,
+      summary: "The popular open-source blocker extension. Adding our list protects this browser only.",
+      fmt: "abp", why: "uBlock Origin reads Adblock files.",
+      steps: [
+        "Click the uBlock Origin icon, then the gear icon to open the dashboard.",
+        "Open the <b>Filter lists</b> tab and scroll to the bottom. Under <b>Custom</b>, tick <b>Import…</b>.",
+        "Paste the URLs from above into the box, one per line.",
+        "Click <b>Apply changes</b> at the top. uBlock Origin keeps the lists up to date by itself.",
+      ],
+      notes: [["warn", "<b>Chrome and Edge:</b> they now only allow <b>uBlock Origin Lite</b>, which can't import custom lists. Use Firefox (full uBlock Origin) or Brave, or block network-wide with Pi-hole or AdGuard Home."]] },
+    { id: "adguard-ext", name: "AdGuard extension", group: "Browser", browser: true,
+      summary: "AdGuard's free browser extension for Chrome, Edge, Firefox, Opera and Safari. Protects this browser only.",
+      fmt: "abp", why: "AdGuard reads Adblock files.",
+      steps: [
+        "Open the AdGuard extension's <b>Settings</b> and go to <b>Filters → Custom</b>.",
+        "Click <b>Add custom filter</b>, paste a URL from above, click <b>Next</b>, then <b>Subscribe</b>. Repeat for each URL.",
+        "Leave <b>Trusted</b> unticked; these lists don't need it.",
+      ] },
+    { id: "adguard-app", name: "AdGuard app", group: "Device app",
+      summary: "AdGuard's paid apps for Windows, Mac and Android filter every app on the device, not just the browser.",
+      fmt: "abp", why: "AdGuard reads Adblock files.",
+      steps: [
+        "Open AdGuard's filter settings (Windows and Mac: <b>Settings → Filters</b>; Android: <b>Protection → Ad blocking → Filters</b>).",
+        "Open <b>Custom</b> and choose <b>Add custom filter</b>.",
+        "Paste a URL from above and confirm. Repeat for each URL.",
+      ],
+      notes: [["info", "On iPhone and iPad, AdGuard runs through Safari's content blocker, which has a rule limit far below these lists. Use complement there, or point the device at a Pi-hole or AdGuard Home instead."]] },
+    { id: "hosts", name: "hosts file", group: "Device app",
+      summary: "Every computer has a hosts file that can block sites with no software at all. It's the most basic option: it only covers that one computer, and you refresh it yourself.",
+      fmt: "hosts", why: "The hosts file only matches exact names, so subdomains aren't covered.",
+      steps: [
+        "These commands are for <b>Linux and macOS</b>. First save a copy of your current hosts file (only once): <code>sudo cp /etc/hosts /etc/hosts.orig</code>",
+        "Then build the new hosts file from your original plus the list(s), using the command below. Run it again whenever you want fresh entries, or put it in root's crontab to run every few hours.",
+      ],
+      code: urls => "curl -fsSL " + urls.map(u => "'" + u[1] + "'").join(" ") + " \\\n  | sudo sh -c 'cat /etc/hosts.orig - > /etc/hosts'",
+      notes: [["warn", "Not recommended on <b>Windows</b>: hosts files this big slow down Windows' DNS lookups. Use the AdGuard app, Brave, or a Pi-hole instead."]] },
+    { id: "dnsmasq", name: "dnsmasq", group: "DNS server (advanced)",
+      summary: "For routers and servers running dnsmasq directly (OpenWrt, many Linux setups). The file is a ready-made dnsmasq config.",
+      fmt: "dnsmasq", why: "Each line is a dnsmasq <code>local=</code> rule, which blocks the site and its subdomains.",
+      steps: [
+        "Make sure dnsmasq reads config files from <code>/etc/dnsmasq.d</code> (the default on Debian and Ubuntu: <code>conf-dir=/etc/dnsmasq.d/,*.conf</code>).",
+        "Create an hourly job that downloads each list and restarts dnsmasq, using the commands below.",
+      ],
+      code: urls => cron("/etc/dnsmasq.d", ".conf", urls, "systemctl restart dnsmasq") },
+    { id: "unbound", name: "Unbound", group: "DNS server (advanced)",
+      summary: "For servers running the Unbound resolver directly. The file is a ready-made Unbound config fragment.",
+      fmt: "unbound", why: "Each line is an Unbound <code>local-zone</code> that blocks the site and its subdomains. The file starts its own <code>server:</code> clause, so it can be included anywhere.",
+      steps: [
+        "Make sure Unbound includes <code>/etc/unbound/unbound.conf.d/*.conf</code> (the default on Debian and Ubuntu).",
+        "Create an hourly job that downloads each list, checks the config and reloads Unbound, using the commands below.",
+      ],
+      code: urls => cron("/etc/unbound/unbound.conf.d", ".conf", urls, "unbound-checkconf && systemctl reload unbound") },
+    { id: "rpz", name: "BIND / Knot / PowerDNS (RPZ)", group: "DNS server (advanced)",
+      summary: "For DNS servers that support Response Policy Zones. Each list is a zone file; the server answers \"no such site\" for everything in it, subdomains included.",
+      fmt: "rpz", why: "RPZ is the standard way to feed a blocklist to BIND, Knot Resolver, PowerDNS Recursor and Unbound.",
+      steps: [
+        "Create an hourly job that downloads each zone file and reloads it, using the first block below. Running it once now puts the files in place.",
+        "Add one zone per list to your config. For <b>BIND</b>, it looks like the second block (the zone names are up to you). Then run <code>sudo rndc reconfig</code>.",
+      ],
+      notes: [["info", "Knot Resolver, PowerDNS Recursor and Unbound load the same zone files with their own RPZ settings; the download job works for all of them."]],
+      code: urls => bindConf(urls) },
+    { id: "blocky", name: "Blocky", group: "DNS server (advanced)",
+      summary: "A lightweight DNS proxy and ad blocker configured with a single YAML file, popular in Docker and Kubernetes setups.",
+      fmt: "domains", why: "Blocky reads plain domain lists. It matches names exactly, so subdomains aren't covered.",
+      steps: [
+        "Add the lists to your <code>config.yml</code> as below and restart Blocky. It downloads them itself and refreshes every hour.",
+      ],
+      code: urls => "blocking:\n  denylists:\n    phishing:\n" + urls.map(u => "      - " + u[1]).join("\n") +
+        "\n  clientGroupsBlock:\n    default:\n      - phishing\n  loading:\n    refreshPeriod: 1h",
+      notes: [["info", "Blocky versions before 0.24 call <code>denylists</code> <code>blackLists</code>."]] },
+    { id: "other", name: "Something else", group: "Other",
+      summary: "Many other blockers accept a list URL too. If yours isn't listed, it most likely reads one of these formats.",
+      fmt: "abp", why: "Try the Adblock URL first: it's the most widely supported, and it blocks subdomains too.",
+      steps: [
+        "Look for a setting called something like <b>blocklist</b>, <b>filter list</b>, <b>adlist</b> or <b>DNSBL</b>, and paste the URL from above.",
+        "If it says the format isn't supported, change <code>abp.txt</code> at the end of the URL to <code>hosts.txt</code> or <code>domains.txt</code> and try again.",
+        "If it lets you choose how often to update, pick every hour or every few hours.",
+      ] },
+  ];
+
+  function cron(dir, ext, urls, reload) {
+    const lines = urls.map(u => {
+      const f = dir + "/" + slug(u[0]);
+      return "curl -fsSL -o '" + f + ".tmp' '" + u[1] + "' && mv '" + f + ".tmp' '" + f + ext + "'";
+    });
+    return "sudo tee /etc/cron.hourly/projectblacklist >/dev/null <<'EOF'\n#!/bin/sh\n" + lines.join("\n") + "\n" + reload + "\nEOF\n" +
+      "sudo chmod +x /etc/cron.hourly/projectblacklist\nsudo /etc/cron.hourly/projectblacklist";
+  }
+  function bindConf(urls) {
+    const zones = urls.map(u => [slug(u[0]) + ".rpz", u[1]]);
+    const conf = "options {\n  response-policy {\n" + zones.map(z => "    zone \"" + z[0] + "\";").join("\n") + "\n  };\n};\n\n" +
+      zones.map(z => "zone \"" + z[0] + "\" {\n  type primary;\n  file \"/var/lib/bind/" + z[0] + "\";\n  allow-query { none; };\n};").join("\n");
+    const job = "sudo tee /etc/cron.hourly/projectblacklist >/dev/null <<'EOF'\n#!/bin/sh\n" +
+      zones.map(z => "curl -fsSL -o '/var/lib/bind/" + z[0] + ".tmp' '" + z[1] + "' && mv '/var/lib/bind/" + z[0] + ".tmp' '/var/lib/bind/" + z[0] + "' && rndc reload " + z[0]).join("\n") +
+      "\nEOF\nsudo chmod +x /etc/cron.hourly/projectblacklist\nsudo /etc/cron.hourly/projectblacklist";
+    return [job, conf];
+  }
+
+  // Platform chips, grouped.
+  const host = document.getElementById("platforms");
+  const groups = [...new Set(P.map(p => p.group))];
+  host.innerHTML = groups.map(g => "<h3>" + esc(g) + "</h3><div class=\"platforms\" role=\"radiogroup\" aria-label=\"" + esc(g) + "\">" +
+    P.filter(p => p.group === g).map(p =>
+      "<div class=\"choice\"><input type=\"radio\" name=\"platform\" id=\"p-" + p.id + "\" value=\"" + p.id + "\">" +
+      "<label for=\"p-" + p.id + "\">" + esc(p.name) + "</label></div>").join("") + "</div>").join("");
+
+  const $ = s => document.querySelector(s);
+  const state = () => ({
+    list: $("input[name=list]:checked").value,
+    ew: $("#ew").checked,
+    p: P.find(p => p.id === ($("input[name=platform]:checked") || {}).value) || P[0],
+  });
+
+  function urlBlock(label, url, tag) {
+    return "<div class=\"url\"><div class=\"label\"><span>" + esc(label) + (tag ? " <span class=\"tag\">" + esc(tag) + "</span>" : "") + "</span></div>" +
+      "<div class=\"row\"><code>" + esc(url) + "</code><button type=\"button\" class=\"copy\" data-copy=\"" + esc(url) + "\">Copy</button></div></div>";
+  }
+  function preBlock(text) {
+    return "<div class=\"pre-wrap\"><pre><code>" + esc(text) + "</code></pre><button type=\"button\" class=\"copy\" data-copy=\"" + esc(text) + "\">Copy</button></div>";
+  }
+
+  function render() {
+    const s = state(), p = s.p, notes = [];
+    let list = s.list;
+    const fmt = p.fmt;
+    if (!FORMATS[list].includes(fmt)) {
+      notes.push(["info", "all-in-one doesn't come in " + FORMAT_NAME[fmt] + " format (it's too big). We've switched to <b>complement</b>, which runs alongside HaGeZi TIF in the same format."]);
+      list = "complement";
+    }
+    if (p.browser && list === "all-in-one") {
+      notes.push(["warn", "all-in-one has over a million entries, which is a lot for a browser. For the same coverage at a browser-friendly size, use complement with HaGeZi TIF medium. <button type=\"button\" class=\"link\" data-list=\"complement\">Switch to complement</button>"]);
+    }
+    if (p.id === "hosts" && list === "all-in-one") {
+      notes.push(["warn", "all-in-one is far too big for a hosts file (tens of megabytes). <button type=\"button\" class=\"link\" data-list=\"complement\">Switch to complement</button>"]);
+    }
+    const urls = [["ProjectBlacklist " + list, RAW + "/" + list + "/" + FILE[fmt], ""]];
+    if (list === "complement") {
+      const tif = p.browser ? TIF.browser : TIF[fmt];
+      if (tif) tif.forEach(t => urls.push([t[0], t[1], "runs alongside complement"]));
+      else if (fmt === "hosts") notes.push(["info", "HaGeZi TIF is too big for a hosts file, so it isn't included here."]);
+      else if (fmt === "unbound") notes.push(["info", "HaGeZi doesn't publish TIF in Unbound format. To add it, load its <a href=\"https://github.com/hagezi/dns-blocklists#tif\">RPZ files</a> with Unbound's <code>rpz:</code> clause."]);
+    }
+    if (s.ew) urls.push(["ProjectBlacklist early-warning", RAW + "/early-warning/" + FILE[fmt], "experimental"]);
+
+    let code = p.code ? p.code(urls) : null;
+    if (code && !Array.isArray(code)) code = [code];
+    const all = notes.concat(p.notes || []);
+    $("#out").innerHTML =
+      "<h2>" + esc(p.name) + "</h2>" +
+      "<p class=\"summary\">" + p.summary + "</p>" +
+      "<p class=\"meta\">Format: " + FORMAT_NAME[fmt] + ". " + p.why + "</p>" +
+      all.map(n => "<div class=\"note" + (n[0] === "warn" ? " warn" : "") + "\"><p>" + n[1] + "</p></div>").join("") +
+      "<h3>" + (urls.length > 1 ? "Add these " + urls.length + " URLs" : "Add this URL") + "</h3>" +
+      "<div class=\"urls\">" + urls.map(u => urlBlock(u[0], u[1], u[2])).join("") + "</div>" +
+      "<h3>Steps</h3><ol class=\"steps\">" + p.steps.map(t => "<li>" + t + "</li>").join("") + "</ol>" +
+      (code ? code.map(preBlock).join("") : "");
+
+    renderExtras(p);
+    if (location.hash !== "#" + p.id) history.replaceState(null, "", "#" + p.id);
+  }
+
+  function renderExtras(p) {
+    const fmt = p.fmt;
+    let html = "";
+    if (fmt === "hosts" || fmt === "unbound") {
+      html = "<div class=\"note\"><p>These lists aren't published in " + FORMAT_NAME[fmt] + " format at a usable size. See " +
+        "<a href=\"https://github.com/hagezi/dns-blocklists\">HaGeZi</a> and <a href=\"https://oisd.nl\">oisd</a> for the formats they offer" +
+        (fmt === "unbound" ? " (both publish RPZ, which Unbound can load with its <code>rpz:</code> clause)" : "") + ".</p></div>";
+    }
+    EXTRAS.forEach(row => {
+      if (html && (fmt === "hosts" || fmt === "unbound")) return;
+      if (p.browser && row.kind === "Ads and trackers") {
+        html += "<h3>" + esc(row.kind) + "</h3><div class=\"note\"><p>" + esc(p.name) + " already blocks ads and trackers with its own built-in lists, so you don't need to add one.</p></div>";
+        return;
+      }
+      html += "<h3>" + esc(row.kind) + "</h3><div class=\"urls\">" +
+        row.lists.map(l => urlBlock(l.name, l.url[fmt], "")).join("") + "</div>";
+    });
+    html += "<p class=\"meta\" style=\"margin-top:10px\">Made and maintained by <a href=\"https://github.com/hagezi/dns-blocklists\">HaGeZi</a> and " +
+      "<a href=\"https://oisd.nl\">oisd</a>; report problems with these lists to them. DNS blocking works per site, so adult-content lists can't filter " +
+      "mixed sites such as Reddit or X without blocking them entirely.</p>";
+    $("#extras").innerHTML = html;
+  }
+
+  document.addEventListener("change", e => { if (e.target.matches("input")) render(); });
+  document.addEventListener("click", e => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    if (b.dataset.list) { document.getElementById("list-" + b.dataset.list).checked = true; render(); return; }
+    if (b.dataset.copy != null) {
+      const done = () => { b.textContent = "Copied"; b.classList.add("done"); setTimeout(() => { b.textContent = "Copy"; b.classList.remove("done"); }, 1500); };
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(b.dataset.copy).then(done, () => {});
+      else {
+        const t = document.createElement("textarea"); t.value = b.dataset.copy; document.body.appendChild(t); t.select();
+        try { document.execCommand("copy"); done(); } catch (_) { /* nothing to do */ }
+        t.remove();
+      }
+    }
+  });
+
+  const fromHash = () => {
+    const id = location.hash.slice(1);
+    const el = document.getElementById("p-" + (P.some(p => p.id === id) ? id : P[0].id));
+    el.checked = true;
+  };
+  window.addEventListener("hashchange", () => { fromHash(); render(); });
+  fromHash();
+  render();
+})();
+</script>
+</body>
+</html>

@@ -54,6 +54,11 @@ which is how Pi-hole reads plain lines, so prefer the Adblock file on Pi-hole v6
 
 ## Setting it up
 
+**[Step-by-step setup guide](https://jonathonpunc.github.io/ProjectBlacklist/)**: pick your list and
+where you use it (Pi-hole, AdGuard Home, Brave, uBlock Origin, AdGuard, pfSense, OPNsense,
+Technitium, dnsmasq, Unbound, BIND and more) and it shows the exact steps and URLs, plus
+optional ad and adult-content lists. The short version:
+
 - **Pi-hole v6:** add the Adblock URL under *Lists*, then run `pihole -g`.
   Pi-hole only refreshes its lists once a week by default, which is too slow
   for phishing. Refresh more often with a cron job, e.g. every 6 hours:
