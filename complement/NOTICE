@@ -1,0 +1,27 @@
+ProjectBlacklist: third-party notices
+=====================================
+
+Generated from licensing/sources.toml by `python -m licensing sync`.
+Do not edit by hand.
+
+Entries are suspected malicious or phishing hosts, not confirmed verdicts.
+
+Build: complement (CC0-1.0)
+---------------------------
+Fast list from public-domain sources and our own curation, meant to run alongside HaGeZi TIF.
+
+* ProjectBlacklist curated data (CC0-1.0), https://github.com/JonathonPunc/ProjectBlacklist
+
+* phishunt.io (CC0-1.0), https://phishunt.io/
+  Condition: Describe entries as suspected, never as confirmed phishing (phishunt ToS sections 3 and 4).
+  Condition: Don't misrepresent where the data came from (ToS section 4).
+  Condition: Stay under 10 requests per second (ToS section 5).
+  Requested: Credit phishunt.io when redistributing (ToS section 7: appreciated, not required).
+  Requested: Send false-positive disputes to phishunt's GitHub issues with its false-positive template (ToS section 6).
+
+* CERT Polska Warning List (LicenseRef-CERT-PL-Data-Usage-Policy), https://cert.pl/en/warning-list/
+  Listed as a data source only. No cooperation, partnership,
+  endorsement, certification or support by NASK-PIB or CERT Polska is implied.
+  Condition: Never imply cooperation, partnership, endorsement, certification or support by NASK-PIB or CERT Polska (data usage policy).
+  Condition: Don't use NASK-PIB or CERT Polska names, designations or logos in any way that could mislead about our relationship (data usage policy).
+  Requested: Block subdomains of listed domains too, but not their parents (CERT Polska implementation guidance).
