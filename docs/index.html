@@ -64,8 +64,11 @@ h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color
 .panel h2 { margin-top: 0; }
 .summary { margin: 0 0 6px; }
 .meta { color: var(--muted); font-size: 0.92rem; margin: 0; }
-ol.steps { padding-left: 1.4em; margin: 8px 0 0; }
-ol.steps li { margin: 6px 0; }
+ol.steps, ul.steps { padding-left: 1.4em; margin: 8px 0 0; }
+ol.steps li, ul.steps li { margin: 6px 0; }
+#dns details { border-top: 1px solid var(--line); padding-top: 12px; }
+#dns details > .note { margin-bottom: 4px; }
+#dns code { overflow-wrap: anywhere; }
 .urls { display: grid; gap: 8px; }
 .url { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: var(--code-bg); }
 .url .label { font-size: 0.85rem; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; align-items: center; }
@@ -143,6 +146,90 @@ footer p { margin: 6px 0; }
     adult sites. Add <b>one</b> from each row you want; the two in a row overlap a lot. They're shown in the format
     for the platform you picked above.</p>
   <div id="extras"></div>
+</section>
+
+<section class="panel" id="dns">
+  <h2>Point your devices at your blocker</h2>
+  <p class="meta">Only needed for the whole-network options (Pi-hole, AdGuard Home, Technitium, a DNS server). Browser
+    and app options work on their own. You'll need your blocker's IP address, for example <code>192.168.1.2</code>:
+    it's shown on the blocker's dashboard and in your router's list of connected devices.</p>
+
+  <details open>
+    <summary>Router (covers every device at once, recommended)</summary>
+    <ol class="steps">
+      <li>Open your router's settings page in a browser. The address and password are usually on a sticker on the
+        router; common addresses are <code>192.168.1.1</code>, <code>192.168.0.1</code> and <code>10.0.0.1</code>.</li>
+      <li>Find the <b>DHCP</b> or <b>LAN</b> settings (sometimes under <b>Advanced</b> or <b>Network</b>), and look for
+        <b>DNS server</b>.</li>
+      <li>Enter your blocker's IP address as the <b>only</b> DNS server and save. If it insists on a second one,
+        enter the same address again.</li>
+      <li>Restart your devices, or turn Wi-Fi off and on, so they pick up the change.</li>
+    </ol>
+    <div class="note"><p>Every router is a little different. If you can't find the setting, search for your router's model
+      with "change DNS server", check its manual, or ask your internet provider or the router's maker. Some
+      provider-supplied routers don't allow it at all; then set DNS on each device below, or use your blocker's own
+      DHCP server (Pi-hole and AdGuard Home both have one) and turn off the router's.</p></div>
+  </details>
+
+  <details>
+    <summary>Windows 11</summary>
+    <ol class="steps">
+      <li>Open <b>Settings → Network &amp; internet</b> and click <b>Wi-Fi</b> or <b>Ethernet</b>, then your network
+        (on Wi-Fi: <b>Hardware properties</b>).</li>
+      <li>Next to <b>DNS server assignment</b>, click <b>Edit</b>, choose <b>Manual</b> and turn on <b>IPv4</b>.</li>
+      <li>Enter your blocker's IP address as <b>Preferred DNS</b>, leave <b>Alternate DNS</b> empty, and click <b>Save</b>.</li>
+    </ol>
+  </details>
+
+  <details>
+    <summary>Mac</summary>
+    <ol class="steps">
+      <li>Open <b>System Settings → Network</b>, click <b>Wi-Fi</b> (or Ethernet), then <b>Details…</b> next to your network.</li>
+      <li>Open the <b>DNS</b> tab. Remove any servers listed with <b>−</b>, then click <b>+</b> and enter your blocker's IP address.</li>
+      <li>Click <b>OK</b>.</li>
+    </ol>
+  </details>
+
+  <details>
+    <summary>iPhone and iPad</summary>
+    <ol class="steps">
+      <li>Open <b>Settings → Wi-Fi</b> and tap the <b>ⓘ</b> next to your network.</li>
+      <li>Tap <b>Configure DNS → Manual</b>. Delete the existing servers, tap <b>Add Server</b> and enter your blocker's
+        IP address. Tap <b>Save</b>.</li>
+      <li>This is per Wi-Fi network, and doesn't apply on mobile data.</li>
+    </ol>
+  </details>
+
+  <details>
+    <summary>Android</summary>
+    <ol class="steps">
+      <li>Setting DNS on the router is much easier on Android: per-network DNS means switching the Wi-Fi to a fixed
+        ("static") IP address, which is fiddly.</li>
+      <li>Either way, check <b>Settings → Network &amp; internet → Private DNS</b> is set to <b>Off</b> or
+        <b>Automatic</b>. A named provider there (such as <code>dns.google</code>) skips your blocker entirely.</li>
+    </ol>
+  </details>
+
+  <details>
+    <summary>Linux</summary>
+    <ol class="steps">
+      <li>In GNOME or KDE network settings, open your connection's <b>IPv4</b> tab.</li>
+      <li>Turn off automatic DNS and enter your blocker's IP address, then reconnect.</li>
+      <li>From a terminal with NetworkManager: <code>nmcli con mod "Your connection" ipv4.dns 192.168.1.2 ipv4.ignore-auto-dns yes</code>,
+        then <code>nmcli con up "Your connection"</code>.</li>
+    </ol>
+  </details>
+
+  <h3>Make sure nothing goes around it</h3>
+  <ul class="steps">
+    <li><b>One DNS server only.</b> Don't add a backup such as <code>8.8.8.8</code>: devices use both, and anything
+      looked up through the backup isn't blocked.</li>
+    <li><b>Browser "secure DNS".</b> In Chrome, Edge, Brave and Firefox, a secure DNS setting that names a provider
+      (Cloudflare, Google and so on) sends lookups straight there. Set it to <b>Off</b> or to use your current provider.</li>
+    <li><b>IPv6.</b> Some routers also hand out their own IPv6 DNS server, which devices may use instead. If your
+      blocker sees little traffic, set the router's IPv6 DNS to your blocker too, or turn that off.</li>
+    <li><b>Check it worked:</b> browse a little on the device, then look for its lookups in your blocker's query log.</li>
+  </ul>
 </section>
 
 <footer>
@@ -407,7 +494,11 @@ footer p { margin: 6px 0; }
       "<h3>" + (urls.length > 1 ? "Add these " + urls.length + " URLs" : "Add this URL") + "</h3>" +
       "<div class=\"urls\">" + urls.map(u => urlBlock(u[0], u[1], u[2])).join("") + "</div>" +
       "<h3>Steps</h3><ol class=\"steps\">" + p.steps.map(t => "<li>" + t + "</li>").join("") + "</ol>" +
-      (code ? code.map(preBlock).join("") : "");
+      (code ? code.map(preBlock).join("") : "") +
+      (p.group === "Whole network" || p.group === "DNS server (advanced)"
+        ? "<div class=\"note\"><p><b>Last step:</b> point your router or devices at it. " +
+          "<button type=\"button\" class=\"link\" data-scroll=\"dns\">How to change DNS on a router, phone or computer</button></p></div>"
+        : "");
 
     renderExtras(p);
     if (location.hash !== "#" + p.id) history.replaceState(null, "", "#" + p.id);
@@ -440,6 +531,7 @@ footer p { margin: 6px 0; }
   document.addEventListener("click", e => {
     const b = e.target.closest("button");
     if (!b) return;
+    if (b.dataset.scroll) { document.getElementById(b.dataset.scroll).scrollIntoView({ behavior: "smooth" }); return; }
     if (b.dataset.list) { document.getElementById("list-" + b.dataset.list).checked = true; render(); return; }
     if (b.dataset.copy != null) {
       const done = () => { b.textContent = "Copied"; b.classList.add("done"); setTimeout(() => { b.textContent = "Copy"; b.classList.remove("done"); }, 1500); };
