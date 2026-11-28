@@ -1,0 +1,6909 @@
+{
+ "build_counts": {
+  "all-in-one": 2392695,
+  "complement": 128822,
+  "early-warning": 34098
+ },
+ "build_sources": {
+  "all-in-one": [
+   "cert-pl",
+   "destroylist",
+   "hagezi-tif",
+   "phishunt",
+   "projectblacklist"
+  ],
+  "complement": [
+   "cert-pl",
+   "phishunt",
+   "projectblacklist"
+  ],
+  "early-warning": [
+   "ct-lookalikes"
+  ]
+ },
+ "fetched": {
+  "cert-pl": "2026-11-28T13:00:41Z",
+  "destroylist": "2026-11-28T11:53:07Z",
+  "hagezi-tif": "2026-11-24T04:18:36Z",
+  "phishunt": "2026-11-28T13:00:41Z"
+ },
+ "seen": {
+  "phishunt": {
+   "0725cf6f-d412-4cd7-a321-47c0276beab7.8331202-coinbase.com": [
+    "2026-11-19T06:00:54Z",
+    "2026-11-19T06:00:54Z"
+   ],
+   "098432-kraken.com": [
+    "2026-11-24T05:53:41Z",
+    "2026-11-24T11:00:44Z"
+   ],
+   "1-whatsapp.top": [
+    "2026-11-15T09:14:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "1.xn--nebl.xn--9dbq2a.account.auth.google.com.1.145.life": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T20:46:59Z"
+   ],
+   "108-174-1-78.fwd.paypal-com-aspi-dll.us": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "1920489-coinbase.com": [
+    "2026-11-24T18:00:41Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "19349144-coinbase.com": [
+    "2026-11-26T18:00:40Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "199281-coinbase.com": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "2017-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "21839-coinbase.com": [
+    "2026-11-20T18:00:44Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "2krn-kraken.com": [
+    "2026-11-25T00:00:51Z",
+    "2026-11-25T12:00:52Z"
+   ],
+   "2rzl.paypal-support.antimoney-laundering.org": [
+    "2026-11-28T06:00:47Z",
+    "2026-11-28T06:00:47Z"
+   ],
+   "30ee17940a1b0dec.netflix.memberaccess-recovery.40-113-33-046.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "30ee17940a1b0dec.www.netflix.memberaccess-recovery.40-113-33-046.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "3177550-coinbase.com": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "44266.eu.cc": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "4zjerlm.yourwebs.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "5b4f274d-f144-418e-b36a-7f441776a305.8331202-coinbase.com": [
+    "2026-11-26T23:42:45Z",
+    "2026-11-26T23:42:45Z"
+   ],
+   "603257.eu.cc": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "7.zaikan2.account-paypal.antimoney-laundering.org": [
+    "2026-11-28T06:00:47Z",
+    "2026-11-28T06:00:47Z"
+   ],
+   "73a2370016b7.7pc28.account-paypal.antimoney-laundering.org": [
+    "2026-11-27T18:00:56Z",
+    "2026-11-27T18:00:56Z"
+   ],
+   "73a2370016b7.a.12904.account-paypal.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "73a2370016b7.ab.paypal-support.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-21T06:00:53Z"
+   ],
+   "73a2370016b7.accounts-paypal.antimoney-laundering.org": [
+    "2026-11-27T06:00:42Z",
+    "2026-11-27T06:00:42Z"
+   ],
+   "73a2370016b7.d.i37.paypal-updates.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "73a2370016b7.dl1wiki.paypal-updates.antimoney-laundering.org": [
+    "2026-11-25T18:00:42Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "73a2370016b7.dp-dev.account-paypal.antimoney-laundering.org": [
+    "2026-11-27T06:00:42Z",
+    "2026-11-27T11:00:51Z"
+   ],
+   "73a2370016b7.jadwiga.paypal-login.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "73a2370016b7.louie.account-paypal.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "73a2370016b7.lp.web18762.account-paypal.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "73a2370016b7.lynch.accounts-paypal.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "73a2370016b7.matfiz.paypal-support.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "73a2370016b7.mbgw.accounts-paypal.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "73a2370016b7.paypal-account.antimoney-laundering.org": [
+    "2026-11-28T06:00:47Z",
+    "2026-11-28T06:00:47Z"
+   ],
+   "73a2370016b7.princess4u3.paypal-support.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "73a2370016b7.switchblade.paypal-update.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "73a2370016b7.w-f.account-paypal.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "73a2370016b7.web11373.accounts-paypal.antimoney-laundering.org": [
+    "2026-11-23T18:00:48Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "7443893.eu.cc": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T00:55:32Z"
+   ],
+   "746184-icloud.com": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-17T20:46:59Z"
+   ],
+   "7wcontinental.coinbase-secured.com": [
+    "2026-11-19T18:00:41Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "822312-coinbase.com": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "8973823-coinbase.com": [
+    "2026-11-20T18:00:44Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "a.12904.account-paypal.antimoney-laundering.org": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "a2zapk.co": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "a2zapk.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "a3.coinbase-secured.com": [
+    "2026-11-27T06:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "aadcdn.microsoft-login.cloud": [
+    "2026-11-26T00:00:53Z",
+    "2026-11-26T06:00:43Z"
+   ],
+   "account-netflix.top": [
+    "2026-11-26T23:42:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "account-paypal.antimoney-laundering.org": [
+    "2026-11-26T00:00:53Z",
+    "2026-11-26T00:00:53Z"
+   ],
+   "account.microsoft-login.cloud": [
+    "2026-11-26T00:00:53Z",
+    "2026-11-26T06:00:43Z"
+   ],
+   "account.microsoft.signin.resetting.password.21512121.dogsitters.ie": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "account.onedrive-live-shared-folder-attachment-microsoft365.com": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "accounts-google.playerportalhub.com": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "accounts-google.wallet-veriffy.com": [
+    "2026-11-21T23:50:05Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "accounts.binanceuz.co": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "accounts.google.com.asso-entrautres.fr": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "accounts.google.com.michaeltenzer.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "accounts.google.com.search.er.in": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "accounts.google.com.waycobeauty.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "acct-goog1e.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "achiit.github.io": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "acounts-google.duckdns.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-27T18:00:56Z"
+   ],
+   "acrobat-adobe-tau.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-14T21:52:17Z"
+   ],
+   "adb-viewersv.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "admin.bill-netflix-dashboard-account.104-248-114-136.cpanel.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "admin.coinbase-backup.com": [
+    "2026-11-26T18:00:40Z",
+    "2026-11-28T06:00:47Z"
+   ],
+   "admin.coinbase-secured.com": [
+    "2026-11-25T18:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "admin.foroshgahma.com": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "admin.glallegro.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "admin.google-amazon-tesla.com": [
+    "2026-11-21T12:00:38Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "admin.google-amazon-ultraman.cc": [
+    "2026-11-21T12:00:38Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "admin.kucoinus.my": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "admin.santandercitas.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "adobe-chmvhqeevfrfcygkahnxmwzj.pages.dev": [
+    "2026-11-24T18:00:41Z",
+    "2026-11-24T23:01:08Z"
+   ],
+   "adobe-jnkjwenkgjnwjenkgje.pages.dev": [
+    "2026-11-27T18:00:56Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "adobe-mpwrihzqvfrjzovcfgtkwcem.pages.dev": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "adobe-ozmwyhlcfcsbhkrkodmfeunn.pages.dev": [
+    "2026-11-16T00:55:32Z",
+    "2026-11-16T00:55:32Z"
+   ],
+   "adobe-reader-v-4-2-installer-critical-security-patch.pages.dev": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "adobe-readers.ru": [
+    "2026-11-22T14:00:38Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "adobe-v4-system-security-patch-installer.pages.dev": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "adobe-xnhfolowajskuqbycagggwcr.pages.dev": [
+    "2026-11-23T18:00:48Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "adobe.aneeshagroup.com": [
+    "2026-11-19T02:00:49Z",
+    "2026-11-19T06:00:54Z"
+   ],
+   "adobe.subscribenet.com": [
+    "2026-11-19T01:15:22Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "adobebasicsstore.shop": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-26T00:00:53Z"
+   ],
+   "adobedocviewer.help": [
+    "2026-11-19T21:00:53Z",
+    "2026-11-22T00:00:47Z"
+   ],
+   "adobefileviewer.dpdns.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "adobefree.com": [
+    "2026-11-16T00:55:32Z",
+    "2026-11-16T00:55:32Z"
+   ],
+   "adobehelp.pages.dev": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T02:50:11Z"
+   ],
+   "adobeinstaller-virid.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "adobepdf-gold.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-14T21:52:17Z"
+   ],
+   "adobepdf-online.lat": [
+    "2026-11-26T06:00:43Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "aflryvbz.microsoftonline-billing-verification-secured-help.52-234-33-034.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "agiletechsolutionsinc.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ai-metamask-restored.netlify.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-14T21:52:17Z"
+   ],
+   "ai.fifa-careerportal.com": [
+    "2026-11-22T18:00:38Z",
+    "2026-11-26T06:00:43Z"
+   ],
+   "aiapp2.outlook1.cc": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ainosato3-instagram.pages.dev": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T00:00:52Z"
+   ],
+   "alibaba-access.pages.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-14T21:52:17Z"
+   ],
+   "alibabamobaile.ir": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "alibabasauce.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "alibabatradeonline.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "all-music-spotify-vnzx.netlify.app": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.0230923o5.surf": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-19T00:00:52Z"
+   ],
+   "allegro.1291928gii.click": [
+    "2026-11-15T23:24:10Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "allegro.59h4hiiii6oo.casa": [
+    "2026-11-27T15:00:55Z",
+    "2026-11-27T18:00:56Z"
+   ],
+   "allegro.78439.sbs": [
+    "2026-11-21T23:50:05Z",
+    "2026-11-22T06:00:42Z"
+   ],
+   "allegro.bdbddb.sbs": [
+    "2026-11-27T21:00:46Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "allegro.bddbdb.sbs": [
+    "2026-11-28T13:00:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.centrumorientacji.pl": [
+    "2026-11-20T01:17:38Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "allegro.dbbdw.shop": [
+    "2026-11-21T05:00:44Z",
+    "2026-11-21T06:00:53Z"
+   ],
+   "allegro.dbdbw.shop": [
+    "2026-11-24T21:16:28Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "allegro.domena788944.shop": [
+    "2026-11-22T01:00:48Z",
+    "2026-11-25T12:00:52Z"
+   ],
+   "allegro.eofer234.sbs": [
+    "2026-11-24T21:16:28Z",
+    "2026-11-24T23:01:08Z"
+   ],
+   "allegro.eofert92345.cfd": [
+    "2026-11-27T17:00:53Z",
+    "2026-11-27T18:00:56Z"
+   ],
+   "allegro.eofet623452.sbs": [
+    "2026-11-25T21:00:49Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "allegro.eofetta863.cfd": [
+    "2026-11-26T14:00:45Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "allegro.gh02391212-gf340.help": [
+    "2026-11-20T01:01:06Z",
+    "2026-11-20T12:00:45Z"
+   ],
+   "allegro.id53455.shop": [
+    "2026-11-27T07:00:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.jfdaily.sbs": [
+    "2026-11-27T02:00:51Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.letnie-okazj343653180.sbs": [
+    "2026-11-25T08:00:51Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "allegro.letnie-okazj343653181.sbs": [
+    "2026-11-26T01:01:04Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "allegro.letnie-okazj3953305.cfd": [
+    "2026-11-27T10:00:41Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "allegro.lokalne-oferty8423.sbs": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-20T18:00:44Z"
+   ],
+   "allegro.mm456.xyz": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "allegro.o102020282.sbs": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-17T20:46:59Z"
+   ],
+   "allegro.o10202030.sbs": [
+    "2026-11-20T01:01:06Z",
+    "2026-11-20T05:00:44Z"
+   ],
+   "allegro.o10202038.shop": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "allegro.o10303082.sbs": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-20T18:00:44Z"
+   ],
+   "allegro.o30303040.sbs": [
+    "2026-11-19T20:26:41Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "allegro.o30304031.sbs": [
+    "2026-11-19T22:00:47Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "allegro.o5413443.top": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T01:49:20Z"
+   ],
+   "allegro.o54134483.top": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T01:49:20Z"
+   ],
+   "allegro.oe63rtaa.cfd": [
+    "2026-11-28T01:24:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.ofe.lol": [
+    "2026-11-22T18:00:38Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.ofe24.sbs": [
+    "2026-11-16T07:52:26Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "allegro.ofe24ta.cfd": [
+    "2026-11-27T19:19:46Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "allegro.ofe83204.sbs": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "allegro.oferta029342049223.cfd": [
+    "2026-11-21T00:49:45Z",
+    "2026-11-21T18:00:21Z"
+   ],
+   "allegro.oferta948583902432.cfd": [
+    "2026-11-21T22:00:46Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "allegro.oferty-24.sbs": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "allegro.oferty24.cfd": [
+    "2026-11-16T11:28:47Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "allegro.ospwpw.sbs": [
+    "2026-11-28T01:24:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.oswps.sbs": [
+    "2026-11-27T17:00:53Z",
+    "2026-11-27T18:00:56Z"
+   ],
+   "allegro.pl-oferta-7461-3819-3842.sbs": [
+    "2026-11-26T12:41:56Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "allegro.pl-oferta842165.cfd": [
+    "2026-11-27T02:00:51Z",
+    "2026-11-27T11:00:51Z"
+   ],
+   "allegro.pl-oferta90230982390.cfd": [
+    "2026-11-28T11:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.pl-zamow4219821.cfd": [
+    "2026-11-26T16:00:47Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "allegro.prod24.top": [
+    "2026-11-26T14:58:02Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "allegro.pspsp.sbs": [
+    "2026-11-24T21:16:28Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.sdspds.sbs": [
+    "2026-11-27T02:00:51Z",
+    "2026-11-27T18:00:56Z"
+   ],
+   "allegro.shslpskl.top": [
+    "2026-11-25T00:00:51Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.sklsklpss.top": [
+    "2026-11-24T23:01:08Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.slsaadsss.top": [
+    "2026-11-27T19:19:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.smart-ofert783.sbs": [
+    "2026-11-19T19:00:46Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "allegro.smart-oferty24.shop": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-20T12:00:45Z"
+   ],
+   "allegro.smart-zakupy24h.shop": [
+    "2026-11-19T19:00:46Z",
+    "2026-11-22T11:31:05Z"
+   ],
+   "allegro.spwspw.shop": [
+    "2026-11-24T01:00:50Z",
+    "2026-11-24T05:53:41Z"
+   ],
+   "allegro.sspspssp.top": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-19T06:00:54Z"
+   ],
+   "allegro.stockstar.sbs": [
+    "2026-11-26T23:42:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.support24h.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.swsasps.shop": [
+    "2026-11-24T01:00:50Z",
+    "2026-11-24T05:53:41Z"
+   ],
+   "allegro.swswsws.sbs": [
+    "2026-11-26T23:00:42Z",
+    "2026-11-27T06:00:42Z"
+   ],
+   "allegro.uppdw.sbs": [
+    "2026-11-24T04:18:36Z",
+    "2026-11-24T05:53:41Z"
+   ],
+   "allegro.yuwenmi.sbs": [
+    "2026-11-26T23:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegro.zzszs.sbs": [
+    "2026-11-24T21:16:28Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalne.1056804.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.01097978.sbs": [
+    "2026-11-20T19:00:45Z",
+    "2026-11-22T00:00:47Z"
+   ],
+   "allegrolokalnie.0ferta73618.top": [
+    "2026-11-25T22:00:45Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "allegrolokalnie.1515155.shop": [
+    "2026-11-20T17:00:47Z",
+    "2026-11-21T00:00:43Z"
+   ],
+   "allegrolokalnie.17836x872v21n1.click": [
+    "2026-11-23T21:12:20Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "allegrolokalnie.302lrf9rezerwacja.top": [
+    "2026-11-27T14:00:54Z",
+    "2026-11-27T18:00:56Z"
+   ],
+   "allegrolokalnie.3826387.xyz": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T02:50:11Z"
+   ],
+   "allegrolokalnie.523581rr.top": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T02:50:11Z"
+   ],
+   "allegrolokalnie.576441gh.top": [
+    "2026-11-23T19:19:43Z",
+    "2026-11-24T11:00:44Z"
+   ],
+   "allegrolokalnie.58733.sbs": [
+    "2026-11-23T19:19:43Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.6710014.cc": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.723467278234573.sbs": [
+    "2026-11-15T23:24:10Z",
+    "2026-11-15T23:24:10Z"
+   ],
+   "allegrolokalnie.78439.sbs": [
+    "2026-11-21T23:50:05Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "allegrolokalnie.7846325.lat": [
+    "2026-11-27T04:00:39Z",
+    "2026-11-27T06:00:42Z"
+   ],
+   "allegrolokalnie.837846348734633.sbs": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "allegrolokalnie.8563421.lat": [
+    "2026-11-25T00:00:51Z",
+    "2026-11-25T06:00:47Z"
+   ],
+   "allegrolokalnie.879512.top": [
+    "2026-11-28T00:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.8974235.lat": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T02:50:11Z"
+   ],
+   "allegrolokalnie.91691.top": [
+    "2026-11-26T23:42:45Z",
+    "2026-11-26T23:42:45Z"
+   ],
+   "allegrolokalnie.931831317221828222.sbs": [
+    "2026-11-27T02:00:51Z",
+    "2026-11-27T11:00:51Z"
+   ],
+   "allegrolokalnie.allegrolokalnie.top": [
+    "2026-11-28T08:00:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.allkategoriaoferta421412.sbs": [
+    "2026-11-15T17:09:24Z",
+    "2026-11-16T00:55:32Z"
+   ],
+   "allegrolokalnie.aukcja-74352981.cfd": [
+    "2026-11-28T01:00:41Z",
+    "2026-11-28T06:00:47Z"
+   ],
+   "allegrolokalnie.aukcja136.shop": [
+    "2026-11-25T22:23:38Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "allegrolokalnie.authentication24.shop": [
+    "2026-11-26T14:00:45Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "allegrolokalnie.bdbddb.sbs": [
+    "2026-11-27T21:00:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.bddbdb.sbs": [
+    "2026-11-27T18:00:56Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "allegrolokalnie.com-numerbiletu3821831923.sbs": [
+    "2026-11-15T14:16:40Z",
+    "2026-11-15T23:24:10Z"
+   ],
+   "allegrolokalnie.dbbdw.shop": [
+    "2026-11-20T22:00:43Z",
+    "2026-11-25T12:00:52Z"
+   ],
+   "allegrolokalnie.dbdbw.shop": [
+    "2026-11-23T21:00:49Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "allegrolokalnie.ddbdw.shop": [
+    "2026-11-22T22:00:41Z",
+    "2026-11-23T00:00:40Z"
+   ],
+   "allegrolokalnie.directhttps-pl.sbs": [
+    "2026-11-20T23:00:56Z",
+    "2026-11-21T00:00:43Z"
+   ],
+   "allegrolokalnie.dk-31431941.sbs": [
+    "2026-11-21T23:00:54Z",
+    "2026-11-22T00:00:47Z"
+   ],
+   "allegrolokalnie.dk-oferta8376.sbs": [
+    "2026-11-25T22:23:38Z",
+    "2026-11-26T00:00:53Z"
+   ],
+   "allegrolokalnie.dk-oferta90451.sbs": [
+    "2026-11-26T23:00:42Z",
+    "2026-11-26T23:42:45Z"
+   ],
+   "allegrolokalnie.dk-oferta9157.sbs": [
+    "2026-11-28T01:24:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.dk-oferta94296.sbs": [
+    "2026-11-19T02:00:49Z",
+    "2026-11-19T06:00:54Z"
+   ],
+   "allegrolokalnie.dk-przywiezione71935spz.cyou": [
+    "2026-11-19T06:00:54Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "allegrolokalnie.domena788944.shop": [
+    "2026-11-22T01:00:48Z",
+    "2026-11-22T06:00:42Z"
+   ],
+   "allegrolokalnie.emf8h5iogf.rest": [
+    "2026-11-26T16:00:47Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "allegrolokalnie.eofer234.sbs": [
+    "2026-11-24T21:16:28Z",
+    "2026-11-25T12:00:52Z"
+   ],
+   "allegrolokalnie.eofer245.cfd": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T00:00:52Z"
+   ],
+   "allegrolokalnie.eofers23.cfd": [
+    "2026-11-22T22:00:41Z",
+    "2026-11-23T00:00:40Z"
+   ],
+   "allegrolokalnie.eofert92345.cfd": [
+    "2026-11-27T17:00:53Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "allegrolokalnie.eofeta34635336.sbs": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-20T18:00:44Z"
+   ],
+   "allegrolokalnie.eofetta863.cfd": [
+    "2026-11-26T14:00:45Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "allegrolokalnie.hnfjkg6fjkg9.rest": [
+    "2026-11-15T23:24:10Z",
+    "2026-11-15T23:24:10Z"
+   ],
+   "allegrolokalnie.httpsofficial-pl.sbs": [
+    "2026-11-21T04:00:44Z",
+    "2026-11-21T06:00:53Z"
+   ],
+   "allegrolokalnie.id-237932sbns3.sbs": [
+    "2026-11-23T06:00:49Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "allegrolokalnie.id-hjjfk5as78jg.rest": [
+    "2026-11-24T23:01:08Z",
+    "2026-11-25T12:00:52Z"
+   ],
+   "allegrolokalnie.id-ngj56j9f.rest": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "allegrolokalnie.id-tkgfhjg4jf8.rest": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "allegrolokalnie.id-ungfjh4kf9zf.rest": [
+    "2026-11-24T21:16:28Z",
+    "2026-11-25T06:00:47Z"
+   ],
+   "allegrolokalnie.imartykul2345232.sbs": [
+    "2026-11-21T04:00:44Z",
+    "2026-11-21T18:00:21Z"
+   ],
+   "allegrolokalnie.innpozycja543412.sbs": [
+    "2026-11-21T17:20:08Z",
+    "2026-11-22T00:00:47Z"
+   ],
+   "allegrolokalnie.jesienne-okazj382428.top": [
+    "2026-11-23T23:01:09Z",
+    "2026-11-24T11:00:44Z"
+   ],
+   "allegrolokalnie.koszyk.sbs": [
+    "2026-11-25T22:23:38Z",
+    "2026-11-26T00:00:53Z"
+   ],
+   "allegrolokalnie.letnie-okazj342353581.shop": [
+    "2026-11-21T00:49:45Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "allegrolokalnie.letnie-okazj342553181.shop": [
+    "2026-11-20T23:00:56Z",
+    "2026-11-21T00:00:43Z"
+   ],
+   "allegrolokalnie.letnie-okazj343653180.sbs": [
+    "2026-11-25T08:00:51Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "allegrolokalnie.letnie-okazj343653181.sbs": [
+    "2026-11-26T00:00:53Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "allegrolokalnie.letnie-okazj3953305.cfd": [
+    "2026-11-27T10:00:41Z",
+    "2026-11-27T11:00:51Z"
+   ],
+   "allegrolokalnie.letnie-okazje92035188.click": [
+    "2026-11-20T18:00:44Z",
+    "2026-11-21T00:00:43Z"
+   ],
+   "allegrolokalnie.lokalna-ofera5982531.top": [
+    "2026-11-23T21:12:20Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "allegrolokalnie.lokalna-ofeta16xv0y2j70n.shop": [
+    "2026-11-15T23:24:10Z",
+    "2026-11-15T23:24:10Z"
+   ],
+   "allegrolokalnie.lokalne-oferty8423.sbs": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-20T18:00:44Z"
+   ],
+   "allegrolokalnie.nr-204-293-sn42sd.sbs": [
+    "2026-11-23T07:00:44Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "allegrolokalnie.nr-238483smn3.sbs": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "allegrolokalnie.nr-238sn34.sbs": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "allegrolokalnie.nr-239820890u9832.cfd": [
+    "2026-11-15T23:24:10Z",
+    "2026-11-15T23:24:10Z"
+   ],
+   "allegrolokalnie.nr-5065043.sbs": [
+    "2026-11-20T17:00:47Z",
+    "2026-11-20T18:00:44Z"
+   ],
+   "allegrolokalnie.o102020282.sbs": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-20T18:00:44Z"
+   ],
+   "allegrolokalnie.o10202030.sbs": [
+    "2026-11-20T01:01:06Z",
+    "2026-11-20T05:00:44Z"
+   ],
+   "allegrolokalnie.o10202038.shop": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "allegrolokalnie.o10303010.sbs": [
+    "2026-11-20T04:00:44Z",
+    "2026-11-20T05:00:44Z"
+   ],
+   "allegrolokalnie.o10303082.sbs": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T02:50:11Z"
+   ],
+   "allegrolokalnie.o20303024.shop": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "allegrolokalnie.o21o2o.sbs": [
+    "2026-11-27T17:00:53Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "allegrolokalnie.o30303040.sbs": [
+    "2026-11-19T19:19:39Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "allegrolokalnie.o30304340.sbs": [
+    "2026-11-19T23:00:48Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "allegrolokalnie.o5433443.top": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T01:49:20Z"
+   ],
+   "allegrolokalnie.ochronakupujacych.sbs": [
+    "2026-11-22T07:00:46Z",
+    "2026-11-22T11:31:05Z"
+   ],
+   "allegrolokalnie.oe63rtaa.cfd": [
+    "2026-11-28T01:24:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.ofartaa-944312.top": [
+    "2026-11-24T21:16:28Z",
+    "2026-11-24T23:01:08Z"
+   ],
+   "allegrolokalnie.ofe.lol": [
+    "2026-11-22T18:00:38Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.ofe24.sbs": [
+    "2026-11-16T07:52:26Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "allegrolokalnie.ofert894401.sbs": [
+    "2026-11-19T19:19:39Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "allegrolokalnie.oferta-2113658.cfd": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-18T02:50:11Z"
+   ],
+   "allegrolokalnie.oferta-2814.sbs": [
+    "2026-11-23T06:00:49Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "allegrolokalnie.oferta-3192.sbs": [
+    "2026-11-28T01:24:46Z",
+    "2026-11-28T11:53:07Z"
+   ],
+   "allegrolokalnie.oferta-3827.sbs": [
+    "2026-11-23T21:12:20Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "allegrolokalnie.oferta-4725.sbs": [
+    "2026-11-15T23:24:10Z",
+    "2026-11-15T23:24:10Z"
+   ],
+   "allegrolokalnie.oferta-4827.sbs": [
+    "2026-11-21T19:00:42Z",
+    "2026-11-22T00:00:47Z"
+   ],
+   "allegrolokalnie.oferta-59530174.sbs": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "allegrolokalnie.oferta-7281.sbs": [
+    "2026-11-26T01:01:04Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "allegrolokalnie.oferta-8261.sbs": [
+    "2026-11-22T04:00:51Z",
+    "2026-11-22T06:00:42Z"
+   ],
+   "allegrolokalnie.oferta-9511.sbs": [
+    "2026-11-28T00:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.oferta-9514.sbs": [
+    "2026-11-24T21:16:28Z",
+    "2026-11-24T23:01:08Z"
+   ],
+   "allegrolokalnie.oferta-nr32873292.sbs": [
+    "2026-11-21T19:00:42Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "allegrolokalnie.oferta029342049223.cfd": [
+    "2026-11-21T00:49:45Z",
+    "2026-11-21T18:00:21Z"
+   ],
+   "allegrolokalnie.oferta1543215.cfd": [
+    "2026-11-22T21:00:41Z",
+    "2026-11-23T00:00:40Z"
+   ],
+   "allegrolokalnie.oferta1553215.cfd": [
+    "2026-11-23T06:00:49Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "allegrolokalnie.oferta38be29o8bwg38.cfd": [
+    "2026-11-23T08:00:56Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "allegrolokalnie.oferta8271652644321.cfd": [
+    "2026-11-20T18:00:44Z",
+    "2026-11-21T00:00:43Z"
+   ],
+   "allegrolokalnie.oferta948583902432.cfd": [
+    "2026-11-21T22:00:46Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "allegrolokalnie.oferty-24.sbs": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "allegrolokalnie.oferty24.cfd": [
+    "2026-11-16T11:28:47Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "allegrolokalnie.ogloszenie-2938265.site": [
+    "2026-11-19T17:00:45Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "allegrolokalnie.ogoszenie-7893462.sbs": [
+    "2026-11-22T23:00:44Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "allegrolokalnie.ogoszenie-8690384.sbs": [
+    "2026-11-22T14:00:38Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "allegrolokalnie.ogoszenie-9583315.sbs": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "allegrolokalnie.oswps.sbs": [
+    "2026-11-27T17:00:53Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "allegrolokalnie.payu-platnosc-kup.sbs": [
+    "2026-11-22T07:00:46Z",
+    "2026-11-22T11:31:05Z"
+   ],
+   "allegrolokalnie.pe-7492104.sbs": [
+    "2026-11-20T23:00:56Z",
+    "2026-11-21T00:00:43Z"
+   ],
+   "allegrolokalnie.pi-751757261.lat": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-22T11:31:05Z"
+   ],
+   "allegrolokalnie.pi-8757887125.click": [
+    "2026-11-23T17:00:52Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "allegrolokalnie.pi-oferta2378967856.sbs": [
+    "2026-11-21T17:20:08Z",
+    "2026-11-22T00:00:47Z"
+   ],
+   "allegrolokalnie.pi-oferta8704329826.sbs": [
+    "2026-11-21T23:00:54Z",
+    "2026-11-22T00:00:47Z"
+   ],
+   "allegrolokalnie.pk-auterization726593.cyou": [
+    "2026-11-24T02:00:55Z",
+    "2026-11-24T05:53:41Z"
+   ],
+   "allegrolokalnie.pk-oferta95032.cyou": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T00:00:52Z"
+   ],
+   "allegrolokalnie.pl-0ferta541234.sbs": [
+    "2026-11-24T02:00:55Z",
+    "2026-11-24T05:53:41Z"
+   ],
+   "allegrolokalnie.pl-0ferta76523.sbs": [
+    "2026-11-27T02:00:51Z",
+    "2026-11-27T06:00:42Z"
+   ],
+   "allegrolokalnie.pl-238957.sbs": [
+    "2026-11-15T17:09:24Z",
+    "2026-11-15T23:24:10Z"
+   ],
+   "allegrolokalnie.pl-2478935.sbs": [
+    "2026-11-15T23:24:10Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "allegrolokalnie.pl-376252l72652726262oferta927263438h662.sbs": [
+    "2026-11-24T02:00:55Z",
+    "2026-11-24T11:00:44Z"
+   ],
+   "allegrolokalnie.pl-3942.lat": [
+    "2026-11-20T23:00:56Z",
+    "2026-11-21T00:00:43Z"
+   ],
+   "allegrolokalnie.pl-5481314.cfd": [
+    "2026-11-26T00:00:53Z",
+    "2026-11-26T06:00:43Z"
+   ],
+   "allegrolokalnie.pl-555272h56238oferta44131415142333.sbs": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "allegrolokalnie.pl-567f786.sbs": [
+    "2026-11-28T00:00:44Z",
+    "2026-11-28T06:00:47Z"
+   ],
+   "allegrolokalnie.pl-625517r251627oferta5345336s444.sbs": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "allegrolokalnie.pl-7131228.my": [
+    "2026-11-27T04:00:39Z",
+    "2026-11-27T06:00:42Z"
+   ],
+   "allegrolokalnie.pl-8752123.cfd": [
+    "2026-11-26T22:00:41Z",
+    "2026-11-26T23:42:45Z"
+   ],
+   "allegrolokalnie.pl-domenatestowa8462288.top": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "allegrolokalnie.pl-h11ps74915742.shop": [
+    "2026-11-22T07:00:46Z",
+    "2026-11-22T11:31:05Z"
+   ],
+   "allegrolokalnie.pl-httpsdigital738296.sbs": [
+    "2026-11-22T01:00:48Z",
+    "2026-11-22T11:31:05Z"
+   ],
+   "allegrolokalnie.pl-id-offer-3983-742-5712.sbs": [
+    "2026-11-24T13:00:49Z",
+    "2026-11-24T17:28:46Z"
+   ],
+   "allegrolokalnie.pl-of1cjalnie848284781.sbs": [
+    "2026-11-26T04:00:42Z",
+    "2026-11-27T06:00:42Z"
+   ],
+   "allegrolokalnie.pl-oferta-0731-3941-2931.sbs": [
+    "2026-11-26T00:00:53Z",
+    "2026-11-26T06:00:43Z"
+   ],
+   "allegrolokalnie.pl-oferta-prywatna92383.cfd": [
+    "2026-11-21T03:00:44Z",
+    "2026-11-21T18:00:21Z"
+   ],
+   "allegrolokalnie.pl-oferta2179118.click": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "allegrolokalnie.pl-oferta2947.lol": [
+    "2026-11-22T22:00:41Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "allegrolokalnie.pl-oferta49329.sbs": [
+    "2026-11-26T01:01:04Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "allegrolokalnie.pl-oferta5733.shop": [
+    "2026-11-25T22:23:38Z",
+    "2026-11-28T11:53:07Z"
+   ],
+   "allegrolokalnie.pl-oferta573938.lol": [
+    "2026-11-23T21:12:20Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "allegrolokalnie.pl-oferta63059244.top": [
+    "2026-11-21T04:00:44Z",
+    "2026-11-21T06:00:53Z"
+   ],
+   "allegrolokalnie.pl-oferta749370.lol": [
+    "2026-11-22T11:00:44Z",
+    "2026-11-22T11:31:05Z"
+   ],
+   "allegrolokalnie.pl-oferta7685948.lol": [
+    "2026-11-24T16:00:48Z",
+    "2026-11-24T17:28:46Z"
+   ],
+   "allegrolokalnie.pl-oferta7832973562.cfd": [
+    "2026-11-21T15:00:50Z",
+    "2026-11-21T18:00:21Z"
+   ],
+   "allegrolokalnie.pl-oferta789618732.cfd": [
+    "2026-11-19T04:00:50Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "allegrolokalnie.pl-oferta809543.shop": [
+    "2026-11-25T22:00:45Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "allegrolokalnie.pl-oferta842165.cfd": [
+    "2026-11-27T02:00:51Z",
+    "2026-11-27T11:00:51Z"
+   ],
+   "allegrolokalnie.pl-oferta853654898.cfd": [
+    "2026-11-21T23:00:54Z",
+    "2026-11-22T00:00:47Z"
+   ],
+   "allegrolokalnie.pl-oferta9845654.shop": [
+    "2026-11-24T23:01:08Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "allegrolokalnie.pl-ogloszenie142908.shop": [
+    "2026-11-15T14:16:40Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "allegrolokalnie.pl-ogloszenie279875016.cfd": [
+    "2026-11-22T22:00:41Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "allegrolokalnie.pl-ogloszenie483926047.cfd": [
+    "2026-11-23T08:53:21Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "allegrolokalnie.pl-ogloszezenie91824.shop": [
+    "2026-11-26T02:14:57Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "allegrolokalnie.pl-ogloszezenle891241.shop": [
+    "2026-11-15T14:16:40Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "allegrolokalnie.pl-ogloszezenle978142.shop": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "allegrolokalnie.pl-oqloszenie9184192159126235125.sbs": [
+    "2026-11-22T07:00:46Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "allegrolokalnie.pl-oqloszenie91861419412159235125.sbs": [
+    "2026-11-23T10:00:47Z",
+    "2026-11-24T05:53:41Z"
+   ],
+   "allegrolokalnie.pl-oqloszenie9318592960125512.sbs": [
+    "2026-11-24T21:16:28Z",
+    "2026-11-24T23:01:08Z"
+   ],
+   "allegrolokalnie.pl-prywatnie897142.shop": [
+    "2026-11-26T23:00:42Z",
+    "2026-11-27T06:00:42Z"
+   ],
+   "allegrolokalnie.pl-xbox-series-x-oferta2224.sbs": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "allegrolokalnie.pl-xbox-series-x-oferta2874.cfd": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "allegrolokalnie.pl145.sbs": [
+    "2026-11-25T22:00:45Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "allegrolokalnie.pl49850.cfd": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-14T21:52:17Z"
+   ],
+   "allegrolokalnie.pl74892.pl": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "allegrolokalnie.pll453f0le34k2n.shop": [
+    "2026-11-15T14:16:40Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "allegrolokalnie.plszybkie-zakupy-aukcja230.top": [
+    "2026-11-27T02:00:51Z",
+    "2026-11-27T11:00:51Z"
+   ],
+   "allegrolokalnie.postoffer.cyou": [
+    "2026-11-23T08:00:56Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "allegrolokalnie.postoffers.cfd": [
+    "2026-11-22T07:00:46Z",
+    "2026-11-22T11:31:05Z"
+   ],
+   "allegrolokalnie.postoffers.top": [
+    "2026-11-21T23:50:05Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "allegrolokalnie.pp-inpost.cfd": [
+    "2026-11-28T04:00:42Z",
+    "2026-11-28T06:00:47Z"
+   ],
+   "allegrolokalnie.prod24.top": [
+    "2026-11-26T14:58:02Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.ps-transport603.top": [
+    "2026-11-21T05:00:44Z",
+    "2026-11-21T18:00:21Z"
+   ],
+   "allegrolokalnie.pspsp.sbs": [
+    "2026-11-24T19:19:48Z",
+    "2026-11-24T23:01:08Z"
+   ],
+   "allegrolokalnie.pwpwwp.sbs": [
+    "2026-11-16T07:52:26Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "allegrolokalnie.rezerwacja175798.click": [
+    "2026-11-28T00:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.rezerwacja2048.sbs": [
+    "2026-11-26T23:00:42Z",
+    "2026-11-26T23:42:45Z"
+   ],
+   "allegrolokalnie.rezerwacja517221.click": [
+    "2026-11-23T12:00:50Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "allegrolokalnie.sdspds.sbs": [
+    "2026-11-27T02:00:51Z",
+    "2026-11-27T06:00:42Z"
+   ],
+   "allegrolokalnie.sjalsasss.top": [
+    "2026-11-27T10:00:41Z",
+    "2026-11-27T11:00:51Z"
+   ],
+   "allegrolokalnie.sklsklpss.top": [
+    "2026-11-24T23:01:08Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.smar921012.surf": [
+    "2026-11-19T18:00:41Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "allegrolokalnie.smart-92492.cfd": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "allegrolokalnie.smart-95582.cfd": [
+    "2026-11-23T06:00:49Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "allegrolokalnie.smart-ofert783.sbs": [
+    "2026-11-19T19:00:46Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "allegrolokalnie.smart-oferty24.shop": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-20T12:00:45Z"
+   ],
+   "allegrolokalnie.smart-zakupy24h.shop": [
+    "2026-11-19T19:00:46Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "allegrolokalnie.spalsjas.top": [
+    "2026-11-27T21:00:46Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "allegrolokalnie.spnspmspn.top": [
+    "2026-11-25T06:00:47Z",
+    "2026-11-25T06:00:47Z"
+   ],
+   "allegrolokalnie.spspspsps.shop": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "allegrolokalnie.sspspssp.top": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "allegrolokalnie.swswss.shop": [
+    "2026-11-26T18:00:40Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.swswsws.sbs": [
+    "2026-11-26T23:00:42Z",
+    "2026-11-26T23:42:45Z"
+   ],
+   "allegrolokalnie.szybkie-zakupy-aukcja23029.top": [
+    "2026-11-26T01:01:04Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "allegrolokalnie.transakcja9191.sbs": [
+    "2026-11-20T01:01:06Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "allegrolokalnie.transakcja940491.sbs": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "allegrolokalnie.ukupteraz.click": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "allegrolokalnie.ukupteraz.rest": [
+    "2026-11-15T14:16:40Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "allegrolokalnie.uppdw.sbs": [
+    "2026-11-24T05:53:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "allegrolokalnie.zakupy-ioo24hc.top": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "amazon-europe.club": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "amazon-game-online.life": [
+    "2026-11-22T07:00:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "amazon-harshdeep.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "amazon-layout-5ufe.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-20T05:00:44Z"
+   ],
+   "amazon-section-opal.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "amazon-signin-update-payment-secure-billing-mainapp.52-234-33-034.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "amazon-signin-update-payment-secure-billing-mainapp.82-119-81-020.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "amazon-signin-update-payment-secure-verify-billing-mainapp.161-35-102-243.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "amazon-signin-update-payment-secure-verify-billing-mainsec.52-234-33-034.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "amazon-slots.buzz": [
+    "2026-11-25T18:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "amazon-slots.digital": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "amazon-v2.isha-dev.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "amazon.account-update.amazon.co.jp.c729c2ca6218415d1f5c9ed250dd84c244eb3506.ph": [
+    "2026-11-26T18:00:40Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "amazon.biowikiweb.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "amazon.discoveryloft.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "amazon.shopping-shop.jp": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T00:55:32Z"
+   ],
+   "amazon.support24h.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "amnesiacuracao.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "an-usps.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "an.binance-zh.cn": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "anacms1.coinbase-secured.com": [
+    "2026-11-19T18:00:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "analytics-google.wallet-veriffy.com": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "apac2-o25.coinbase.com.lc": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "apac2.coinbase.com.lc": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "apexrecoveryconsulting.com.glovonetwork.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "api.hotmail666.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "apis.coinbase-secured.com": [
+    "2026-11-28T06:00:47Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "app-facebook.blogspot.com": [
+    "2026-11-23T14:00:50Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "app-icloudmaps.click": [
+    "2026-11-19T00:00:52Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "app-trezor-starts.pages.dev": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "app.binance-zh.cn": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "app.docusign.sxcrn.com": [
+    "2026-11-19T02:00:49Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "app.googleoa.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "app.kucoin108.com": [
+    "2026-11-20T14:00:45Z",
+    "2026-11-25T06:00:47Z"
+   ],
+   "app81-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "apple-support-login.live": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T00:55:32Z"
+   ],
+   "appleid-icloudmac.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "appleid-support-security-verify.167-71-10-235.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "appleid-support-security-verify.167-71-169-104.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "appleid-support-security-verify.50-116-6-13.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "appleinc-support.info": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "apps-metamask-extensions.apper.so": [
+    "2026-11-16T07:52:26Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "argocts.com": [
+    "2026-11-20T06:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "arpa.org.bd": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-24T17:28:46Z"
+   ],
+   "ashy-moss-0bc074f03.5.azurestaticapps.net": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "athome-www.paypal-login.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "att-mail-com-110087.square.site": [
+    "2026-11-21T01:21:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "attmail8566575.weebly.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "auth-metamask.pages.dev": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "auth0-google.com": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T00:00:52Z"
+   ],
+   "auto.chatgptown.cn": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "autoconfig.glovonetwork.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "autoconfig.uspsecuredlogs.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T01:49:20Z"
+   ],
+   "autodiscover.icloudservice.nl": [
+    "2026-11-24T09:01:04Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "autologon.onedrive-live-shared-folder-attachment-microsoft365.com": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "axm-amazon.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "b.binance-zh.cn": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-21T12:00:38Z"
+   ],
+   "backup.bill-netflix-dashboard-account.104-248-114-136.cpanel.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "bankofamerica-financial.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T20:46:59Z"
+   ],
+   "bankofamericatreasury.info": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "barclaysiportalfraudcentre.com": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "barclaysiportalhelphub.com": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "barclaysnetchatinfo.com": [
+    "2026-11-27T18:00:56Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "barclaysnetreactivate.com": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "bas.api.usps.zda.com": [
+    "2026-11-20T01:17:38Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bbva.e-docssign.net": [
+    "2026-11-23T02:00:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bbva.nuvasafe.com": [
+    "2026-11-21T14:00:39Z",
+    "2026-11-22T11:31:05Z"
+   ],
+   "bbvaexperiences.com": [
+    "2026-11-22T18:00:38Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bbvalues.uk": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "being-suite-trezre-us.framer.ai": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "berbagi-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "beta-instagram.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bill-account-netflix-dashboard.15-204-230-53.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bill-account-netflix-dashboard.3-129-34-49.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "bill-account-netflix-dashboard.8-219-97-148.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bill-account-netflix.139-84-132-128.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T02:50:11Z"
+   ],
+   "bill-account-netflix.212-227-255-11.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-20T05:00:44Z"
+   ],
+   "bill-netflix-dashboard-account.03-022-22-000.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bill-netflix-dashboard-account.104-248-114-136.cpanel.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "bill-netflix-dashboard-account.167-71-143-126.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "bill-netflix-dashboard-account.193-146-211-80.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "bill-netflix-dashboard-account.52-234-33-034.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "billings-apple.shop": [
+    "2026-11-25T06:00:47Z",
+    "2026-11-25T06:00:47Z"
+   ],
+   "binance-co.github.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "binance-ltd.com": [
+    "2026-11-19T06:00:54Z",
+    "2026-11-22T06:00:42Z"
+   ],
+   "binance-promo-code.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "binance-red-packet.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "binance-referral-code-btcbonus.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "binance-register.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "binance-verif.com": [
+    "2026-11-15T01:49:20Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "binance-zh.cn": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "binance3.github.io": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "binanceidentityportal.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "binanceii.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "binancelivetrade.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "binancenn.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "binanceokc.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "binancereferralid.github.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "binancewallett.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "blog.ww6.icloudhelp.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bob2.paypal-updates.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "boost-coinbase-verify.web.app": [
+    "2026-11-22T02:00:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bqdyfcls.trendyolal31.coinbase-assists.com": [
+    "2026-11-26T23:42:45Z",
+    "2026-11-26T23:42:45Z"
+   ],
+   "bradesco-app-redesign.vercel.app": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "bradesco-conviteprincipal.com": [
+    "2026-11-24T00:00:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bradesco-netempresa.digital": [
+    "2026-11-19T06:00:54Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "bradesco-principalconvite.world": [
+    "2026-11-24T00:00:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bradesco.beneficios-pj.com": [
+    "2026-11-25T00:00:51Z",
+    "2026-11-25T12:00:52Z"
+   ],
+   "bradesco.pjlivelo.com": [
+    "2026-11-19T02:00:49Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "bradesco.servicosjuridico.com": [
+    "2026-11-19T02:00:49Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "bradescobeneficios.app.br": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bradescoblack-convite.com": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bradescoblackconvite.world": [
+    "2026-11-25T06:00:47Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bradescochat.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bradescoconviteblackclub.world": [
+    "2026-11-20T18:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bradescodigital-american.express": [
+    "2026-11-25T00:00:51Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bradescoempresa.urlx.online": [
+    "2026-11-19T02:00:49Z",
+    "2026-11-19T06:00:54Z"
+   ],
+   "bradescoempresabanking.com": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bradescoinvestidor.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "bradesconvitecenturion.com": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bradescoprincipalinvestimentos.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "brasil-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bridge-trezr-io-sso.square.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "brimembal.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "buscarmi-icloud.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "bybit-binance.com.cn": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "c67b0c24-27dd-4c22-88d1-d2616db49038.coinbase-secured.com": [
+    "2026-11-26T18:00:40Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "call.whatsapp.com-n8a2i.beloaki.buzz": [
+    "2026-11-22T02:00:46Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "captcha.kraken--17att.net": [
+    "2026-11-28T04:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "captcha.kraken-17--at.net": [
+    "2026-11-28T09:00:39Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "carlosjosez1981-collab.github.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "carsscanned.ebaymclaren-austin.eventshouse.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "cash-app-en.com": [
+    "2026-11-24T18:00:41Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "cashapp-account-recovery-verify.165-154-255-254.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "cashapp-account-security-check.165-154-255-254.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "cashapp-liart.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "cashapp-secure-account-access.165-154-255-254.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "cashapp-verify-payment-info.165-154-255-254.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "cceng.netflixuae.com": [
+    "2026-11-26T06:00:43Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "centre-google.com": [
+    "2026-11-23T18:00:48Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "chat-on-whatsapp.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "chatgpt-vwas-us.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "chatgpt.verifyapp.org": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-21T00:00:43Z"
+   ],
+   "chatgpt0005.eu.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "chatgptget.com": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "chatgpts.co.kr": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "chatgpttrainingforemployees.com": [
+    "2026-11-19T03:00:48Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "chatgptupd.com": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "chinese.binance-zh.cn": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T00:00:52Z"
+   ],
+   "citrix-secure-access.com": [
+    "2026-11-25T00:00:51Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "click-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "clickhere-whatsapponly.pages.dev": [
+    "2026-11-27T18:00:56Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "clientverification-scotiabank.com": [
+    "2026-11-28T06:00:47Z",
+    "2026-11-28T11:53:07Z"
+   ],
+   "cn.binance-zh.cn": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "cns.binance-zh.cn": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-20T12:00:45Z"
+   ],
+   "coinbase-advanced-trial.pages.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "coinbase-connetct.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "coinbase-listing-677f.pages.dev": [
+    "2026-11-21T16:00:42Z",
+    "2026-11-21T18:00:21Z"
+   ],
+   "coinbase-lock.com": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-24T05:53:41Z"
+   ],
+   "coinbase-recover.vercel.app": [
+    "2026-11-22T02:00:46Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "coinbase-secured.com": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "coinbase-supportdesk.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "coinbase.am.in": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "coinbase.securelinkvault.com": [
+    "2026-11-19T06:00:54Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "coinbase2017.net": [
+    "2026-11-19T00:00:52Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "coinbaseactivate.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "coinbasecd.com": [
+    "2026-11-22T18:00:38Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "coinbasechat.vercel.app": [
+    "2026-11-22T02:00:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "coinbasecover.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-24T17:28:46Z"
+   ],
+   "coinbaseoffers.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "coinbasepersonalvault.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-21T12:00:38Z"
+   ],
+   "coinbaseplogininin.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "coinbaseprotect.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "coinbaseprovip.vip": [
+    "2026-11-25T17:00:44Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "coinbasevip2012.net": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "coinbasewallet1.com": [
+    "2026-11-20T18:00:44Z",
+    "2026-11-21T06:00:53Z"
+   ],
+   "coma3.coinbase-secured.com": [
+    "2026-11-26T23:42:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "comcast-1-zeta.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T20:46:59Z"
+   ],
+   "comcast-xi.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T20:46:59Z"
+   ],
+   "comcast.fqtjw.com": [
+    "2026-11-23T02:00:46Z",
+    "2026-11-24T17:28:46Z"
+   ],
+   "comcastupdate1b.weebly.com": [
+    "2026-11-24T02:00:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "comtqnxbwrc.coinbase-secured.com": [
+    "2026-11-24T18:00:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "comunamazon.org": [
+    "2026-11-24T11:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "comwtsfiopg.coinbase-secured.com": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "comwww.coinbase-secured.com": [
+    "2026-11-21T00:00:43Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "conatem.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "copilot.m365cloud-microsoft.com": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "correos-entrega.naiwniak.pl": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-19T00:00:52Z"
+   ],
+   "correosicri.cc": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "correosncr.cc": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "correosprepago.bnext.es": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "cpa.freeopenai.me": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "cpanel.cash-app-en.com": [
+    "2026-11-24T18:00:41Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "cpanel.glovonetwork.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "cpanel.login-microsoft-update-billing-online-secure-mainapp.20-14-89-105.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "cpanel.uspsecuredlogs.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T01:49:20Z"
+   ],
+   "creyt.cl": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "cs.glallegro.com": [
+    "2026-11-23T18:00:48Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "cs18-ord.paypal-com-aspi-dll.us": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "csmgroup.blu-foods.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T00:00:52Z"
+   ],
+   "cursos-zensara.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-21T00:00:43Z"
+   ],
+   "customer-paypal-services.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-21T12:00:38Z"
+   ],
+   "dapp-coin.top": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "darkieamazon.vercel.app": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-20T05:00:44Z"
+   ],
+   "dashboard-netflix-en-us-verification.51-79-117-114.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "daweb.hropenai.cn": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "de-paypal-sec.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dhl-express-dev.firebaseapp.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dhl-express-test.lobster-cloud.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dhl-express.llaanidads.com": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "dhl-paketstatus.de": [
+    "2026-11-28T13:00:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dhlexpressservice.com": [
+    "2026-11-27T18:00:56Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dianh.top": [
+    "2026-11-19T19:00:46Z",
+    "2026-11-20T12:00:45Z"
+   ],
+   "diogoss120.github.io": [
+    "2026-11-19T14:00:48Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "dispute-google.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "docs--trezr-css.gitbook.io": [
+    "2026-11-22T02:00:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "docs-google.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "docs-trezor-app.pages.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "docusign-verify.pages.dev": [
+    "2026-11-26T09:00:43Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "docusign.com.myfolder.secure-docusign.preview.smallflyingarts.net": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "domain.onedrive-live-shared-folder-attachment-microsoft365.com": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dow-nload-ledger-live--doc.typedream.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "download-outlook.com": [
+    "2026-11-23T23:01:09Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dp-dev.account-paypal.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "dpd-bexnaro.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-calnori.com": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-calviro.click": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-cenviro.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-ie-kmr.club": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-ie-pack.club": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-ie-pack.vip": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-ie-pzr.club": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-ie-twn.link": [
+    "2026-11-20T18:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-malvexa.click": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-packages.club": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-paketkosten.click": [
+    "2026-11-27T14:00:54Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-polska.com": [
+    "2026-11-25T06:00:47Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-ravlimo.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-suivi-colis.com": [
+    "2026-11-19T18:00:41Z",
+    "2026-11-24T05:53:41Z"
+   ],
+   "dpd-telvora.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd-xelvora.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpd.bio": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-20T12:00:45Z"
+   ],
+   "dpd.cuj.temporary.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dpdacvjwe.top": [
+    "2026-11-25T18:00:42Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "dpdr.us": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "dropbox.rev.it": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dropboxpdf.com": [
+    "2026-11-27T23:00:43Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "dropboxxesmailyamailapp.top": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "dss-br.coinbase.com.lc": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ebay-app.com": [
+    "2026-11-23T18:00:48Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ebay-lwholesale.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ebay-phone-number.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ebay-seller-center-managedpayments.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ebay.zco.mx": [
+    "2026-11-28T01:24:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "email.microsofth.com": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "en-home-trezore.pages.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "en-ledgre.pages.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "en-ledgrr.pages.dev": [
+    "2026-11-27T19:00:51Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "en-trezor-suite-io.square.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "en-whatsapp.com": [
+    "2026-11-24T18:00:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "en.hsbcorpfinancial.com": [
+    "2026-11-25T21:00:49Z",
+    "2026-11-28T06:00:47Z"
+   ],
+   "es-netflix-dashboard.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-27T06:00:42Z"
+   ],
+   "esteva0almeida.github.io": [
+    "2026-11-16T07:52:26Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "eu-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "everythingturfpros.com": [
+    "2026-11-24T02:00:55Z",
+    "2026-11-26T23:42:45Z"
+   ],
+   "exclusive-openseamints.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "exodus-tecnoclin.netlify.app": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "exodus-wallet.global.ssl.fastly.net": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "exodus-web3-saport.square.site": [
+    "2026-11-24T02:00:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "exoduswallethelpcenter.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebok-facebook.blogspot.com": [
+    "2026-11-16T07:52:26Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook--br.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-2-0-dun.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-2025.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-247-support.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-5645464.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-9.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-98.blogspot.com": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "facebook-account-login-page.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-alpha.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-ba.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-benjamin.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-carol.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-cdn.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-channel.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-community.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-delta-three.vercel.app": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-developers.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-do.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-esp.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-eu.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-facebook1.blogspot.com": [
+    "2026-11-21T01:21:42Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "facebook-fansdanssapage.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-fati.blogspot.com": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-fb-com.blogspot.com": [
+    "2026-11-21T01:21:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-five-gamma.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-germany.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-groups-new.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-hack-accounts.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-hr.blogspot.com": [
+    "2026-11-21T01:21:42Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "facebook-ic.blogspot.com": [
+    "2026-11-24T14:00:43Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-juga.blogspot.com": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "facebook-links.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-login-be.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-login-it.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-login-login.blogspot.com": [
+    "2026-11-21T01:21:42Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "facebook-login-page-kappa.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-login-page.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-login-pages.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-login.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-logo.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-meta-reels-1.pages.dev": [
+    "2026-11-25T07:00:53Z",
+    "2026-11-25T12:00:52Z"
+   ],
+   "facebook-new-security.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-ng.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-notification.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-official-page.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-photo5.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-profile-login.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-pt.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-rus.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-seks-40.blogspot.com": [
+    "2026-11-19T14:00:48Z",
+    "2026-11-21T18:00:21Z"
+   ],
+   "facebook-services-login.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-source.blogspot.com": [
+    "2026-11-21T01:21:42Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "facebook-space.blogspot.com": [
+    "2026-11-21T14:00:39Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-system.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-theta.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-trk.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-verification-system3.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-verification-system5.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-view.slplus.pro": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-26T06:00:43Z"
+   ],
+   "facebook-visitantes.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-vn-com.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook-xi-coral.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook.beritanasional.eu.org": [
+    "2026-11-20T14:00:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook.com.securedacess.group.zsoon.eu": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook.milindu.work": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "facebook.sagers.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook.shopweb.com.vn": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "facebook.tamil.bid": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook1019key.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook24-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebook524.blogspot.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "facebook7-facebook.blogspot.com": [
+    "2026-11-20T01:17:38Z",
+    "2026-11-22T06:00:42Z"
+   ],
+   "facebookaccountrecovery.blogspot.com": [
+    "2026-11-15T01:49:20Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "facebookaccountsmanager.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookahla.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookbfacebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookbusiines.github.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookcomprimisingourrights.blogspot.com": [
+    "2026-11-27T14:00:54Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookctf.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookcustomersupportnumber25.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookfakelogin.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookhints.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookinsight-jp.com": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "facebookk.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebooklivepage.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebooklogin-page.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebooklogin123.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebooklogin17.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebooklogin18.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebooklogin19.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebooklogin21.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebooklogin239.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebooklogin333.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebooklogin99999.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookloginapp.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebooklogincc.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookloginf.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookloginfriends.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "facebookloginguidance.blogspot.com": [
+    "2026-11-21T14:00:39Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "facebookloginid.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebooklogininfo.blogspot.com": [
+    "2026-11-21T14:00:39Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "facebookloginpage2.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookloginpage2025.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookloginreview.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookloginsignub.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookloginss.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookloginuser.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-27T18:00:56Z"
+   ],
+   "facebookmail-facebook.blogspot.com": [
+    "2026-11-21T01:21:42Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "facebookpage-noreplycenter.com": [
+    "2026-11-26T14:00:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookpagemanagement.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookpageslinkk.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookprofilelinks.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "facebooksecurityhelp.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookshops.best": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebooksociallink.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebooktechnicalsupportnumber123.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookverifyyouraccount.blogspot.com": [
+    "2026-11-21T01:21:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "facebookwebsite9.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "faq-trezr-git.pages.dev": [
+    "2026-11-21T14:00:39Z",
+    "2026-11-21T18:00:21Z"
+   ],
+   "fedex.apple-cl0ud.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "fedex.aurionintl.online": [
+    "2026-11-19T14:00:48Z",
+    "2026-11-21T00:00:43Z"
+   ],
+   "fedexasset.pro": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "fedexdelivery.pages.dev": [
+    "2026-11-22T20:00:38Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "fedexinvoicedelivery.pages.dev": [
+    "2026-11-25T06:00:47Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "fedexsv.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "fifa-careerhub.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T00:00:52Z"
+   ],
+   "fifa-hr.com": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-19T00:00:52Z"
+   ],
+   "forsakens-crew-teman-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "fotos-icloud.info": [
+    "2026-11-20T18:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ftw.alibaba99.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "fwd.coinbase-secured.com": [
+    "2026-11-21T06:00:53Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "game-amazon.best": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "gestorweb.cl": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "get-googlemeet.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "getdigicore.com": [
+    "2026-11-27T14:00:54Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ggzh-google.com.cn": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "githubsubs.netflixuae.com": [
+    "2026-11-26T06:00:43Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "gloronyan.github.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "gls-defender.pro": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-21T18:00:21Z"
+   ],
+   "gls-errsp.com": [
+    "2026-11-20T05:00:44Z",
+    "2026-11-21T12:00:38Z"
+   ],
+   "gls-groaup.cyou": [
+    "2026-11-20T18:00:44Z",
+    "2026-11-21T12:00:38Z"
+   ],
+   "gls-grougp.icu": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "gls-grovup.cyou": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "gls-link.app": [
+    "2026-11-23T18:00:48Z",
+    "2026-11-28T11:53:07Z"
+   ],
+   "google-8t7.pages.dev": [
+    "2026-11-28T06:00:47Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "google-account-signin.com": [
+    "2026-11-23T06:00:49Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "google-advertising.co.za": [
+    "2026-11-26T06:00:43Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "google-apk.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "google-aplication.download": [
+    "2026-11-23T06:00:49Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "google-do-do-junoo.netlify.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "google-live-maps-view.com": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-22T06:00:42Z"
+   ],
+   "google-meet-app.com": [
+    "2026-11-24T02:00:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "google-rights.com": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T06:00:54Z"
+   ],
+   "google-static-09.com": [
+    "2026-11-23T21:12:20Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "google.drive03.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "google.wallet-veriffy.com": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-21T18:00:21Z"
+   ],
+   "google1208.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "google1302.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "google1308.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "google28.m4ntapaset.ink": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "google29.m4ntapaset.ink": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "google32.m4ntapaset.ink": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "google56.cn": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googlea.eu.cc": [
+    "2026-11-16T07:52:26Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "googleads-g-doubleclick.wallet-veriffy.com": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "googleapps.lk": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googlechena.top": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-21T06:00:53Z"
+   ],
+   "googlecontacts.email": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googlee.gd.cn": [
+    "2026-11-26T18:00:40Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googlee.sc.cn": [
+    "2026-11-26T18:00:40Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googleepkay.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googleeppay.com": [
+    "2026-11-26T23:42:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googleeptay.com": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googleepway.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googleguestservices.com": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googlel0gin.netlify.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googlelikenadav.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googlelogos.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googlemaccount.com": [
+    "2026-11-20T00:00:47Z",
+    "2026-11-20T12:00:45Z"
+   ],
+   "googlemeet-join.com": [
+    "2026-11-15T20:18:03Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "googlenewsgh.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googleplaiby.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googleplaydown.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googlepllry.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "googleplrzy.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "googleplsky.com": [
+    "2026-11-21T00:00:43Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googleprofits30.pages.dev": [
+    "2026-11-19T03:00:48Z",
+    "2026-11-19T06:00:54Z"
+   ],
+   "googlerelayinbox.blogspot.com": [
+    "2026-11-21T14:00:39Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "googlesupportt.netlify.app": [
+    "2026-11-19T14:00:48Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "graph.onedrive-live-shared-folder-attachment-microsoft365.com": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "hameem.net": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-22T11:31:05Z"
+   ],
+   "hans.binance-zh.cn": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "hawkinsinc.microsoft-alerts.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "help--ledger-live.pages.dev": [
+    "2026-11-16T11:28:47Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "help-docs-metamask.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-27T18:00:56Z"
+   ],
+   "help-kraken-com-eng.square.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "help.coinbasewallet1.com": [
+    "2026-11-19T08:00:52Z",
+    "2026-11-21T06:00:53Z"
+   ],
+   "help.kraken-tor.co.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "hke-whatsapp.com": [
+    "2026-11-25T06:00:47Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "hkk-whatsapp.com": [
+    "2026-11-25T06:00:47Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "hofmemorabilia.ebaymclaren-austin.eventshouse.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "home-facebook.blogspot.com": [
+    "2026-11-22T14:00:38Z",
+    "2026-11-24T17:28:46Z"
+   ],
+   "home.binance-zh.cn": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-20T12:00:45Z"
+   ],
+   "hostmaster.microsofth.com": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "hotmail-two.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "hotmail666.com": [
+    "2026-11-19T00:00:52Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "hsbc-sec.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "hsbc-trade-review.pages.dev": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "hsbcau.jrni.com": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "hsbcfrance.v-psp.com": [
+    "2026-11-23T02:00:46Z",
+    "2026-11-23T16:00:49Z"
+   ],
+   "hsbcnetcustomerchat.com": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-27T18:00:56Z"
+   ],
+   "hsbcnetlivesupportchat.com": [
+    "2026-11-27T22:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "hsbcpersonalbanking.com": [
+    "2026-11-20T06:00:44Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "hsbcprivatebanksupport.com": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "hsbcverifyadvisorhelp.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "https--www--roblox.com": [
+    "2026-11-28T01:24:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "https-www-roblox.com": [
+    "2026-11-16T07:52:26Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "icloud-apple-com.com": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "icloud-apple.co": [
+    "2026-11-27T06:00:42Z",
+    "2026-11-27T11:00:51Z"
+   ],
+   "icloud-apple1.shop": [
+    "2026-11-24T18:00:41Z",
+    "2026-11-25T06:00:47Z"
+   ],
+   "icloud-findmy-live.info": [
+    "2026-11-20T00:00:47Z",
+    "2026-11-23T00:00:40Z"
+   ],
+   "icloud-finm.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "icloud-id.rip": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "icloud-maps-locate.app": [
+    "2026-11-20T00:00:47Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "icloud-my.rip": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "icloud-ny.rip": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "icloud-verification.com": [
+    "2026-11-27T18:00:56Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "icloud.map-supports.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-22T11:31:05Z"
+   ],
+   "icloud.you": [
+    "2026-11-26T06:00:43Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "icloudfindmysoporte.help": [
+    "2026-11-25T18:00:42Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "icloudmaps.app": [
+    "2026-11-25T18:00:42Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "icloudmx-ayuda.help": [
+    "2026-11-26T18:00:40Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "icloudsupportpr.ink": [
+    "2026-11-27T18:00:56Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "icloudvsmapalocaliza.click": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T00:00:52Z"
+   ],
+   "id-applejp.cyou": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "id-paypalservice.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "id-whatsapp-telegram.pages.dev": [
+    "2026-11-16T07:52:26Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "ijpress.account-paypal.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "im.nbpublic.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "ims.paypal-support.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "info-eng-ledgerlive-learn.typedream.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "info-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "info-live-ledgrr.pages.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-14T21:52:17Z"
+   ],
+   "ingdirect-accesoweb-login.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ingdirect-clienteweb-login.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "ingdirect-gestionservicio.com": [
+    "2026-11-20T06:00:44Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "ingdirect-iniciosoporte.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-26T23:42:45Z"
+   ],
+   "ingdirect-plataforma-clientes.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "ingdirect-portal-ingreso.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ingdirect-servicios-clientes.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "ingdirect-usuario-login.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "iniciamazon.com.br": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-12.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "instagram-2-blond.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-baittouts-login.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-cam.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-change-password.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-chi.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-cloud.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-copy.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-fe.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-five-gamma.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-frontpage.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-groupe-invite.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-inky.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-jennifer.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-login-page-two.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-login-pi-seven.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-login.desireblueuniforms.com": [
+    "2026-11-19T14:00:48Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "instagram-login.hashnode.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-new-version.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-one-alpha.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-open.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-profile-789.vercel.app": [
+    "2026-11-22T02:00:46Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "instagram-register.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-services.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-session.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "instagram-stories-facebook-1.pages.dev": [
+    "2026-11-25T05:00:50Z",
+    "2026-11-25T12:00:52Z"
+   ],
+   "instagram-test.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T06:00:54Z"
+   ],
+   "instagram-tip.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram-zeta.vercel.app": [
+    "2026-11-19T14:00:48Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram.82.165.110.7.backname.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "instagram.dothome.co.kr": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "instagram030.github.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram157.github.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagram90sedition.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramaccount.info": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramchatsview999.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramcoverrbrasilinstagram.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramdefrancisco.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramfollowers146.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramfollowers7894.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramfollowersfake.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramlikescheap.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramlogin-k.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramlogin08.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "instagramlogin124.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramlogin24.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramlogin68.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramlogin74.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramlogin77.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramlogin99.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramloginpage111.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramloginpassword.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagrammalo.blogspot.com": [
+    "2026-11-21T14:00:39Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramrecovery.blogspot.com": [
+    "2026-11-22T14:00:38Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramsnp.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramsupportverify.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "instagramusicabrasilinstagram.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "io-docs--trezor.gitbook.io": [
+    "2026-11-22T02:00:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "io-trezostarts.pages.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ios.binance-zh.cn": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "italianeservizipostali.finanziari-assicurativi.uspsecuredlogs.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T01:49:20Z"
+   ],
+   "itau-cassino.com": [
+    "2026-11-15T09:14:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "itau-snowy.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "itau.granometrics.io": [
+    "2026-11-26T12:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "itaucotascontempladas.com.br": [
+    "2026-11-28T00:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "itauhomeinstbank.ooguy.com": [
+    "2026-11-27T20:00:39Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "itcserv.net": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "j-ctagroup.paypal-support.antimoney-laundering.org": [
+    "2026-11-25T18:00:42Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "jayaram0550.github.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "join-my-group-whatsapp-ap3.pages.dev": [
+    "2026-11-16T11:28:47Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "join-my-group-whatsapp-bwh.pages.dev": [
+    "2026-11-23T18:00:48Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "join-my-group-whatsapp-ewm.pages.dev": [
+    "2026-11-27T07:00:46Z",
+    "2026-11-27T11:00:51Z"
+   ],
+   "josebernardinogonza-pixel.github.io": [
+    "2026-11-15T01:49:20Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "jp-coinbase.com": [
+    "2026-11-22T18:00:38Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "jsqnjzyg.login.microsoftonline-billing-verification-secured-help.161-35-102-243.cpanel.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "jszjissd.ph-whatsapp.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kelissa.org": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-26T00:00:53Z"
+   ],
+   "kg5.04d.mytemp.website": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "klarnaplayes.shop": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kraken--17att.net": [
+    "2026-11-28T00:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kraken-17--at.net": [
+    "2026-11-28T01:00:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kraken-24.net": [
+    "2026-11-25T22:00:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kraken-binance.cn": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kraken-cc.com": [
+    "2026-11-27T23:00:43Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kraken-exchange.help": [
+    "2026-11-21T00:00:43Z",
+    "2026-11-26T06:00:43Z"
+   ],
+   "kraken-site.shop": [
+    "2026-11-24T08:00:45Z",
+    "2026-11-25T12:00:52Z"
+   ],
+   "kraken-wallet.my": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "kuc0inlgin5.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kucoin-referral-code-pt.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kucoin.ambitopv.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "kucoin.finance": [
+    "2026-11-20T14:00:45Z",
+    "2026-11-21T18:00:21Z"
+   ],
+   "kucoinapp.pages.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kucoinblock.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kucoindeep.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kucoinlogenac.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "kucoinlogin.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kucoinloginaa.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-20T18:00:44Z"
+   ],
+   "kucoinloginii-1.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kucoinloign.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kucoinnxlogis.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kucoinprologin.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kucoinrewards.blogspot.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kucoinspro.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "kzxysgitlab.coinbase-secured.com": [
+    "2026-11-26T23:42:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "lapaca.webdirecto.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-27T11:00:51Z"
+   ],
+   "ld-icloud.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ld-icloud.info": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "learn.microsofth.com": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ledger-live-download-sso-conect.typedream.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ledger-live-login-access.pages.dev": [
+    "2026-11-27T02:00:51Z",
+    "2026-11-27T06:00:42Z"
+   ],
+   "ledger-live-login-web.square.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ledger-livee-logii.typedream.app": [
+    "2026-11-20T01:17:38Z",
+    "2026-11-20T05:00:44Z"
+   ],
+   "ledgerlive-app-web.pages.dev": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-22T00:00:47Z"
+   ],
+   "ledgerlive-desktop--get.pages.dev": [
+    "2026-11-23T18:00:48Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "ledgerlive-desktop-eu.pages.dev": [
+    "2026-11-23T14:00:50Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "ledgerlive-people.pages.dev": [
+    "2026-11-15T09:14:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "ledgrr-start-info.gitbook.io": [
+    "2026-11-22T02:00:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ledgrr-strt-auth-io.square.site": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ledzer-live.square.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "leia-santander.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "lewisc99.github.io": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "lhttps-www--roblox.com": [
+    "2026-11-19T14:00:48Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "lite.paypal-login.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T00:00:40Z"
+   ],
+   "live-ledgre.com": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "live.docusignworkflow.com": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "live.microsoft-login.cloud": [
+    "2026-11-26T00:00:53Z",
+    "2026-11-26T06:00:43Z"
+   ],
+   "livepackagetracking.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "lmomimro.barclaysea.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "log-in-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "login-coinbase.net": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "login-dev.instagram-services.com": [
+    "2026-11-20T18:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "login-east3.cashappps.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "login-facebook-login.blogspot.com": [
+    "2026-11-19T02:00:49Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "login-facebookaccount.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "login-my-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "login-outlook365.yzz.me": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "login-page-instagram.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "login-page-instagram.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "login-xfinitysimple.weebly.com": [
+    "2026-11-19T02:00:49Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "login.agentforce.cc": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "login.coinbase-secured.com": [
+    "2026-11-20T00:00:47Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "login.docusignworkflow.com": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "login.icloudhelp.com": [
+    "2026-11-21T00:00:43Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "login.m-microsoft.com": [
+    "2026-11-19T00:00:52Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "login.microsoftonline.bamboohr.app": [
+    "2026-11-19T01:15:22Z",
+    "2026-11-25T12:00:52Z"
+   ],
+   "login.microsoftonline.rcm-portal.at": [
+    "2026-11-19T18:00:41Z",
+    "2026-11-24T05:53:41Z"
+   ],
+   "login.microsoftonline.xrb.okx.mybluehost.me": [
+    "2026-11-20T18:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "loginms.microsoft-login.cloud": [
+    "2026-11-26T00:00:53Z",
+    "2026-11-26T06:00:43Z"
+   ],
+   "logistics.cn-fedex.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "lonato-cc-il-leone-shopping-center.vodafone-on-line.it": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "lovefive-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "lut.openanthropic.com": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "ly-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "m-whatsapp.net": [
+    "2026-11-20T18:00:44Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "m.citex-pro.com": [
+    "2026-11-20T18:00:44Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "m.coinbase-svip.com": [
+    "2026-11-15T01:49:20Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "m.linkedin-365bet.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "m.www.znzfgdld.login.microsoftonline-billing-verification-secured-help.51-254-125-38.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "m.yahoo-c7entertainment.com.cn": [
+    "2026-11-26T20:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "macieladvogados.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "madison.paypal-updates.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "mail.bankofamerica-tx.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail.bbvaexperiences.com": [
+    "2026-11-22T18:00:38Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail.cash-app-en.com": [
+    "2026-11-24T18:00:41Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "mail.cashapp-account-recovery-verify.165-154-255-254.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail.cashapp-account-security-check.165-154-255-254.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail.cashapp-secure-account-access.165-154-255-254.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail.cashapp-verify-payment-info.165-154-255-254.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail.coinbase-backup.com": [
+    "2026-11-26T18:00:40Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail.coinbase-secured.com": [
+    "2026-11-24T18:00:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail.glovonetwork.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail.googlenewsgh.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail.icloudhelp.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "mail.login.microsoftonline.xrb.okx.mybluehost.me": [
+    "2026-11-20T18:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail.manage-cashapp-accountinformation.165-154-255-254.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail.outlookmails.de": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail.swift-hsbc.com": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail.uspsecuredlogs.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T01:49:20Z"
+   ],
+   "mail03.icloudservice.nl": [
+    "2026-11-24T09:01:04Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mail04.icloudservice.nl": [
+    "2026-11-24T09:01:04Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "manage-cashapp-accountinformation.165-154-255-254.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "maps-apple.support": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "marcosmarroquin23.github.io": [
+    "2026-11-15T01:49:20Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "matheusmartino97.github.io": [
+    "2026-11-22T02:00:46Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "maytheek.com": [
+    "2026-11-23T06:00:49Z",
+    "2026-11-25T12:00:52Z"
+   ],
+   "mb-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "meet-googlee46347975696.pages.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "meet-googlee7563454656.pages.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "meet-googlee7823629056.pages.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "meme-facebook.blogspot.com": [
+    "2026-11-21T14:00:39Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "meraksoul.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "metamask-ai-agent.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T11:53:07Z"
+   ],
+   "metamask-connect.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "metamask-docs-git-dependabot-npmandya-5f7441-consensys-ddffed67.vercel.app": [
+    "2026-11-22T14:00:38Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "metamask-launchpad.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "metamask-login.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "metamask-six.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "metamask-wallet.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "metamask-web.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "metamask173.blogspot.com": [
+    "2026-11-26T14:00:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "metamaskchromeextensionn.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-24T17:28:46Z"
+   ],
+   "metamaskdiuxtension.gitbook.io": [
+    "2026-11-20T14:00:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "metamaskemailverification.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "metamaskextensionnn.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "metamaskexzxtension.gitbook.io": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "metamaskiologii.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "metamasklskog.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-20T18:00:44Z"
+   ],
+   "metamaskoanlogin.gitbook.io": [
+    "2026-11-19T01:15:22Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "metamasksdiohrome.gitbook.io": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "metamasksupportsos.github.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "metamaskuxlogen.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "metamaskwallett.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-24T17:28:46Z"
+   ],
+   "mi-santander.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "microsoft-login-verify.online": [
+    "2026-11-25T19:00:46Z",
+    "2026-11-26T00:00:53Z"
+   ],
+   "microsoft-online.gr": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "microsoft-telemetry.at": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "microsoft-winupdate.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "microsoft.citrix-sharing.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "microsoft.o356.ee": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "microsoft.pedrolllogroup.com": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "microsoft.updata.net.cn": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "microsoft0117.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "microsoft365businessbasic.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "microsoft365updates.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "microsoftcom-link.com": [
+    "2026-11-25T03:00:52Z",
+    "2026-11-25T12:00:52Z"
+   ],
+   "microsoftedge.microsofth.com": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "microsofth.com": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "microsoftjk.eu.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "microsoftonline-billing-verification-secured-help.52-234-33-034.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "microsoftoutlook.flazio.online": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "microsoftsignin.azurewebsites.net": [
+    "2026-11-23T14:00:50Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "microsoftturkey.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "microsoftturkiye.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T00:55:32Z"
+   ],
+   "microsoftwordob.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "millassllc.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "mirror-google.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "monjaro-amazon.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "moonstream-instagram-com.vercel.app": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "movistar-recaudo-epayc.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "movistararena.cl": [
+    "2026-11-20T21:00:43Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "mp.microsofth.com": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mqklzsuh.coinbase-secured.com": [
+    "2026-11-19T00:00:52Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mta-sts.google-alerter.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "multimedia-penetration-gba-perry.trycloudflare.com": [
+    "2026-11-25T00:00:51Z",
+    "2026-11-27T11:00:51Z"
+   ],
+   "my-coinbase.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "my-kraken.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "my-spotify.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "mylogin-microsoftonline.com": [
+    "2026-11-23T18:00:48Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "neda-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix-abonnement.com": [
+    "2026-11-16T11:28:47Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "netflix-bobby.web.app": [
+    "2026-11-27T02:00:51Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix-clon-eight-beta.vercel.app": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix-col.vercel.app": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix-coral-zeta.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix-dashboard-login.23-099-70-096.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "netflix-dashboard-login.8-219-97-148.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix-help.syracusehousepainters.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix-homepage-pi.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix-log-in-dashboard.139-84-132-128.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "netflix-log-in-dashboard.167-71-143-126.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "netflix-login.blogspot.com": [
+    "2026-11-21T14:00:39Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "netflix-register.help": [
+    "2026-11-25T18:00:42Z",
+    "2026-11-28T11:53:07Z"
+   ],
+   "netflix-renovacion-es.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "netflix-seven-rose.vercel.app": [
+    "2026-11-27T02:00:51Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix-signin-update-billing-secured-mainapp-payment-decline.104-248-114-136.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "netflix-signin-update-billing-secured-mainapp-payment-decline.161-35-102-243.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "netflix-signin-update-payment-secure-verify-billing-mainapp.52-234-33-034.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "netflix-signin-update-payment-secured-billing-mainapp.52-234-33-034.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "netflix-signin-update-payment-secured-billing-mainapp.8-219-97-148.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix-signin-update-payment-secured-billing-mainsec.51-79-117-114.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "netflix-signin-update-payment-secured-billing-verify-account.104-248-114-136.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "netflix-signin-update-payment-secured-billing-verify-account.167-71-10-235.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "netflix-signin-update-payment-secured-billing-verifying.139-84-132-128.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "netflix-signin-update-payment-secured-billing-verifying.161-35-102-243.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "netflix-signin-update-payment-secured-billing-verifying.167-71-10-235.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "netflix-signin-update-payment-verify-billing-mainapp.104-248-114-136.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "netflix-signin-verifying-billing-secure-payment-update.212-227-255-11.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-20T05:00:44Z"
+   ],
+   "netflix-signin-verifying-billing-secure-payment-update.52-166-65-2.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "netflix-signin-verifying-billing-secure-payment-update.52-234-33-034.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "netflix-signin-verifying-billing-secure-payment-update.82-119-81-020.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "netflix-support-center.com": [
+    "2026-11-28T06:00:47Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix-update.employmentlawyerlongisland.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix-updateinfo.com": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix-updatepayment.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix-upgrade.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-25T12:00:52Z"
+   ],
+   "netflix-web-site-three.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix.gafiatechnologies.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "netflix.ky": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "netflix.memberaccess-recovery.23-99-70-96.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "netflix.paineljota.top": [
+    "2026-11-24T02:00:55Z",
+    "2026-11-24T17:28:46Z"
+   ],
+   "netflix.surf": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix.vpnuse.eu.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflix6.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflixa.shop": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflixaccount119.blogspot.com": [
+    "2026-11-15T01:49:20Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "netflixbymanoj.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflixcol.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "netflixfeitoaqui.com.br": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflixinyourneighborhoodnm.com": [
+    "2026-11-24T05:53:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflixmedia.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflixquebec.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflixvoid.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflixy-bixy.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "netflixzap.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "network-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "node.coinbase-secured.com": [
+    "2026-11-21T00:00:43Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "noreply-icloud.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "notexistsbill-netflix-dashboard-account.50-116-6-13.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "notexistsikkkjqhz.netflix-signin-update-payment-secured-billing-mainapp.50-116-6-13.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "notexistslqthujai.netflix-signin-verifying-billing-secure-payment-update.40-113-33-046.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "notexistsnotexistsbill-account-netflix.40-113-33-46.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "notexistsnotexistsnotexistsecsbqavu.amazon-signin-update-payment-secure-billing-mainapp.050-116-06-013.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "notexistssocxqnfn.netflix-signin-update-payment-secured-billing-mainsec.23-099-70-096.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "notexistswww.amazon-signin-update-payment-secure-verify-billing-mainsec.23-099-70-096.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "notexistswww.bill-account-netflix-dashboard.050-116-06-013.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "notexistswww.codrfpkl.netflix-signin-update-payment-secured-billing-mainsec.104-243-38-18.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "notexistswww.netflix-signin-update-payment-secured-billing-mainapp.161-35-102-243.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "notexistswww.netflix-signin-update-payment-secured-billing-mainsec.52-176-40-210.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "notexistswww.notexistswww.www.www.bill-account-netflix.40-113-33-46.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "notexistswww.notexistswww.www.www.netflix-dashboard-login.167-71-143-126.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "notexistswww.ntbnbkct.netflix-signin-update-payment-secured-billing-mainsec.167-71-10-235.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "notexistswww.www.amazon-signin-update-payment-secure-verify-billing-mainsec.40-113-33-046.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "notexistswww.www.bill-netflix-dashboard-account.52-166-65-002.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "notexistswww.www.dashboard-netflix-en-us-verification.23-099-70-096.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "notexistswww.www.notexistsnotexistswww.www.www.login-netflix-dashboard-user.50-116-06-013.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "notexistswww.www.www.amazon-signin-update-payment-secure-verify-billing-mainsec.03-129-34-049.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "notexistswww.www.www.bill-account-netflix.40-113-33-46.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "notexistswww.www.www.lqthujai.netflix-signin-verifying-billing-secure-payment-update.40-113-33-046.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "notexistswww.www.www.netflix-signin-update-payment-secured-billing-mainsec.52-176-40-210.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "notexistswww.www.www.www.www.www.account-netflix-payment.52-166-65-2.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "notifications.microsoft-ssl.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ns1.az": [
+    "2026-11-22T02:00:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "nw-facebook.blogspot.com": [
+    "2026-11-21T01:21:42Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "nyc.netflix-switzerlandch.com": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-22T00:00:47Z"
+   ],
+   "oauthe-xfinity-comm.weebly.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "oauthe-xfinity.weebly.com": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "odd-lab-f930.xqnrclhhevjgnwr.workers.dev": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "office.onedrive-live-shared-folder-attachment-microsoft365.com": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "office365-authenticator.com": [
+    "2026-11-21T00:00:43Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "office365.internal-alerts.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "office365.rricrosoft-offices.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "office365licensingsupport.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "office365thunderbirdsetup.pages.dev": [
+    "2026-11-25T17:00:44Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "ok.docusignworkflow.com": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "olx.allegrolokalnie.top": [
+    "2026-11-28T08:00:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "onaamazon.com.ng": [
+    "2026-11-16T00:55:32Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "onedrive-1-one.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "onedrive-4-nine.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "onedrive-live-shared-folder-attachment-microsoft365.com": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "onedrive.at-us.therelayservice.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "open-instagram.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "openai--ads.com": [
+    "2026-11-19T04:00:50Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "openai-hotel-trip.com": [
+    "2026-11-15T01:49:20Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "openanthropic.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "opensea-six.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "opensea-team.help": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-28T11:53:07Z"
+   ],
+   "openseadeals.shop": [
+    "2026-11-23T18:00:48Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "opensealogin1.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "openseaproks007.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "openseavxr.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "oss-web.hropenai.cn": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "oss.hropenai.cn": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "ossama-instagram.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "outlook-8.onrender.com": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "outlook-live365.github.io": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "outlook-mailer.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "outlook-notifications.com": [
+    "2026-11-22T18:00:38Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "outlook-phi-one.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T00:00:52Z"
+   ],
+   "outlook-silk-nine.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "outlook.accountonline-officeportal.lunarvelvetshell.org": [
+    "2026-11-24T18:00:41Z",
+    "2026-11-27T06:00:42Z"
+   ],
+   "outlook.verifytoken.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "outlook.webaccess-alert.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "outlookmail.social": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "outlookmails.de": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "outlookquarantinenotice.com": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-27T11:00:51Z"
+   ],
+   "outlooksa.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "packaging.onedrive.business": [
+    "2026-11-21T06:00:53Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "page-instagram.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "page-kucoin-en-us.typedream.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "pagina-inicial-instagram-anesoledar.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "pagina-inicial-instagram.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "paivudinho.github.io": [
+    "2026-11-27T14:00:54Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "paxgold-binance.com.cn": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "pay.paykmc.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "paypal-logiin.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-20T18:00:44Z"
+   ],
+   "paypal-password.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "paypal-verify.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "paypal.com-websppsc-verification.epsilons.co": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "paypal.com.us-cgi-bin.webscr-cmd-login-run.telar.cl": [
+    "2026-11-23T18:00:48Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "paypal.com.yunjin-tec.com": [
+    "2026-11-27T14:00:54Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "paypal.kinoloft.de": [
+    "2026-11-26T18:00:40Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "paypalacc.shop": [
+    "2026-11-21T17:00:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "paypalcorp.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "paypall.shop": [
+    "2026-11-21T17:00:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "pdev.paypal-verification.antimoney-laundering.org": [
+    "2026-11-25T06:00:47Z",
+    "2026-11-25T06:00:47Z"
+   ],
+   "perfectgiftchoice.life": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "photos-instagram.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "php-intesasanpaolo-assistenza.wasmer.app": [
+    "2026-11-23T14:00:50Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "phpmyadmin.coinbase-secured.com": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "piedrasdecolon.com.ar": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "platform-kraken.cc": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "play-amazon.site": [
+    "2026-11-25T04:00:53Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "play.googleplaety.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-20T12:00:45Z"
+   ],
+   "plugins.sugar-outlook.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "pmc.pay.paypal-security.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T23:24:10Z"
+   ],
+   "porrtal-stpmex.com": [
+    "2026-11-15T01:49:20Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "portall-stpmex.com": [
+    "2026-11-15T01:49:20Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "pousadaparaisodocarmo.com.br": [
+    "2026-11-15T01:49:20Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "powerbi.microsofth.com": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "premio-instagram.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "prestamo-santander-cliente.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "prime-atualizacaocadastral-amazon.top": [
+    "2026-11-24T18:00:41Z",
+    "2026-11-24T23:01:08Z"
+   ],
+   "primequill.wolfpackadventure.surf": [
+    "2026-11-25T17:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "procasmexico.com": [
+    "2026-11-19T06:00:54Z",
+    "2026-11-25T18:00:42Z"
+   ],
+   "profil-facebook-saya.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ptai.in": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-21T12:00:38Z"
+   ],
+   "qualisatis.com.br": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "r-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "r-icloud.com": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-22T06:00:42Z"
+   ],
+   "rajasthanagroproduct.com": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "random.microsofth.com": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "rbxexntesions.com": [
+    "2026-11-19T06:00:54Z",
+    "2026-11-20T12:00:45Z"
+   ],
+   "rcb.cuj.temporary.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "react.onedrive-live-shared-folder-attachment-microsoft365.com": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "reactivar-microsoft-live.iceiy.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-24T11:00:44Z"
+   ],
+   "recover-paypal-p73809.com": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "recreate-instagrampage.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "recreatingwordsforsoul.us-sea-1.linodeobjects.com": [
+    "2026-11-19T14:00:48Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "redeemgift-amazon.com": [
+    "2026-11-28T00:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "renouveler-spotify.com": [
+    "2026-11-16T00:55:32Z",
+    "2026-11-22T00:00:47Z"
+   ],
+   "required-updated-amazon.sprinklers-orlando.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "reserveringenavonturenboerderij.nl": [
+    "2026-11-15T01:49:20Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "resultados.santanderarena.cl": [
+    "2026-11-16T07:52:26Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "rewardsplatform.microsofth.com": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "rgnmsfve.mgsfpgkn.zyg.login.microsoftonline-billing-verification-secured-help.161-35-102-243.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "roblox.com.am": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-22T06:00:42Z"
+   ],
+   "roblox.com.bo": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "roblox.com.bz": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-24T00:00:55Z"
+   ],
+   "roblox.com.ee": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "roblox.com.et": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "roblox.com.gr": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "roblox.com.gt": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-22T06:00:42Z"
+   ],
+   "roblox.com.kz": [
+    "2026-11-20T16:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "roblox.com.ml": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-22T06:00:42Z"
+   ],
+   "roblox.com.pt": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "roblox.com.ss": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "roblox.com.sy": [
+    "2026-11-20T01:17:38Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "rootsblowers.co.in": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "ruddycruzc.github.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "s1027ipmi.paypal-updates.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "samplel-ks6yxvur5-instagramm.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "sandbox.fifa-careerportal.com": [
+    "2026-11-22T18:00:38Z",
+    "2026-11-26T06:00:43Z"
+   ],
+   "santander-bloquear.com": [
+    "2026-11-23T06:00:49Z",
+    "2026-11-23T12:00:50Z"
+   ],
+   "santander-comprovante-fr8kq2lm7xv9pqa4nx.duckdns.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "santander-comprovante-r7kqtg9ycnkpzgxvzk.duckdns.org": [
+    "2026-11-18T22:14:16Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "santander-dev-week.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "santander-inicio.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "santander-revogar.com": [
+    "2026-11-27T06:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "santander2026.dothome.co.kr": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "saque-instagram.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "sbobet.uspsstampcollectors.com": [
+    "2026-11-21T06:00:53Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "schubert-kamphausen.de": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "seaxzh.cam": [
+    "2026-11-19T01:15:22Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "secret-trezor-io.pages.dev": [
+    "2026-11-21T14:00:39Z",
+    "2026-11-22T11:31:05Z"
+   ],
+   "secure-bridge-trezr-apps.typedream.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "secure14-apple.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "secure40-appleid.com": [
+    "2026-11-16T07:52:26Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "securedsupport-coinbase.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "securee-comcast.net": [
+    "2026-11-22T23:00:44Z",
+    "2026-11-23T00:00:40Z"
+   ],
+   "security-awareness.microsoft365.studio": [
+    "2026-11-23T06:00:49Z",
+    "2026-11-23T16:00:49Z"
+   ],
+   "security-eng.coinbase-secured.com": [
+    "2026-11-21T00:00:43Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "security-server-stat-kng4.bolt.host": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "security.email-microsoft.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "sell--amazon--co--uk---playtech-o12xjo.systemsharbor.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "sellercentral--amazon--com---playtech-o12xjo.systemsharbor.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "send-secure-trustwallet-usdt-bip20.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "server4.netflix-switzerlandch.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-22T00:00:47Z"
+   ],
+   "seurexpress.wpenginepowered.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "sexy-whatsapp.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "shares.onedrive1.com": [
+    "2026-11-26T18:00:40Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "shiny-forest-1d9f.sigmundbaron255mlg3.workers.dev": [
+    "2026-11-26T14:00:45Z",
+    "2026-11-26T23:42:45Z"
+   ],
+   "sign-in-to-xfinity-3643.weebly.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "signin.aws.login.emekastudios.co.za": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "signin.google-k12-alert.com": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "simulador-credito-auto-bbva.ideeo.mx": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "sip34427.account-paypal.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "site.com-microsoftonline-ondrive.ca": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "sitemaps.fifa-hiring.com": [
+    "2026-11-25T06:00:47Z",
+    "2026-11-25T12:00:52Z"
+   ],
+   "siyarata-assets-web.whatsappapk.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "siyarata-assets-workbench.whatsappapk.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "sk-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "smartscreen.microsofth.com": [
+    "2026-11-22T06:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "smmpanel.today": [
+    "2026-11-26T02:00:46Z",
+    "2026-11-26T06:00:43Z"
+   ],
+   "snmxtehc.coinbase-secured.com": [
+    "2026-11-20T00:00:47Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "spellapp.com": [
+    "2026-11-23T14:00:50Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "spire-binance.com.cn": [
+    "2026-11-22T18:00:38Z",
+    "2026-11-27T18:00:56Z"
+   ],
+   "sports.netflixuae.com": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "spotify-client-beta.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "spotify-clon-by-akshit.netlify.app": [
+    "2026-11-15T01:49:20Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "spotify-login-teal.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "spotify-react-omega-murex.vercel.app": [
+    "2026-11-27T14:00:54Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "spotify.arfatech.in": [
+    "2026-11-22T14:00:38Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "spotifymodapp.com.in": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "spotifymode.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "spotifypremiumapk.pk": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "spotifypremiummodapk.com.co": [
+    "2026-11-21T06:00:53Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "spotifypremiummodapk.io.in": [
+    "2026-11-22T02:00:46Z",
+    "2026-11-22T06:00:42Z"
+   ],
+   "spotifypremiumz.net": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "spotifyprimiumapk.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "spotifysvotingslink.ct.ws": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "spotifyzonepro-dl.fwh.is": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "spwww.paypal-updates.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-23T00:00:40Z"
+   ],
+   "ssl.docusignworkflow.com": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "sso-auth.com": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-22T20:00:38Z"
+   ],
+   "sso-site-ledgrr.square.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "start-ledgerlive-com-web.typedream.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "start-ledgren.zapier.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "startio-trexoru.framer.website": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "static-login.onedrive-live-shared-folder-attachment-microsoft365.com": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "steamcommunity-com.steam000.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "steamcommunity.blog": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "steamcommunity.ing": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "stericycle.bill-account-netflix.52-176-40-210.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "stericycle.www.bill-account-netflix.52-176-40-210.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "stericycle.www.bill-netflix-dashboard-account.193-146-211-80.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "stericycle.www.www.dashboard-netflix-en-us-verification.23-099-70-096.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "stericycle.www.www.www.bill-netflix-dashboard-account.52-166-65-002.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "stericycle.www.www.www.dashboard-netflix-en-us-verification.104-243-38-18.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "steuerquimica.cl": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "subscriber-netflix.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T00:55:32Z"
+   ],
+   "sue-wellsfargo.com": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "suite-app-docs-trezr.typedream.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "support-apple.help": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "support-appleld.info": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "support-barclays-inc.info": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "support-center-apple.wasmer.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "support-ledgerlive-eng.typedream.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "support-ledgrcom-start-web.typedream.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-26T06:00:43Z"
+   ],
+   "support.google.com.search.er.in": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "support.zoom.us.sgvip12.skylar.web.id": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "support.zoom.us.trojan.d165.dpdns.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "support.zoom.us.vless.d165.dpdns.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "t4-kraken.com": [
+    "2026-11-20T00:00:47Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "tara-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "tb-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "teachschool.up.railway.app": [
+    "2026-11-24T14:00:43Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "teams.microsoftonline-sharepoint.online": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "test.jsqnjzyg.login.microsoftonline-billing-verification-secured-help.161-35-102-243.cpanel.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "testing.coinbase-secured.com": [
+    "2026-11-20T00:00:47Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "testweb.coinbase-secured.com": [
+    "2026-11-21T00:00:43Z",
+    "2026-11-21T00:00:43Z"
+   ],
+   "theamazon.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "threestarcrm.com": [
+    "2026-11-15T01:49:20Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "ticket-fedex.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "tickets-icloud-apple.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "tk-binance.cn": [
+    "2026-11-26T14:00:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "todaytonight.paypal-login.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "token-whatsapp.com": [
+    "2026-11-27T18:00:56Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "tqnxbwrc.coinbase-secured.com": [
+    "2026-11-26T23:42:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "trackingnumbers.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "transfer-trust-wallet-1-ivory.vercel.app": [
+    "2026-11-28T01:24:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "trezo-bridg.pages.dev": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T02:50:11Z"
+   ],
+   "trezo-io-helpe.pages.dev": [
+    "2026-11-27T06:00:42Z",
+    "2026-11-27T11:00:51Z"
+   ],
+   "trezoorr--thego.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "trezor-eo-startd.pages.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "trezor-login-us-auth-start.typedream.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-25T06:00:47Z"
+   ],
+   "trezor-suite-eng-sushi.wasmer.app": [
+    "2026-11-27T14:00:54Z",
+    "2026-11-27T18:00:56Z"
+   ],
+   "trezor-suite-minsa.wasmer.app": [
+    "2026-11-26T14:00:45Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "trezorguide.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "trezoriowlte.gitbook.io": [
+    "2026-11-23T14:00:50Z",
+    "2026-11-24T23:01:08Z"
+   ],
+   "trezorsuite-app.gitbook.io": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "trezrhiwanlt.gitbook.io": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "tron-binance.cn": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "truegamefishing.com": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "trust-wallet-omega.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "trust-wallet.daservglobal.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "trustwallet-helpcenter.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "trustwallet-ownership.net": [
+    "2026-11-27T06:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "trustwallet-recovery.duckdns.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "trustwallet-secure.duckdns.org": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "trustwallet-tokentwtowner.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "trustwallet.com-2fa.vip": [
+    "2026-11-22T02:00:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "trustwallet.com-gpt.vip": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "trustwallet.com-info.vip": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "trustwallet.com-ok.vip": [
+    "2026-11-15T13:58:02Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "trustwallet.com-users.vip": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "trustwalletindia-beta.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ttgyahvw.login.microsoftonline-billing-verification-secured-help.161-35-102-243.cpanel.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "tunishopia.tn": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "tvkrqejy.netflix-signin-verifying-billing-secure-payment-update.15-204-247-101.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "twitterbikeusahq.shop": [
+    "2026-11-21T12:00:38Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "twittergroup.netflixuae.com": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "twitterselfiefest.netflixuae.com": [
+    "2026-11-15T01:49:20Z",
+    "2026-11-16T00:55:32Z"
+   ],
+   "twitterw-wiki.com": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-24T11:00:44Z"
+   ],
+   "unicaja-inicio.net": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-20T05:00:44Z"
+   ],
+   "uniswap-binance.cn": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "unsyncid-coinbase.com": [
+    "2026-11-19T18:00:41Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "update-your-paypal.com.gruposuplidores.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "urmwzapi.coinbase-secured.com": [
+    "2026-11-28T06:00:47Z",
+    "2026-11-28T06:00:47Z"
+   ],
+   "us-2dq.paypal-support.antimoney-laundering.org": [
+    "2026-11-28T00:00:44Z",
+    "2026-11-28T06:00:47Z"
+   ],
+   "us07zoom.us": [
+    "2026-11-19T18:00:41Z",
+    "2026-11-20T18:00:44Z"
+   ],
+   "us09zoom.us": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "us13zoom.us": [
+    "2026-11-23T18:00:48Z",
+    "2026-11-24T11:00:44Z"
+   ],
+   "us14zoom.us": [
+    "2026-11-23T18:00:48Z",
+    "2026-11-24T11:00:44Z"
+   ],
+   "us15zoom.us.com": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "us22zoom.us": [
+    "2026-11-25T18:00:42Z",
+    "2026-11-26T11:00:41Z"
+   ],
+   "us23zoom.us": [
+    "2026-11-26T18:00:40Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "us75webzoom.us": [
+    "2026-11-17T20:46:59Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "usa-icloud.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "usdt.hotmail666.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "user.coinbase-secured.com": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "uso4zoom.us": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-24T11:00:44Z"
+   ],
+   "usps-orders.com": [
+    "2026-11-26T18:00:40Z",
+    "2026-11-27T18:00:56Z"
+   ],
+   "usps-vmts.azurewebsites.net": [
+    "2026-11-24T02:00:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "usps.avaturefed.net": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "uspsaunitedworkforce.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "uspsecuredlogs.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T01:49:20Z"
+   ],
+   "uspsofficialdelivery.com": [
+    "2026-11-19T14:00:48Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "uspss.pages.dev": [
+    "2026-11-16T07:52:26Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "uspssmartparcellocker.tech": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "uspsstampcollectors.com": [
+    "2026-11-21T06:00:53Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "v0-exodus-wallet-app.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "v0-trezor-suite-website.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "v1-coinbase.com": [
+    "2026-11-24T18:00:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "v3ille.netflix-verification.fr": [
+    "2026-11-15T17:45:41Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "venditoriamazon.com": [
+    "2026-11-18T11:28:50Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "vendruco2.github.io": [
+    "2026-11-22T02:00:46Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "verificarcuenta-micros0ft2026way.zya.me": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "verify-google-app.netlify.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "verify.coinbase-invest.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "verifyaccount-google.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-26T23:42:45Z"
+   ],
+   "verifycase-apple.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "vetro-pack-gls-3m.pages.dev": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "viewpackagetracking.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "vinted.id653655.shop": [
+    "2026-11-20T01:17:38Z",
+    "2026-11-20T12:00:45Z"
+   ],
+   "vintedd.duckdns.org": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "vinteden-etikett5358.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "vodafone-admin-app.netlify.app": [
+    "2026-11-22T14:00:38Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "vodafone-business-berlin.de": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "vodafone-business-berlin.store": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "vodafone-on-line.it": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-26T18:00:40Z"
+   ],
+   "vvxhfgtt.amazon-signin-update-payment-secure-verify-billing-mainsec.167-71-10-235.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "w1-whatsapp.com.cn": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "wab-whatsapp.cc": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "wahat-ipp.sa-onedrive.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "waniakanwal13.github.io": [
+    "2026-11-22T14:00:38Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "wc-020cba42b24a.ouxhbuse.netflix-signin-verifying-billing-secure-payment-update.104-243-38-18.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "wc-13d0baf9cf59.ouxhbuse.netflix-signin-verifying-billing-secure-payment-update.104-243-38-18.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "wc-3b870a52efd3.ouxhbuse.netflix-signin-verifying-billing-secure-payment-update.104-243-38-18.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "wc-3b870a52efd3.www.ouxhbuse.netflix-signin-verifying-billing-secure-payment-update.104-243-38-18.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "wc-691207f1b1df.ouxhbuse.netflix-signin-verifying-billing-secure-payment-update.104-243-38-18.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "wc-f388a5c139b0.www.ouxhbuse.netflix-signin-verifying-billing-secure-payment-update.104-243-38-18.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "web-conect-us-ledger-live-wallet.typedream.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "web-ledgerlive--en.typedream.app": [
+    "2026-11-19T14:00:48Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "web-trezor-io-start-us.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "web.whatsappe.us.cc": [
+    "2026-11-25T14:00:44Z",
+    "2026-11-28T06:00:47Z"
+   ],
+   "web4147.account-paypal.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "webmail.glovonetwork.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "webmail.icloudservice.nl": [
+    "2026-11-24T09:01:04Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "webmail.login-microsoft-update-billing-online-secure-mainapp.20-14-89-105.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T17:28:46Z"
+   ],
+   "webmail.uspsecuredlogs.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T01:49:20Z"
+   ],
+   "webpage-edge-start-trezo.pages.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "webpage-trezriostart.pages.dev": [
+    "2026-11-15T17:09:24Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "webproxy.goku8.workers.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "wellsfargobanking.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "wellsfargocentersuites.com": [
+    "2026-11-28T04:00:42Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "wetransferswiftserverr.edgeone.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T00:55:32Z"
+   ],
+   "whatsapp-connect-vcm.pages.dev": [
+    "2026-11-19T18:00:41Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "whatsapp-dp-images.in": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "whatsapp-fast.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "whatsapp-gruppo-connect.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-22T18:00:38Z"
+   ],
+   "whatsapp-hk.com": [
+    "2026-11-19T18:00:41Z",
+    "2026-11-21T12:00:38Z"
+   ],
+   "whatsapp-iamsuyash.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "whatsapp-integrator.pages.dev": [
+    "2026-11-26T00:00:53Z",
+    "2026-11-26T06:00:43Z"
+   ],
+   "whatsapp-online.me": [
+    "2026-11-19T16:00:52Z",
+    "2026-11-22T06:00:42Z"
+   ],
+   "whatsapp-pc.com.cn": [
+    "2026-11-22T18:00:38Z",
+    "2026-11-26T00:00:53Z"
+   ],
+   "whatsapp-sex-7hf.pages.dev": [
+    "2026-11-21T19:00:42Z",
+    "2026-11-22T00:00:47Z"
+   ],
+   "whatsapp-verify.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "whatsapp.certif-account.com": [
+    "2026-11-27T18:00:56Z",
+    "2026-11-28T06:00:47Z"
+   ],
+   "whatsapp.checkleaked.cc": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "whatsapp.dir.com.my": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "whatsapp.emeklialbay.site": [
+    "2026-11-19T14:00:48Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "whatsapp.spacevip.com.br": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "whatsapp.tamil.bid": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "whatsapp.us.org": [
+    "2026-11-19T16:00:52Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "whatsapp.viewclass.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "whatsapp11-cnj.pages.dev": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "whatsapp2233.com": [
+    "2026-11-27T18:00:56Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "whatsapp889.xyz": [
+    "2026-11-15T09:14:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "whatsappcall12.pages.dev": [
+    "2026-11-16T07:52:26Z",
+    "2026-11-16T11:28:47Z"
+   ],
+   "whatsappcampaign.online": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "whatsappdjin.bond": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-20T12:00:45Z"
+   ],
+   "whatsappdjin.icu": [
+    "2026-11-15T09:14:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "whatsappfreewhatsapp.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "whatsapplmao.sbs": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "whatsappmebeton.site": [
+    "2026-11-27T18:00:56Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "whatsappo-ten.vercel.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "whatsappsdzuan.cyou": [
+    "2026-11-15T09:14:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "whatsappsedzuan.bond": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-19T06:00:54Z"
+   ],
+   "whatsappzoeiras.blogspot.com": [
+    "2026-11-21T01:21:42Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "whm5.paypal-verification.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T17:45:41Z"
+   ],
+   "wiega-gls-10m.pages.dev": [
+    "2026-11-17T07:42:56Z",
+    "2026-11-17T11:57:06Z"
+   ],
+   "windows-ledger-live.typedream.app": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "winnersvoyagetours.com": [
+    "2026-11-20T14:00:45Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "wise-transfer.com": [
+    "2026-11-17T02:25:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "worldtk-whatsapp.com.cn": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "wtsfiopg.coinbase-secured.com": [
+    "2026-11-21T00:00:43Z",
+    "2026-11-21T00:00:43Z"
+   ],
+   "wvvw--roblox.com": [
+    "2026-11-19T02:00:49Z",
+    "2026-11-19T23:00:48Z"
+   ],
+   "ww-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www-app-google.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "www-apple.support": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-17T02:25:55Z"
+   ],
+   "www-google-ca.wallet-veriffy.com": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-21T18:00:21Z"
+   ],
+   "www-google-uk.wallet-veriffy.com": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-22T06:00:42Z"
+   ],
+   "www-google-vipp.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-19T00:00:52Z"
+   ],
+   "www-google.wallet-veriffy.com": [
+    "2026-11-21T18:00:21Z",
+    "2026-11-22T11:31:05Z"
+   ],
+   "www-instagram-com-erru.fronx.my.id": [
+    "2026-11-23T02:00:46Z",
+    "2026-11-23T18:00:48Z"
+   ],
+   "www.amazon-signin-update-payment-secure-billing-mainapp.3-129-34-49.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.amazon-signin-update-payment-secure-verify-billing-mainapp.167-71-10-235.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.amazon-signin-update-payment-secure-verify-billing-mainsec.130-61-243-200.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-20T18:00:44Z"
+   ],
+   "www.amazon-signin-update-payment-secure-verify-billing-mainsec.167-71-169-104.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.amazon-signin-update-payment-secure-verify-billing-mainsec.3-129-34-49.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.amazon-signin-update-payment-secure-verify-billing-mainsec.40-113-33-46.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.appleid-support-security-verify.40-113-33-046.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.appleid-support-security-verify.51-79-117-114.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.bill-account-netflix-dashboard.15-204-247-101.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "www.bill-netflix-dashboard-account.3-129-34-49.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.cbndbysw.login.microsoftonline-billing-verification-secured-help.03-129-34-049.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.dashboard-netflix-en-us-verification.167-71-10-235.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "www.dashboard-netflix-en-us-verification.8-219-97-148.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.gttgvoej.microsoftonline-billing-verification-secured-help.134-209-251-140.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "www.gtxwdxyq.amazon-signin-update-payment-secure-billing-mainapp.40-113-33-46.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.login.microsoftonline-billing-verification-secured-help.03-129-34-049.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.login.microsoftonline-billing-verification-secured-help.167-71-169-104.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.m.www.znzfgdld.login.microsoftonline-billing-verification-secured-help.51-254-125-38.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.mxjkckus.login.microsoftonline-billing-verification-secured-help.104-248-114-136.cpanel.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "www.netflix-dashboard-login.03-022-22-000.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.netflix-signin-update-payment-secure-verify-billing-mainapp.50-116-6-13.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "www.netflix-signin-update-payment-secured-billing-mainapp.35-179-33-128.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.netflix-signin-update-payment-secured-billing-mainsec.40-113-33-46.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.netflix-signin-verifying-billing-secure-payment-update.212-227-255-11.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-23T00:00:40Z"
+   ],
+   "www.notexistsntbnbkct.netflix-signin-update-payment-secured-billing-mainsec.167-71-10-235.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.notexistswww.notexistswww.www.www.bill-account-netflix.40-113-33-46.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.nvdqmmgf.amazon-signin-update-payment-secure-billing-mainapp.3-129-34-49.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.stericycle.amazon-signin-update-payment-secure-verify-billing-mainsec.167-71-143-126.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.stericycle.dashboard-netflix-en-us-verification.23-099-70-096.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.stericycle.www.bill-netflix-dashboard-account.193-146-211-80.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T11:49:11Z"
+   ],
+   "www.vkpsourd.login.microsoftonline-billing-verification-secured-help.54-037-73-097.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.vwraqsci.netflix-signin-update-payment-secured-billing-mainapp.50-116-6-13.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "www.wc-020cba42b24a.www.ouxhbuse.netflix-signin-verifying-billing-secure-payment-update.104-243-38-18.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.wthpqpte.login.microsoftonline-billing-verification-secured-help.54-037-73-097.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.www.30ee17940a1b0dec.www.netflix.memberaccess-recovery.40-113-33-046.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.amazon-signin-update-payment-secure-billing-mainapp.51-79-117-114.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.amazon-signin-update-payment-secure-verify-billing-mainsec.51-79-117-114.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.app.netflix-signin-verifying-billing-secure-payment-update.139-84-132-128.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T02:50:11Z"
+   ],
+   "www.www.appleid-support-security-verify.130-61-243-200.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-20T18:00:44Z"
+   ],
+   "www.www.login-netflix-dashboard-user.139-84-132-128.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-18T02:50:11Z"
+   ],
+   "www.www.netflix-dashboard-login.52-234-33-034.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "www.www.netflix-signin-update-payment-secure-verify-billing-mainapp.167-71-10-235.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.netflix-signin-update-payment-secure-verify-billing-mainapp.167-71-169-104.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.netflix-signin-update-payment-secure-verify-billing-mainapp.51-79-117-114.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.netflix-signin-update-payment-secure-verify-billing-mainapp.52-234-33-034.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "www.www.netflix-signin-update-payment-secured-billing-mainsec.54-037-73-097.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.www.netflix.memberaccess-recovery.51-79-117-114.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.notexistsnotexistsecsbqavu.amazon-signin-update-payment-secure-billing-mainapp.050-116-06-013.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "www.www.uhrmwpzj.netflix-signin-update-payment-secured-billing-mainsec.15-204-247-101.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.wc-691207f1b1df.ouxhbuse.netflix-signin-verifying-billing-secure-payment-update.104-243-38-18.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.amazon-signin-update-payment-secure-verify-billing-mainsec.54-037-73-097.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.www.www.amazon-signin-update-payment-secure-verify-billing-mainsec.8-219-97-148.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.www.www.appleid-support-security-verify.51-79-117-114.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.bill-account-netflix-dashboard.050-116-06-013.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "www.www.www.dwiylwkp.amazon-signin-update-payment-secure-verify-billing-mainsec.8-219-97-148.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.www.www.fbfjglke.netflix-signin-update-payment-secured-billing-mainapp.40-113-33-046.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.login.microsoftonline-billing-verification-secured-help.8-219-97-148.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.www.www.mail.netflix.memberaccess-recovery.134-209-251-140.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T06:00:54Z"
+   ],
+   "www.www.www.netflix-dashboard-login.51-79-117-114.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.netflix-log-in-dashboard.167-71-10-235.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.netflix-signin-update-payment-secure-verify-billing-mainapp.50-116-6-13.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "www.www.www.netflix-signin-update-payment-secured-billing-mainapp.52-234-07-169.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.www.www.netflix-signin-update-payment-secured-billing-mainsec.03-129-34-049.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.netflix-signin-update-payment-secured-billing-mainsec.23-99-70-96.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.netflix-signin-update-payment-secured-billing-mainsec.52-234-07-169.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.www.www.netflix.memberaccess-recovery.15-204-247-101.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.notexistslukisxct.netflix-signin-update-payment-secured-billing-mainsec.050-116-06-013.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "www.www.www.www.amazon-signin-update-payment-secure-verify-billing-mainsec.40-113-33-046.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.www.appleid-support-security-verify.52-176-40-210.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.www.appleid-support-security-verify.8-219-97-148.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.www.www.www.netflix-dashboard-login.8-219-97-148.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.www.www.www.netflix-signin-update-payment-secure-verify-billing-mainapp.50-116-6-13.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "www.www.www.www.netflix-signin-update-payment-secured-billing-mainapp.40-113-33-046.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.www.netflix-signin-update-payment-secured-billing-mainsec.52-234-07-169.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.www.www.www.netflix.memberaccess-recovery.23-099-70-096.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.www.notexistslukisxct.netflix-signin-update-payment-secured-billing-mainsec.050-116-06-013.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T12:00:49Z"
+   ],
+   "www.www.www.www.www.amazon-signin-update-payment-secure-billing-mainapp.52-176-40-210.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.www.www.amazon-signin-update-payment-secure-verify-billing-mainsec.03-129-34-049.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ],
+   "www.www.www.www.www.amazon-signin-update-payment-secure-verify-billing-mainsec.51-79-117-114.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.www.www.appleid-support-security-verify.8-219-97-148.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.www.www.www.www.netflix-dashboard-login.23-099-70-096.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-24T13:00:49Z"
+   ],
+   "www.www.www.www.www.netflix-signin-verifying-billing-secure-payment-update.134-209-251-140.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-19T17:00:45Z"
+   ],
+   "www.www.www.xxdjqszw.amazon-signin-update-payment-secure-verify-billing-mainsec.52-234-07-169.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www.www.znzfgdld.login.microsoftonline-billing-verification-secured-help.51-254-125-38.cpanel.site": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "www1.coinbase-login-usa.com": [
+    "2026-11-16T07:52:26Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "wwwwww.account-paypal.antimoney-laundering.org": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-15T11:00:07Z"
+   ],
+   "xfinity-106534.square.site": [
+    "2026-11-24T14:00:43Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "xfinity-billing.com": [
+    "2026-11-21T23:50:05Z",
+    "2026-11-23T00:00:40Z"
+   ],
+   "xfinityecure.weebly.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "xfinityinfoltdorgltd.weebly.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "xfinityloggingin.weebly.com": [
+    "2026-11-24T02:00:55Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "xfinitymailogs.weebly.com": [
+    "2026-11-22T02:00:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "xfinityteamhelper.weebly.com": [
+    "2026-11-26T02:00:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "xfinityteamlogin.weebly.com": [
+    "2026-11-26T02:00:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "xfinityupdateinfo.weebly.com": [
+    "2026-11-18T20:23:05Z",
+    "2026-11-23T06:00:49Z"
+   ],
+   "xfinityvoicemailwf.weebly.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "xfinitywebslogin.weebly.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "xucoxuqh.amazon-signin-update-payment-secure-verify-billing-mainsec.54-037-73-097.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "yahoo-9game.com.cn": [
+    "2026-11-26T20:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "yahoo-c7entertainment.com.cn": [
+    "2026-11-26T20:00:44Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "yahoo888.xyz": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "yahooinfo.coinbase-secured.com": [
+    "2026-11-25T00:00:51Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "youknowwho-67.github.io": [
+    "2026-11-28T01:24:46Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "ywnjb.onedrive-live-shared-folder-attachment-microsoft365.com": [
+    "2026-11-16T18:21:11Z",
+    "2026-11-16T20:48:45Z"
+   ],
+   "z-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "z-instagram.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "zaltiel.com.do": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-27T23:00:43Z"
+   ],
+   "zeta-facebook.blogspot.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "zh-google-chrome.com": [
+    "2026-11-14T21:52:17Z",
+    "2026-11-28T13:00:41Z"
+   ],
+   "zinqfbqw.amazon-signin-update-payment-secure-verify-billing-mainsec.52-166-65-002.cpanel.site": [
+    "2026-11-18T01:38:25Z",
+    "2026-11-22T19:19:33Z"
+   ]
+  }
+ },
+ "source_counts": {
+  "cert-pl": 127644,
+  "destroylist": 234780,
+  "hagezi-tif": 2171154,
+  "phishunt": 821
+ },
+ "version": 1
+}

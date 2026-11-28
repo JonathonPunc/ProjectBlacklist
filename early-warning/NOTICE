@@ -1,0 +1,14 @@
+ProjectBlacklist: third-party notices
+=====================================
+
+Generated from licensing/sources.toml by `python -m licensing sync`.
+Do not edit by hand.
+
+Entries are suspected malicious or phishing hosts, not confirmed verdicts.
+
+Build: early-warning (CC0-1.0)
+------------------------------
+Experimental: hosts whose new TLS certificates look like a brand's login page, often hours before anyone reports them. Expect more mistakes than complement; use it alongside, not instead.
+
+* ProjectBlacklist early-warning detector (CC0-1.0), https://github.com/JonathonPunc/ProjectBlacklist
+  Condition: Read the logs through their monitoring (names/data tile) endpoints with gzip, whole tiles only, as the static CT API asks (https://c2sp.org/static-ct-api).
